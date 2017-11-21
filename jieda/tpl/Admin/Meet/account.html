@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="__EASYUI__/themes/default/easyui.css" rel="stylesheet" />
+    <link href="__EASYUI__/themes/color.css" rel="stylesheet" />
+    <link href="__EASYUI__/themes/icon.css" rel="stylesheet" />
+    <link href="__KINDEDITOR__/themes/default/default.css" rel="stylesheet" />
+    <script src="__EASYUI__/jquery.min.js"></script>
+    <script src="__EASYUI__/jquery.easyui.min.js"></script>
+    <script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
+    <script src="__EASYUI__/common.js"></script>
+    <script src="__KINDEDITOR__/kindeditor-all-min.js"></script>
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('.addcontent', {
+                allowFileManager : false
+            });
+        });
+        var editor2;
+        KindEditor.ready(function(K) {
+            editor2 = K.create('.editcontent', {
+                allowFileManager : false
+            });
+        });
+    </script>
+</head>
+<body>
+<div id='Loading' style="position:absolute;z-index:1000;top:0px;left:0px;width:100%;height:100%;background:#fff ;text-align:center;padding-top: 10%;">
+    <h1><image src='__PUBLIC_IMAGES__/loading3.gif'/></h1></div>
+<table id="accountGrid" class="easyui-datagrid" style="width:92%;height:800px" url="{:U('Admin/Meet/ajaxAccountList')}" pagination="true"  toolbar="#toolbar" singleSelect="true" rownumbers="true">
+    <thead>
+    <tr>
+        <th field="username" width="200" >账号</th>
+        <th field="truename" width="200" >姓名</th>
+        <th field="tname" width="200" >乡镇</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addAccount()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAccount()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAccount()">删除</a>
+</div>
+
+<!-- 添加 -->
+<div id="addAccount" class="easyui-dialog" title="添加" style="width:400px;height:450px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addAccountForm" method="post">
+        <table>
+            <tr>
+                <td>账号:</td>
+                <td><input name="username" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input name="password" class="easyui-textbox" type="password" data-options="delay:1000,required:true,validType:'phone',height:30" /></td>
+            </tr>
+            <tr>
+                <td>姓名:</td>
+                <td><input name="truename" class="easyui-textbox" data-options="delay:1000,required:true,validType:'phone',height:30" /></td>
+            </tr>
+            <tr>
+                <td>所属乡镇:</td>
+                <td>
+                    <input id="addaccounttownid" name="townid" data-options="delay:1000,required:true,multiple:false">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addAccountSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addAccount').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+<div id="editAccount" class="easyui-dialog" title="编辑" style="width:400px;height:450px;padding:10px 20px;" closed="true" modal="true">
+    <form id="editAccountForm" method="post">
+        <input name="id" type="hidden" />
+        <table>
+            <tr>
+                <td>账号:</td>
+                <td><input name="username" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><input name="password" class="easyui-passwordbox"id="editAccountPassword" data-options="delay:1000,required:true,validType:'phone',height:30" /></td>
+            </tr>
+            <tr>
+                <td>姓名:</td>
+                <td><input name="truename" class="easyui-textbox"  data-options="delay:1000,required:true,validType:'phone',height:30" /></td>
+            </tr>
+            <tr>
+                <td>所属乡镇:</td>
+                <td>
+                    <input id="editaccounttownid" name="townid" data-options="delay:1000,required:true,multiple:false">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editAccountSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editAccount').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+<script type="text/javascript">
+
+    var url;
+    function addAccount(){
+        $('#addAccount').dialog('open').dialog('setTitle','添加账号');
+        $('#addAccountForm').form('clear');
+        $('#addaccounttownid').combobox({
+            url:"{:U('Admin/Town/ajaxTownAll')}",
+            valueField:'id',
+            textField:'name',
+            multiple:false
+        });
+        url="{:U('Admin/Meet/addAccount')}";
+    }
+    function addAccountSubmit(){
+
+        $('#addAccountForm').form('submit',{
+            url: url,
+            onSubmit: function(){
+                return $(this).form('validate');
+            },
+            success:function(data){
+                data=$.parseJSON(data);
+                if(data.status==1){
+                    $.messager.alert('Info', data.message, 'info');
+                    $('#addAccount').dialog('close');
+                    $('#accountGrid').datagrid('reload');
+                }else {
+                    $.messager.alert('Warning', data.message, 'info');
+                    $('#addAccount').dialog('close');
+                    $('#accountGrid').datagrid('reload');
+                }
+            }
+        });
+    }
+    function editAccount(){
+        var row = $('#accountGrid').datagrid('getSelected');
+        if(row==null){
+            $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
+        }
+        if (row){
+            $('#editAccount').dialog('open').dialog('setTitle','编辑');
+            $('#editAccountForm').form('load',row);
+            $("#editAccountPassword").passwordbox("setValue",'')
+            $('#editaccounttownid').combobox({
+                url:"{:U('Admin/Town/ajaxTownAll')}",
+                valueField:'id',
+                textField:'name',
+                multiple:false,
+                onLoadSuccess: function(){
+                    console.log(row);
+                    $('#editaccounttownid').combobox('setValue', row.townid);
+                }
+            });
+            url ="{:U('Admin/Meet/editAccount')}"+'/id/'+row.id;
+        }
+    }
+    function editAccountSubmit(){
+        $('#editAccountForm').form('submit',{
+            url: url,
+            onSubmit: function(){
+                return $(this).form('validate');
+            },
+            success:function(data){
+                data=$.parseJSON(data);
+                if(data.status==1){
+                    $.messager.alert('Info', data.message, 'info');
+                    $('#editAccount').dialog('close');
+                    $('#accountGrid').datagrid('reload');
+                }else {
+                    $.messager.alert('Warning', data.message, 'info');
+                    $('#editAccount').dialog('close');
+                    $('#accountGrid').datagrid('reload');
+                }
+            }
+        });
+    }
+    function destroyAccount(){
+        var row = $('#accountGrid').datagrid('getSelected');
+        if (row){
+            $.messager.confirm('删除提示','真的要删除?',function(r){
+                if (r){
+                    var durl="{:U('Admin/Meet/deleteAccount')}";
+                    $.getJSON(durl,{id:row.id},function(result){
+                        if (result.status){
+                            $('#accountGrid').datagrid('reload');    // reload the user data
+                        } else {
+                            $.messager.alert('错误提示',result.message,'error');
+                        }
+                    },'json').error(function(data){
+                        var info=eval('('+data.responseText+')');
+                        $.messager.confirm('错误提示',info.message,function(r){});
+                    });
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

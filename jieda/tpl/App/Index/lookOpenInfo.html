@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- head 中 -->
+    <link rel="stylesheet" href="__PUBLIC__/statics/bootstrap-3.3.5/css/bootstrap.css">
+    <STYLE type="text/css">
+        #lookOpenInfo{
+            width:800px;
+            height:400px;
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            margin-left:-370px;
+            margin-top:-320px;
+            border:1px;
+            align:center;
+        }
+        #form{
+            width:300px;
+            height:160px;
+            position:relative;
+            left:50%;
+            top:50%;
+            margin-left:-120px;
+            margin-top:-120px;
+        }
+    </STYLE>
+</head>
+<body>
+<table class="table" style="width:800px;height:400px;align:center">
+    <div id="lookOpenInfo" style="width:800px;padding:10px 50px;">
+        <h3 style="text-align:center">{$lookOpenInfo.name}的详细信息</h3>
+        <form id="form" class="form-horizontal">
+            <div class="control-group">
+                <label class="col-sm-2 control-label" for="inputName">名称:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputName" value="{$lookOpenInfo.name}">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="col-sm-2 control-label" for="inputPeiyang">培养联系人:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputPeiyang" value="{$lookOpenInfo.peiyang}" >
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="col-sm-2 control-label" for="inputJieshao">入党介绍人:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputJieshao" value="{$lookOpenInfo.jieshao}">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="col-sm-2 control-label" for="inputCurrent">当前阶段:</label>
+                <div class="col-sm-10">
+                    <input type="text"  class="form-control" id="inputCurrent" value="{$lookOpenInfo.current}">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="col-sm-2 control-label">介绍:</label>
+                <div class="col-sm-10">
+                    <textarea  class="form-control" rows="4">{$lookOpenInfo.intro}</textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</table>
+</body>
+</html>

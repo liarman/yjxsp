@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="__EASYUI__/themes/default/easyui.css" rel="stylesheet" />
+    <link href="__EASYUI__/themes/color.css" rel="stylesheet" />
+    <link href="__EASYUI__/themes/icon.css" rel="stylesheet" />
+    <link href="__KINDEDITOR__/themes/default/default.css" rel="stylesheet" />
+    <script src="__EASYUI__/jquery.min.js"></script>
+    <script src="__EASYUI__/jquery.easyui.min.js"></script>
+    <script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
+    <script src="__EASYUI__/common.js"></script>
+</head>
+<body>
+<div id='Loading' style="position:absolute;z-index:1000;top:0px;left:0px;width:100%;height:100%;background:#fff ;text-align:center;padding-top: 10%;">
+    <h1><image src='__PUBLIC_IMAGES__/loading3.gif'/></h1></div>
+<table id="newscatGrid" class="easyui-treegrid" style="width:92%;height:800px" url="{:U('Admin/News/ajaxCatsList')}" toolbar="#toolbar" idField="id" treeField="name" >
+    <thead>
+    <tr>
+        <th field="name" width="200" >名称</th>
+        <th field="sort" width="200" >排序</th>
+        <th field="islink" width="200" formatter="formatStatus">是否链接</th>
+        <th field="linkurl" width="300" >链接地址</th>
+        <th field="action" width="200" align="center" formatter="formatAction">操作</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addNewscat(0)">添加</a>
+</div>
+<!-- 添加 -->
+<div id="addNewscat" class="easyui-dialog" title="添加" style="width:420px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addNewscatForm" method="post">
+        <table>
+            <tr>
+                <td>上级类目:</td>
+                <td><lablel class="parent"></lablel><input type="hidden" name="pid" value="0"></td>
+            </tr>
+            <tr>
+                <td>标题:</td>
+                <td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>排序:</td>
+                <td><input name="sort" class="easyui-numberbox" data-options="delay:1000,height:30" value="0"/></td>
+            </tr>
+            <tr>
+                <td>是否链接:</td>
+                <td>
+                    <input type="checkbox" name="islink" value="1" class="easyui-checkbox editcategoryCheckbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>链接地址:</td>
+                <td><input name="linkurl" class="easyui-textbox" data-options="delay:1000,height:30" value="" style="width: 300px;"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addNewscatSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addNewscat').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+<div id="editNewscat" class="easyui-dialog" title="编辑" style="width:420px;padding:10px 20px;" closed="true" modal="true">
+    <form id="editNewscatForm" method="post">
+        <input type="hidden" name="id" value="">
+        <table>
+            <tr>
+                <td>上级类目:</td>
+                <td><lablel class="editparent"></lablel><input type="hidden" name="pid" value="" id="editCatPid"><input type="hidden" name="id" value="" id="editCatId"></td>
+            </tr>
+            <tr>
+                <td>标题:</td>
+                <td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true,height:30" id="editCatName"/></td>
+            </tr>
+            <tr>
+                <td>排序:</td>
+                <td><input name="sort" class="easyui-numberbox" data-options="delay:1000,height:30" value="0" id="editCatSort"/></td>
+            </tr>
+            <tr>
+                <td>是否链接:</td>
+                <td>
+                    <input type="checkbox" name="islink" value="1" class="easyui-checkbox editcategoryCheckbox"/>
+                </td>
+            </tr>
+            <tr>
+                <td>链接地址:</td>
+                <td><input name="linkurl" class="easyui-textbox" data-options="delay:1000,height:30" value="" style="width: 300px;"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editNewscatSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editNewscat').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+<script type="text/javascript">
+    $("input[name='islink'][value='0']").attr("checked",true);
+    var url;
+    function addNewscat(id){
+        $('#addNewscat').dialog('open').dialog('setTitle','增加类目');
+        $('#addNewscatForm').form('clear');
+        if(id>0){
+            $("input[name='pid']").val(id);
+            $.getJSON("{:U('Admin/News/getCat')}/id/"+id,function(data){
+                $(".parent").empty().append(data.name);
+            })
+        }
+        url="{:U('Admin/News/addCat')}";
+    }
+    function addNewscatSubmit(){
+        $('#addNewscatForm').form('submit',{
+            url: url,
+            onSubmit: function(){
+                return $(this).form('validate');
+            },
+            success:function(data){
+                data=$.parseJSON(data);
+                if(data.status==1){
+                    $.messager.alert('Info', data.message, 'info');
+                    $('#addNewscat').dialog('close');
+                    $('#newscatGrid').treegrid('reload');
+                }else {
+                    $.messager.alert('Warning', data.message, 'info');
+                    $('#addNewscat').dialog('close');
+                    $('#newscatGrid').treegrid('reload');
+                }
+            }
+        });
+    }
+    function editNewscatSubmit(){
+        $('#editNewscatForm').form('submit',{
+            url: url,
+            onSubmit: function(){
+                return $(this).form('validate');
+            },
+            success:function(data){
+                data=$.parseJSON(data);
+                if(data.status==1){
+                    $.messager.alert('Info', data.message, 'info');
+                    $('#editNewscat').dialog('close');
+                    $('#newscatGrid').treegrid('reload');
+                }else {
+                    $.messager.alert('Warning', data.message, 'info');
+                    $('#editNewscat').dialog('close');
+                    $('#newscatGrid').treegrid('reload');
+                }
+            }
+        });
+    }
+    //编辑会员对话窗
+    function editNewscat(id){
+        if(id>0){
+            $('#editNewscat').dialog('open').dialog('setTitle','编辑');
+            url ="{:U('Admin/News/editCat')}"+'/id/'+id;
+            $.getJSON("{:U('Admin/News/getCat')}/id/"+id,function(data){
+                $("#editCatPid").val(data.pid);
+                $("#editCatId").val(data.id);
+                $("#editCatName").textbox('setValue',data.name);
+                $("#editCatSort").textbox('setValue',data.sort);
+                $(".editparent").empty().append(data.pname);
+            })
+        }else{
+            $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
+        }
+    }
+    function destroyNewscat(){
+        var row = $('#newscatGrid').datagrid('getSelected');
+        if(row==null){
+            $.messager.alert('Warning',"请选择要删除的行", 'info');return false;
+        }
+        if (row){
+            $.messager.confirm('删除提示','真的要删除?',function(r){
+                if (r){
+                    var durl="{:U('Admin/News/deleteCat')}";
+                    $.getJSON(durl,{id:row.id},function(result){
+                        if (result.status){
+                            $('#newscatGrid').treegrid('reload');    // reload the user data
+                        } else {
+                            $.messager.alert('错误提示',result.message,'error');
+                        }
+                    },'json').error(function(data){
+                        var info=eval('('+data.responseText+')');
+                        $.messager.confirm('错误提示',info.message,function(r){});
+                    });
+                }
+            });
+        }
+    }
+    function formatAction(value,row,index){
+        id=row.id;
+        var add = '<a href="javascript:void(0);" onclick="addNewscat('+id+')">添加子类目</a> ';
+        var del = '<a href="javascript:void(0);" onclick="destroyNewscat('+id+')">删除</a>';
+        var edit = '<a href="javascript:void(0);" onclick="editNewscat('+id+')">编辑</a>';
+        return add+"&nbsp;&nbsp;"+edit+"&nbsp;&nbsp;"+del;
+    }
+    function formatStatus(val,rowData,row){
+        if(val==1){
+            val="<span style='color: green'>是</span>";
+        }else {
+            val="<span style='color: red'>否</span>";
+        }
+        return val;
+    }
+</script>
+</body>
+</html>
