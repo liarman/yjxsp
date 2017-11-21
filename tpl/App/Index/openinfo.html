@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- head 中 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/statics/css/mobile.css">
+    <link rel="stylesheet" href="__PUBLIC__/statics/bootstrap-3.3.5/css/bootstrap.css">
+</head>
+<body>
+<div class="weui-cells_title">
+    <h3 style="text-align:center"> <volist name="openinfo" id="openinfos" offset="0" length='1'>{$openinfos.vname}公开信息</volist></h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr >
+                    <th>名称</th>
+                    <th>培养联系人</th>
+                    <th>入党介绍人</th>
+                    <th>当前阶段</th>
+                    <th>查看</th>
+                </tr>
+            </thead>
+            <volist name="openinfo" id="openinfos">
+               <tbody>
+                    <tr>
+                        <td>{$openinfos.name}</td>
+                        <td>{$openinfos.peiyang}</td>
+                        <td>{$openinfos.jieshao}</td>
+                        <td>{$openinfos.current}</td>
+                       <td>
+                        <a href="{:U('App/Index/lookOpeninfo',array('id'=>$openinfos['id']))}">
+                            <div>
+                                <img src="__PUBLIC__/statics/images/search.png" alt="">
+                            </div>
+                        </a>
+                       </td>
+                    </tr>
+               </tbody>
+            </volist>
+        </table>
+</div>
+<div class="weui-footer">
+    <p class="weui-footer__text">Copyright © 启凡科技提供技术支持</p>
+</div>
+</body>
+<!-- body 最后 -->
+<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+</html>
