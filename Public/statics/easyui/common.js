@@ -8,8 +8,8 @@ function closes(){
 }
 var pc;
 $.parser.onComplete = function(){
-    if(pc) clearTimeout(pc);
-    pc = setTimeout(closes, 1000);
+    // if(pc) clearTimeout(pc);
+    // pc = setTimeout(closes, 1000);
 }
 
 //图片添加路径
