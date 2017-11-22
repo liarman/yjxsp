@@ -1,5 +1,5 @@
 <script src="__ADMIN_JS__/rule.js" type="text/javascript" charset="utf-8"></script>
-<table id="ruleGrid" class="easyui-treegrid" url="{:U('Admin/Rule/ajaxRules')}" pagination="true" idField="id" treeField="title" toolbar="#toolbar">
+<table id="ruleGrid" class="easyui-treegrid" url="{:U('Admin/Rule/ajaxRules')}" pagination="true" idField="id" treeField="title" toolbar="#toolbar_rule">
 	<thead>
 	<tr>
 		<th field="title" width="200" >权限名称</th>
@@ -8,7 +8,7 @@
 	</tr>
 	</thead>
 </table>
-<div id="toolbar">
+<div id="toolbar_rule">
 	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="add(0)">添加</a>
 </div>
 <!-- 添加 -->

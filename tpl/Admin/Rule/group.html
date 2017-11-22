@@ -1,16 +1,16 @@
 <script src="__ADMIN_JS__/group.js" type="text/javascript" charset="utf-8"></script>
-<table id="groupGrid" class="easyui-datagrid" url="{:U('Admin/Rule/ajaxGroup')}" pagination="true"  toolbar="#toolbar" singleSelect="true">
+<table id="groupGrid" class="easyui-datagrid" url="{:U('Admin/Rule/ajaxGroup')}" pagination="true"  toolbar="#toolbar_group" singleSelect="true">
 	<thead>
 	<tr>
 		<th field="title" width="200" >用户组名称</th>
 	</tr>
 	</thead>
 </table>
-<div id="toolbar">
-	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addGroup()">添加</a>
-	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editGroup()">编辑</a>
-	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyGroup()">删除</a>
-	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-lock" plain="true" onclick="giveAuth()">分配权限</a>
+<div id="toolbar_group">
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addGroup()">添加</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editGroup()">编辑</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyGroup()">删除</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-user" plain="true" onclick="giveAuth()">分配权限</a>
 </div>
 <!-- 添加 -->
 <div id="addGroup" class="easyui-dialog" title="添加" style="width:400px;padding:10px 20px;" closed="true" modal="true">
