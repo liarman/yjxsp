@@ -12,6 +12,7 @@ class AdminBaseController extends BaseController{
 		//print_r(session('user'));die;
 		parent::_initialize();
 		if(empty(session('user'))){
+		/*if(session('user')==null){*/
 			$this->redirect('/Admin/Login/index');
 		}
 		$auth=new \Think\Auth();

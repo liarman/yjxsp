@@ -5,13 +5,738 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="df8a1f4f-edb9-40da-9872-c4e17fc60ac6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/hr.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MP_verify_nXNpM7ln1gGqM077.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/kill-svn.bat" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/App/3c760f1240eeee186e5f34a0fac4b4fa.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/App/454e151e3c8fa909e5d81fa0c0feafab.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/App/69eb29987482e45ead3f7e81aea86b4c.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/App/73235bd2af81bc812c8e6c57d8269be2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/App/d622b362f36cfc043b3e3436f63e0238.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/App/f0f09d9cd534397e1977b57209bd9379.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Cache/Home/d678f280cf84122e981f201997603ea5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Data/_fields/qfant_binding.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Data/_fields/qfant_equipment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Data/_fields/qfant_openinfo.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Data/_fields/qfant_town.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Data/_fields/qfant_village.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Logs/Common/17_11_16.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Logs/Common/17_11_17.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Logs/Common/17_11_18.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Logs/Common/17_11_19.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Runtime/Logs/Common/17_11_20.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/AppWeixinController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/AppWeixinController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/CustomNavController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/CustomNavController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/EquipmentController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/EquipmentController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/HouseController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/HouseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/IndexController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/LoginController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/LoginController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/MeetController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/MeetController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/NavController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/NavController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/RoomController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/RoomController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/RuleController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/TownController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/TownController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/UserController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/UserController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/VillageController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/VillageController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/index.html" afterPath="$PROJECT_DIR$/Application/Admin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/App/Controller/BindController.class.php" afterPath="$PROJECT_DIR$/Application/App/Controller/BindController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/App/Controller/EquipmentController.class.php" afterPath="$PROJECT_DIR$/Application/App/Controller/EquipmentController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/App/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Application/App/Controller/IndexController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/App/Controller/MeetController.class.php" afterPath="$PROJECT_DIR$/Application/App/Controller/MeetController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/App/Controller/UserController.class.php" afterPath="$PROJECT_DIR$/Application/App/Controller/UserController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Common/function.php" afterPath="$PROJECT_DIR$/Application/Common/Common/function.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Conf/config.php" afterPath="$PROJECT_DIR$/Application/Common/Conf/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Conf/db.php" afterPath="$PROJECT_DIR$/Application/Common/Conf/db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/AdminBaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/AdminBaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/AppBaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/AppBaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/BaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/BaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/BindBaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/BindBaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/HomeBaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/HomeBaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/PublicBaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/PublicBaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Controller/UserBaseController.class.php" afterPath="$PROJECT_DIR$/Application/Common/Controller/UserBaseController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/AdminNavModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/AdminNavModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/AppWeixinModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/AppWeixinModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/AuthGroupAccessModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/AuthGroupAccessModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/AuthGroupModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/AuthGroupModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/AuthRuleModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/AuthRuleModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/BaseModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/BaseModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/BuildingModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/BuildingModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/CategoryModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/CategoryModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/ConfigModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/ConfigModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/CustomNavModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/CustomNavModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/DistrictModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/DistrictModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/EquipmentModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/EquipmentModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/HouseModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/HouseModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/LinkModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/LinkModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/MeetAccountModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/MeetAccountModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/MeetContentModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/MeetContentModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/MeetModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/MeetModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/MeetUserModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/MeetUserModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/NewsModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/NewsModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/NewscatModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/NewscatModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/NoticeModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/NoticeModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/OpeninfoModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/OpeninfoModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/ProductModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/ProductModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/PromotionModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/PromotionModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/RepairModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/RepairModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/RoomModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/RoomModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/RoomOwnerModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/RoomOwnerModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/SnapshotModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/SnapshotModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/StoreModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/StoreModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/TownModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/TownModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/UsersModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/UsersModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/VillageModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/VillageModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/WashModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/WashModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/WaterModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/WaterModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/WorkerModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/WorkerModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Model/WuyefeeModel.class.php" afterPath="$PROJECT_DIR$/Application/Common/Model/WuyefeeModel.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Common/Tag/My.class.php" afterPath="$PROJECT_DIR$/Application/Common/Tag/My.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/Controller/VueController.class.php" afterPath="$PROJECT_DIR$/Application/Home/Controller/VueController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/index.html" afterPath="$PROJECT_DIR$/Application/Home/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/User/Controller/IndexController.class.php" afterPath="$PROJECT_DIR$/Application/User/Controller/IndexController.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.colors.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.colors.min.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.min.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.rtl.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.rtl.min.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.ios.rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.colors.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.colors.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.colors.min.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.colors.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.min.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.rtl.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.rtl.min.css" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/css/framework7.material.rtl.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-calendar-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-calendar-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-calendar-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-calendar-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-comment-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-comment-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-comment-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-comment-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-email-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-email-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-email-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-email-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-gender-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-gender-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-name-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-name-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-name-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-name-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-password-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-password-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-password-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-password-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-settings-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-settings-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-tel-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-tel-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-tel-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-tel-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-toggle-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-toggle-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-url-ios.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-url-ios.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-url-material.svg" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/img/i-form-url-material.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/js/framework7.js" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/js/framework7.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/js/framework7.min.js" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/js/framework7.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/js/my-app.js" afterPath="$PROJECT_DIR$/Public/statics/Framework7-1.2.0/js/my-app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap-theme.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap-theme.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap.css" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/js/bootstrap.js" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/js/npm.js" afterPath="$PROJECT_DIR$/Public/statics/bootstrap-3.3.5/js/npm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/animate.css" afterPath="$PROJECT_DIR$/Public/statics/css/animate.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/animate.less" afterPath="$PROJECT_DIR$/Public/statics/css/animate.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/animate.min.css" afterPath="$PROJECT_DIR$/Public/statics/css/animate.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/bjy.css" afterPath="$PROJECT_DIR$/Public/statics/css/bjy.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/bjy.less" afterPath="$PROJECT_DIR$/Public/statics/css/bjy.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/css/mobile.css" afterPath="$PROJECT_DIR$/Public/statics/css/mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/ajaxfileupload.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/ajaxfileupload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/easyloader.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/easyloader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/jquery.easyui.min.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/jquery.easyui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/jquery.min.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/locale/easyui-lang-it.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/locale/easyui-lang-it.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/locale/easyui-lang-tr.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/locale/easyui-lang-tr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.accordion.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.accordion.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.calendar.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combo.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combobox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combobox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combogrid.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combogrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combotree.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combotree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combotreegrid.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.combotreegrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datagrid.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datagrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datalist.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datalist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datebox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datetimebox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datetimebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datetimespinner.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.datetimespinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.dialog.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.dialog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.draggable.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.draggable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.droppable.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.droppable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.filebox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.filebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.form.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.layout.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.layout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.linkbutton.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.linkbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.menu.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.menu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.menubutton.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.menubutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.messager.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.messager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.mobile.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.mobile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.numberbox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.numberbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.numberspinner.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.numberspinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.pagination.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.pagination.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.panel.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.panel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.parser.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.passwordbox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.passwordbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.progressbar.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.progressbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.propertygrid.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.propertygrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.resizable.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.resizable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.searchbox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.searchbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.slider.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.slider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.spinner.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.spinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.splitbutton.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.splitbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.switchbutton.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.switchbutton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tabs.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tabs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tagbox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tagbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.textbox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.textbox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.timespinner.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.timespinner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tooltip.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tooltip.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tree.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.tree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.treegrid.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.treegrid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.validatebox.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.validatebox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.window.js" afterPath="$PROJECT_DIR$/Public/statics/easyui/plugins/jquery.window.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/accordion.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/calendar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/combo.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/combobox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/datagrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/datalist.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/datebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/dialog.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/easyui.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/filebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/layout.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/linkbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/menu.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/menubutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/messager.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/pagination.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/panel.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/passwordbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/progressbar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/propertygrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/searchbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/slider.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/spinner.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/splitbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/switchbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tabs.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tagbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tagbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/textbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tooltip.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tree.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/validatebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/black/window.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/black/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/accordion.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/calendar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/combo.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/combobox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/datagrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/datalist.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/datebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/dialog.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/easyui.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/filebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/layout.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/linkbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/menu.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/menubutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/messager.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/pagination.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/panel.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/passwordbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/progressbar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/propertygrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/searchbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/slider.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/spinner.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/splitbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/switchbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tabs.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tagbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tagbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/textbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tooltip.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tree.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/validatebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/window.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/bootstrap/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/accordion.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/calendar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/combo.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/combobox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/datagrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/datalist.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/datebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/dialog.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/easyui.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/filebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/layout.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/linkbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/menu.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/menubutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/messager.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/pagination.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/panel.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/passwordbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/progressbar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/propertygrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/searchbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/slider.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/spinner.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/splitbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/switchbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tabs.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tagbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tagbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/textbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tooltip.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tree.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/validatebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/default/window.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/default/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/accordion.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/calendar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/combo.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/combobox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/datagrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/datalist.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/datebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/dialog.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/easyui.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/filebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/layout.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/linkbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/menu.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/menubutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/messager.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/pagination.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/panel.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/passwordbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/progressbar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/propertygrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/searchbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/slider.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/spinner.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/splitbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/switchbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tabs.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tagbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tagbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/textbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tooltip.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tree.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/validatebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/window.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/gray/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/accordion.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/calendar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/combo.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/combobox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/datagrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/datalist.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/datebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/dialog.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/easyui.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/filebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/layout.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/linkbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/menu.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/menubutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/messager.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/pagination.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/panel.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/passwordbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/progressbar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/propertygrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/searchbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/slider.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/spinner.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/splitbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/switchbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tabs.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tagbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tagbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/textbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tooltip.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tree.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/validatebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/material/window.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/material/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/accordion.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/accordion.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/calendar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/calendar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/combo.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/combo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/combobox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/combobox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/datagrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/datagrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/datalist.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/datalist.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/datebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/datebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/dialog.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/dialog.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/easyui.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/easyui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/filebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/filebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/layout.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/layout.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/linkbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/linkbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/menu.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/menu.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/menubutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/menubutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/messager.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/messager.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/pagination.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/pagination.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/panel.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/panel.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/passwordbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/passwordbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/progressbar.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/progressbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/propertygrid.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/propertygrid.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/searchbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/searchbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/slider.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/slider.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/spinner.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/spinner.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/splitbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/splitbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/switchbutton.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/switchbutton.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tabs.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tabs.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tagbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tagbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/textbox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/textbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tooltip.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tooltip.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tree.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/tree.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/validatebox.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/validatebox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/window.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/metro/window.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/easyui/themes/mobile.css" afterPath="$PROJECT_DIR$/Public/statics/easyui/themes/mobile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/emoji/js/config.js" afterPath="$PROJECT_DIR$/Public/statics/emoji/js/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/emoji/js/emoji-picker.js" afterPath="$PROJECT_DIR$/Public/statics/emoji/js/emoji-picker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/emoji/js/jquery.emojiarea.js" afterPath="$PROJECT_DIR$/Public/statics/emoji/js/jquery.emojiarea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/emoji/js/nanoscroller.min.js" afterPath="$PROJECT_DIR$/Public/statics/emoji/js/nanoscroller.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/HELP-US-OUT.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/css/font-awesome.css" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/css/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/css/font-awesome.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/animated.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/animated.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/bordered-pulled.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/core.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/core.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/fixed-width.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/fixed-width.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/font-awesome.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/font-awesome.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/icons.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/icons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/larger.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/larger.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/list.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/list.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/mixins.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/mixins.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/path.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/path.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/rotated-flipped.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/stacked.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/stacked.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/variables.less" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/less/variables.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_animated.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_animated.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_bordered-pulled.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_core.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_core.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_fixed-width.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_icons.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_icons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_larger.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_larger.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_list.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_list.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_mixins.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_path.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_path.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_rotated-flipped.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_stacked.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_stacked.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_variables.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/_variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/font-awesome.css" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/font-awesome.css.map" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/font-awesome.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/Public/statics/font-awesome-4.4.0/scss/font-awesome.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/css/highcharts.css" afterPath="$PROJECT_DIR$/Public/statics/highcharts/css/highcharts.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-3d.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-3d.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-3d.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-3d.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-more.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-more.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-more.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/highcharts-more.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/highcharts.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/highcharts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/highcharts.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/highcharts.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/canvg.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/canvg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/canvg.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/canvg.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/jspdf.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/jspdf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/jspdf.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/jspdf.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/rgbcolor.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/rgbcolor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/rgbcolor.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/rgbcolor.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/svg2pdf.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/svg2pdf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/lib/svg2pdf.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/lib/svg2pdf.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/accessibility.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/accessibility.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/accessibility.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/accessibility.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/annotations.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/annotations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/annotations.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/annotations.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/boost.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/boost.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/boost.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/boost.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/broken-axis.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/broken-axis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/broken-axis.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/broken-axis.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/data.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/data.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/data.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/drilldown.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/drilldown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/drilldown.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/drilldown.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/exporting.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/exporting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/exporting.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/exporting.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/funnel.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/funnel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/funnel.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/funnel.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/gantt.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/gantt.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/gantt.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/gantt.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/grid-axis.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/grid-axis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/grid-axis.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/grid-axis.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/heatmap.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/heatmap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/heatmap.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/heatmap.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/no-data-to-display.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/no-data-to-display.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/no-data-to-display.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/no-data-to-display.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/offline-exporting.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/offline-exporting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/offline-exporting.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/offline-exporting.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/overlapping-datalabels.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/overlapping-datalabels.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/overlapping-datalabels.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/overlapping-datalabels.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/series-label.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/series-label.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/series-label.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/series-label.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/solid-gauge.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/solid-gauge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/solid-gauge.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/solid-gauge.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/treemap.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/treemap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/treemap.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/treemap.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/xrange-series.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/xrange-series.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/modules/xrange-series.src.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/modules/xrange-series.src.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/test/highcharts.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/test/highcharts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/test/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/test/jquery-1.8.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/dark-blue.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/dark-blue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/dark-green.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/dark-green.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/dark-unica.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/dark-unica.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/gray.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/gray.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/grid-light.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/grid-light.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/grid.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/grid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/sand-signika.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/sand-signika.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/highcharts/themes/skies.js" afterPath="$PROJECT_DIR$/Public/statics/highcharts/themes/skies.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/.gitignore" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/CHANGELOG.md" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/README.md" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/bower.json" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/custom.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-bold.svg" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-bold.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-regular.svg" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/montserrat-regular.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/normalize.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/css/normalize.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/index.html" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/custom.min.js" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/jquery.js" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/zepto.js" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/demo/js/zepto.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.jquery.json" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.jquery.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.js" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.min.js" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/icheck.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/all.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/_all.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/aero.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/blue.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/flat.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/flat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/green.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/grey.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/orange.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/pink.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/purple.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/red.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/yellow.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/flat/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/futurico/futurico.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/futurico/futurico.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/_all.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/aero.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/blue.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/green.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/grey.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/line.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/line.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/orange.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/pink.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/purple.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/red.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/yellow.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/line/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/_all.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/aero.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/blue.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/green.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/grey.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/minimal.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/minimal.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/orange.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/pink.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/purple.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/red.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/yellow.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/minimal/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/polaris/polaris.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/polaris/polaris.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/_all.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/_all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/aero.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/aero.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/blue.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/green.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/green.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/grey.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/grey.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/orange.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/orange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/pink.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/pink.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/purple.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/purple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/red.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/red.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/square.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/square.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/yellow.css" afterPath="$PROJECT_DIR$/Public/statics/iCheck-1.0.2/skins/square/yellow.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.css" afterPath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.js" afterPath="$PROJECT_DIR$/Public/statics/imageCropper/cropper.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/main.css" afterPath="$PROJECT_DIR$/Public/statics/imageCropper/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/imageCropper/main.js" afterPath="$PROJECT_DIR$/Public/statics/imageCropper/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/emoji.js" afterPath="$PROJECT_DIR$/Public/statics/js/emoji.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/html5shiv.min.js" afterPath="$PROJECT_DIR$/Public/statics/js/html5shiv.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/jquery-1.10.2.min.js" afterPath="$PROJECT_DIR$/Public/statics/js/jquery-1.10.2.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/jquery-2.0.0.min.js" afterPath="$PROJECT_DIR$/Public/statics/js/jquery-2.0.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/jquery.cookie.js" afterPath="$PROJECT_DIR$/Public/statics/js/jquery.cookie.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/jquery.nicescroll.min.js" afterPath="$PROJECT_DIR$/Public/statics/js/jquery.nicescroll.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/respond.min.js" afterPath="$PROJECT_DIR$/Public/statics/js/respond.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/js/zepto-1.1.6.min.js" afterPath="$PROJECT_DIR$/Public/statics/js/zepto-1.1.6.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/kindeditor-all-min.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/kindeditor-all-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/lang/ko.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/lang/ko.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/lang/ru.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/lang/ru.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/lang/zh-TW.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/lang/zh-TW.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/license.txt" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/license.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/php/JSON.php" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/php/JSON.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/anchor/anchor.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/anchor/anchor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/autoheight/autoheight.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/autoheight/autoheight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/baidumap/baidumap.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/baidumap/baidumap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/baidumap/index.html" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/baidumap/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/baidumap/map.html" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/baidumap/map.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/code/prettify.css" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/code/prettify.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/code/prettify.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/code/prettify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/fixtoolbar/fixtoolbar.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/fixtoolbar/fixtoolbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/multiimage/multiimage.js" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/multiimage/multiimage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/template/html/1.html" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/template/html/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/template/html/2.html" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/template/html/2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/template/html/3.html" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/plugins/template/html/3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/themes/default/default.css" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/themes/default/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/themes/qq/qq.css" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/themes/qq/qq.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/kindeditor/themes/simple/simple.css" afterPath="$PROJECT_DIR$/Public/statics/kindeditor/themes/simple/simple.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/layer/extend/layer.ext.js" afterPath="$PROJECT_DIR$/Public/statics/layer/extend/layer.ext.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/layer/layer.js" afterPath="$PROJECT_DIR$/Public/statics/layer/layer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/login/css/style.css" afterPath="$PROJECT_DIR$/Public/statics/login/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/login/scss/style.scss" afterPath="$PROJECT_DIR$/Public/statics/login/scss/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/LICENSE.txt" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/bower.json" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/ajax.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/ajax_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/ajax_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/auto_hide_scrollbar_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/auto_hide_scrollbar_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/auto_scrolling_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/auto_scrolling_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/bootstrap_examples.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/bootstrap_examples.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/callbacks_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/callbacks_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/colorbox.css" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/colorbox.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/jquery.colorbox-min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox/jquery.colorbox-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/colorbox_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/complete_examples.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/complete_examples.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/disable_destroy_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/disable_destroy_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/fluid_scrollbar_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/fluid_scrollbar_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/full_page_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/full_page_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/grid_and_snap_while_scrolling_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/grid_and_snap_while_scrolling_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/iframe_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/iframe_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/infinite_scroll_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/infinite_scroll_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/init_hidden_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/init_hidden_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/init_position_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/init_position_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_accordion_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_accordion_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_autocomplete_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_autocomplete_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_dialog_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_dialog_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_resizable_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_resizable_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_sortable_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_sortable_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_tabs_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/jquery_ui_tabs_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/keyboard_nav_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/keyboard_nav_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_each_script_separately.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_each_script_separately.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_each_script_separately_via_cdn.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_each_script_separately_via_cdn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_scripts_via_cdn.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/loading_scripts_via_cdn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/max-height_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/max-height_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/max-width_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/max-width_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/multiple_scrollbars_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/multiple_scrollbars_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo_alt.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo_alt.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo_alt_2.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/nested_scrollbars_demo_alt_2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/rtl_direction_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/rtl_direction_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scrollTo_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scrollTo_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scroll_buttons_and_snap_scrolling_examples.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scroll_buttons_and_snap_scrolling_examples.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scrollbar_themes_demo.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/scrollbar_themes_demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/simple_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/simple_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/simple_example_all_params.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/simple_example_all_params.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/style.css" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/textarea_example.html" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/examples/textarea_example.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.css" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/jquery.mCustomScrollbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-1.11.0.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-1.11.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-1.9.1.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-1.9.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-2.1.0.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-2.1.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-ui-1.10.4.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery-ui-1.10.4.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mCustomScrollbar.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mCustomScrollbar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mousewheel-3.0.6.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mousewheel-3.0.6.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mousewheel.min.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/minified/jquery.mousewheel.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mCustomScrollbar.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mCustomScrollbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mousewheel-3.0.6.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mousewheel-3.0.6.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mousewheel.js" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/js/uncompressed/jquery.mousewheel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/package.json" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/readme.md" afterPath="$PROJECT_DIR$/Public/statics/mCustomScrollbar/readme.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/rongcloud/css/main.css" afterPath="$PROJECT_DIR$/Public/statics/rongcloud/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm-extend.css" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm-extend.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm-extend.min.css" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm-extend.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm.css" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm.min.css" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/css/sm.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-city-picker.js" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-city-picker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-city-picker.min.js" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-city-picker.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-extend.js" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-extend.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-extend.min.js" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm-extend.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm.js" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm.min.js" afterPath="$PROJECT_DIR$/Public/statics/sui-0.6.1/js/sm.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/validate/additional-methods.js" afterPath="$PROJECT_DIR$/Public/statics/validate/additional-methods.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/validate/additional-methods.min.js" afterPath="$PROJECT_DIR$/Public/statics/validate/additional-methods.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/validate/jquery.validate.js" afterPath="$PROJECT_DIR$/Public/statics/validate/jquery.validate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/validate/jquery.validate.min.js" afterPath="$PROJECT_DIR$/Public/statics/validate/jquery.validate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/validate/messages_zh.js" afterPath="$PROJECT_DIR$/Public/statics/validate/messages_zh.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/vue/vue-resource.min.js" afterPath="$PROJECT_DIR$/Public/statics/vue/vue-resource.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/vue/vue-touch.min.js" afterPath="$PROJECT_DIR$/Public/statics/vue/vue-touch.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/vue/vue.js" afterPath="$PROJECT_DIR$/Public/statics/vue/vue.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/README.md" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/style.css" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/test.css" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/test.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/uploader.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/uploader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.css" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.custom.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.custom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.custom.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.fis.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.fis.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.flashonly.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.flashonly.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.flashonly.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.flashonly.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.html5only.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.html5only.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.html5only.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.html5only.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.noimage.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.noimage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.noimage.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.noimage.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.nolog.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.nolog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.nolog.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.nolog.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.withoutimage.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.withoutimage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.withoutimage.min.js" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/webuploader.withoutimage.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/xb-webuploader.css" afterPath="$PROJECT_DIR$/Public/statics/webuploader-0.1.5/xb-webuploader.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Runtime/common~runtime.php" afterPath="$PROJECT_DIR$/Runtime/common~runtime.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/AppWeixin/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/AppWeixin/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/CustomNav/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/CustomNav/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Customers/carowners.html" afterPath="$PROJECT_DIR$/tpl/Admin/Customers/carowners.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Customers/companys.html" afterPath="$PROJECT_DIR$/tpl/Admin/Customers/companys.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Customers/senders.html" afterPath="$PROJECT_DIR$/tpl/Admin/Customers/senders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Equipment/camera.html" afterPath="$PROJECT_DIR$/tpl/Admin/Equipment/camera.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Equipment/cameras.html" afterPath="$PROJECT_DIR$/tpl/Admin/Equipment/cameras.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Equipment/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Equipment/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Index/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Index/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Link/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Link/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Login/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Login/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Login/index2.html" afterPath="$PROJECT_DIR$/tpl/Admin/Login/index2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Meet/account.html" afterPath="$PROJECT_DIR$/tpl/Admin/Meet/account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Meet/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Meet/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Nav/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Nav/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/News/cats.html" afterPath="$PROJECT_DIR$/tpl/Admin/News/cats.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/News/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/News/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Notice/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Notice/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/add_admin.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/add_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/admin_user_list.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/admin_user_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/check_user.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/check_user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/edit_admin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/group.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Rule/rule_group.html" afterPath="$PROJECT_DIR$/tpl/Admin/Rule/rule_group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Town/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Town/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Admin/Village/index.html" afterPath="$PROJECT_DIR$/tpl/Admin/Village/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Equipment/camera.html" afterPath="$PROJECT_DIR$/tpl/App/Equipment/camera.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Equipment/district.html" afterPath="$PROJECT_DIR$/tpl/App/Equipment/district.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Equipment/listcamera.html" afterPath="$PROJECT_DIR$/tpl/App/Equipment/listcamera.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/baseinfo.html" afterPath="$PROJECT_DIR$/tpl/App/Index/baseinfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/camera.html" afterPath="$PROJECT_DIR$/tpl/App/Index/camera.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/cameras.html" afterPath="$PROJECT_DIR$/tpl/App/Index/cameras.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/groupin.html" afterPath="$PROJECT_DIR$/tpl/App/Index/groupin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/groupindex.html" afterPath="$PROJECT_DIR$/tpl/App/Index/groupindex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/grouplife.html" afterPath="$PROJECT_DIR$/tpl/App/Index/grouplife.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/index.html" afterPath="$PROJECT_DIR$/tpl/App/Index/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/news.html" afterPath="$PROJECT_DIR$/tpl/App/Index/news.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/newslist.html" afterPath="$PROJECT_DIR$/tpl/App/Index/newslist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/standard.html" afterPath="$PROJECT_DIR$/tpl/App/Index/standard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Index/village.html" afterPath="$PROJECT_DIR$/tpl/App/Index/village.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Meet/index.html" afterPath="$PROJECT_DIR$/tpl/App/Meet/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/Meet/meeting.html" afterPath="$PROJECT_DIR$/tpl/App/Meet/meeting.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/App/User/userinfo.html" afterPath="$PROJECT_DIR$/tpl/App/User/userinfo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Index/index.html" afterPath="$PROJECT_DIR$/tpl/Home/Index/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Index/index2.html" afterPath="$PROJECT_DIR$/tpl/Home/Index/index2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Index/user1.html" afterPath="$PROJECT_DIR$/tpl/Home/Index/user1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Index/user2.html" afterPath="$PROJECT_DIR$/tpl/Home/Index/user2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Index/webuploader.html" afterPath="$PROJECT_DIR$/tpl/Home/Index/webuploader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Reg/agreement.html" afterPath="$PROJECT_DIR$/tpl/Home/Reg/agreement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Reg/register.html" afterPath="$PROJECT_DIR$/tpl/Home/Reg/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Reg/selecttype.html" afterPath="$PROJECT_DIR$/tpl/Home/Reg/selecttype.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Home/Vue/web_page.html" afterPath="$PROJECT_DIR$/tpl/Home/Vue/web_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Public/css/base.css" afterPath="$PROJECT_DIR$/tpl/Public/css/base.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Public/css/base.less" afterPath="$PROJECT_DIR$/tpl/Public/css/base.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Public/dispatch_jump.tpl" afterPath="$PROJECT_DIR$/tpl/Public/dispatch_jump.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tpl/Public/js/base.js" afterPath="$PROJECT_DIR$/tpl/Public/js/base.js" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,16 +773,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="camera.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/Admin/Equipment/camera.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="cameras.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/Admin/Equipment/cameras.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,11 +798,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavController.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NavController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/NavController.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Conf/db.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Conf/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -98,7 +833,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1511318405283" expanded="true" signature="96135:96164" placeholder="..." />
+                <marker date="1511318405283" expanded="true" signature="96142:96164" placeholder="..." />
+                <marker date="1511318405283" expanded="true" signature="103992:104275" placeholder="..." />
+                <marker date="1511318405283" expanded="true" signature="103992:104446" placeholder="..." />
+                <marker date="1511318405283" expanded="true" signature="103992:104447" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,7 +927,6 @@
         <option value="$PROJECT_DIR$/tpl/Admin/News/index.html" />
         <option value="$PROJECT_DIR$/Application/Common/Model/NewscatModel.class.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/NewsController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/MeetController.class.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Meet/index.html" />
         <option value="$PROJECT_DIR$/tpl/App/Index/news.html" />
@@ -195,10 +935,11 @@
         <option value="$PROJECT_DIR$/tpl/Admin/Village/index.html" />
         <option value="$PROJECT_DIR$/tpl/App/Index/openinfo.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/EquipmentController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Common/Conf/db.php" />
         <option value="$PROJECT_DIR$/tpl/Admin/Equipment/cameras.html" />
         <option value="$PROJECT_DIR$/tpl/Admin/Equipment/index.html" />
         <option value="$PROJECT_DIR$/Application/Admin/Controller/NavController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Conf/db.php" />
+        <option value="$PROJECT_DIR$/Application/Common/Conf/config.php" />
       </list>
     </option>
   </component>
@@ -261,6 +1002,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jieda" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Common" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Conf" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,7 +1233,7 @@
       <workItem from="1507888650861" duration="989000" />
       <workItem from="1508144226705" duration="147000" />
       <workItem from="1508291985386" duration="3036000" />
-      <workItem from="1511318038143" duration="178000" />
+      <workItem from="1511318038143" duration="1256000" />
     </task>
     <task id="LOCAL-00001">
       <created>1477901107239</created>
@@ -552,17 +1347,24 @@
       <option name="project" value="LOCAL" />
       <updated>1504859862543</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="项目重构">
+      <created>1511318240312</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1511318240312</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="505454000" />
+    <option name="totallyTimeSpent" value="506532000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1741453" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1741453" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28073993" sideWeight="0.5025" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -596,7 +1398,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="项目重构" />
+    <option name="LAST_COMMIT_MESSAGE" value="项目重构" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -794,13 +1597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Common/Conf/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Admin/Controller/MeetController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -871,13 +1667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Common/Conf/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/renshe/index.php" />
     <entry file="file://$PROJECT_DIR$/tpl/Admin/Equipment/camera.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -942,7 +1731,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1511318405283" expanded="true" signature="96135:96164" placeholder="..." />
+            <marker date="1511318405283" expanded="true" signature="96142:96164" placeholder="..." />
+            <marker date="1511318405283" expanded="true" signature="103992:104275" placeholder="..." />
+            <marker date="1511318405283" expanded="true" signature="103992:104446" placeholder="..." />
+            <marker date="1511318405283" expanded="true" signature="103992:104447" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -966,6 +1761,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Conf/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
           <folding />
         </state>
       </provider>
