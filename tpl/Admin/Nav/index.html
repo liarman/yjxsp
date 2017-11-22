@@ -1,5 +1,11 @@
+<script type="text/javascript">
+	var addNavUrl="{:U('Admin/Nav/add')}";
+	var editNavUrl="{:U('Admin/Nav/edit')}";
+	var menuLevelUrl="{:U('Admin/Nav/menuLevel',array('pid'=>0))}";
+	var deleteNavUrl="{:U('Admin/Nav/delete')}";
+</script>
 <script src="__ADMIN_JS__/nav.js" type="text/javascript" charset="utf-8"></script>
-<table id="menuGrid" class="easyui-treegrid" url="{:U('Admin/Nav/Menus')}" toolbar="#toolbar" pagination="true" idField="id" treeField="name" >
+<table id="menuGrid" class="easyui-treegrid" url="{:U('Admin/Nav/Menus')}" toolbar="#toolbar_nav" pagination="true" idField="id" treeField="name" >
 	<thead>
 	<tr>
 		<th field="name" width="200">菜单名称</th>
@@ -10,7 +16,7 @@
 	</tr>
 	</thead>
 </table>
-<div id="toolbar">
+<div id="toolbar_nav">
 	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="newMenu()">添加</a>
 	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editMenu()">编辑</a>
 	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyMenu()">删除</a>
