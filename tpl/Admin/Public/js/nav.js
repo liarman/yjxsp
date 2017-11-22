@@ -6,7 +6,7 @@ var url;
 function newMenu(){
     $('#dlg').dialog('open').dialog('setTitle','添加菜单');
     $('#fm').form('clear');
-    url="{:U('Admin/Nav/add')}";
+    url=addNavUrl;
 }
 function addMenu(){
     $('#fm').form('submit',{
@@ -61,10 +61,10 @@ function editMenu(){
             $('.pidedit').combobox('loadData',[{'id':0,'name':'无'}]);
         }else {
             $('.pidedit').combobox('loadData',{});
-            $('.pidedit').combobox({url:"{:U('Admin/Nav/menuLevel',array('pid'=>0))}"});
+            $('.pidedit').combobox({url:menuLevelUrl});
             $('.pidedit').combobox('setValue', row.pid);
         }
-        url ="{:U('Admin/Nav/edit')}"+'/id/'+row.id;
+        url =editNavUrl+'/id/'+row.id;
     }
 }
 function destroyMenu(){
@@ -75,8 +75,7 @@ function destroyMenu(){
     if (row){
         $.messager.confirm('删除提示','真的要删除此菜单吗?删除将不能再恢复!',function(r){
             if (r){
-                var durl="{:U('Admin/Nav/delete')}";
-                $.getJSON(durl,{id:row.id},function(result){
+                $.getJSON(deleteNavUrl,{id:row.id},function(result){
                     if (result.status){
                         $('#menuGrid').treegrid('reload');    // reload the user data
                     } else {

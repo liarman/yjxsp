@@ -9,7 +9,7 @@ function giveAuth(){
     $('#giveAuthGroup').dialog('open').dialog('setTitle','分配权限');
     $('#giveAuthForm').form('clear');
     $('#authtree').tree({
-        url: "{:U('Admin/Rule/ajaxAuthTree')}/id/"+row.id,
+        url: ajaxAuthTreeUrl+"/id/"+row.id,
         checkbox:true,
         onBeforeLoad: function (node, param) {
             loading = true;
@@ -22,7 +22,7 @@ function giveAuth(){
                 return;
             } else {
                 var rules=getChecked($('#authtree').tree('getChecked'));
-                $.post("{:U('Admin/Rule/rule_group')}", {
+                $.post(ruleGroupUrl, {
                     rules: rules,
                     id: row.id
                 }, function (result) {
@@ -36,7 +36,7 @@ function giveAuth(){
 function addGroup(){
     $('#addGroup').dialog('open').dialog('setTitle','添加用户组');
     $('#addGroupForm').form('clear');
-    url="{:U('Admin/Rule/add_group')}";
+    url=addGroupUrl;
 }
 function addGroupSubmit(){
     $('#addGroupForm').form('submit',{
@@ -87,7 +87,7 @@ function editGroup(){
     if (row){
         $('#editGroup').dialog('open').dialog('setTitle','编辑');
         $('#editGroupForm').form('load',row);
-        url ="{:U('Admin/Nav/edit_group')}"+'/id/'+row.id;
+        url =editGroupUrl+'/id/'+row.id;
     }
 }
 function destroyGroup(){
@@ -98,8 +98,7 @@ function destroyGroup(){
     if (row){
         $.messager.confirm('删除提示','真的要删除?',function(r){
             if (r){
-                var durl="{:U('Admin/Rule/delete_group')}";
-                $.getJSON(durl,{id:row.id},function(result){
+                $.getJSON(deleteGroupUrl,{id:row.id},function(result){
                     if (result.status){
                         $('#groupGrid').datagrid('reload');    // reload the user data
                     } else {

@@ -3,12 +3,11 @@
  */
 var url;
 var loading = false; //为防止onCheck冒泡事件设置的全局变量
-
 function addAdminUser(){
     $('#addAdminUser').dialog('open').dialog('setTitle','添加账号');
     $('#addAdminUserForm').form('clear');
     $('#cc').combobox({
-        url:"{:U('Admin/Rule/ajaxGroupAll')}",
+        url:ajaxGroupAllUrl,
         valueField:'id',
         textField:'title',
         onChange:function(){
@@ -17,7 +16,7 @@ function addAdminUser(){
     });
     var $radios = $('.addstatus');
     $radios.filter('[value=1]').prop('checked', true);
-    url="{:U('Admin/Rule/add_admin')}";
+    url=addAdminUrl;
 }
 function addAdminUserSubmit(){
     $('#addAdminUserForm').form('submit',{
@@ -73,7 +72,7 @@ function editAdminUser(){
             status:row.status
         });
         $('#ccd').combobox({
-            url:"{:U('Admin/Rule/ajaxGroupAll')}/id/"+row.id,
+            url:ajaxGroupAllUrl+"/id/"+row.id,
             valueField:'id',
             textField:'title',
             onLoadSuccess:function(){
@@ -83,7 +82,7 @@ function editAdminUser(){
                 $("#group_idsd").val($('#ccd').combobox('getValues').join(','));
             }
         });
-        url ="{:U('Admin/Rule/edit_admin')}"+'/id/'+row.id;
+        url =editAdminUrl+'/id/'+row.id;
     }
 }
 function destroyAdminUser(){
@@ -94,7 +93,7 @@ function destroyAdminUser(){
     if (row){
         $.messager.confirm('删除提示','真的要删除?',function(r){
             if (r){
-                var durl="{:U('Admin/Rule/delete_users')}";
+                var durl=deleteAdminUrl;
                 $.getJSON(durl,{id:row.id},function(result){
                     if (result.status){
                         $('#adminUserGrid').datagrid('reload');    // reload the user data
