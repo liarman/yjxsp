@@ -1,0 +1,121 @@
+/**
+ * Created by Liarman on 2017/11/22.
+ */
+var url;
+var loading = false; //为防止onCheck冒泡事件设置的全局变量
+
+function addAdminUser(){
+    $('#addAdminUser').dialog('open').dialog('setTitle','添加账号');
+    $('#addAdminUserForm').form('clear');
+    $('#cc').combobox({
+        url:"{:U('Admin/Rule/ajaxGroupAll')}",
+        valueField:'id',
+        textField:'title',
+        onChange:function(){
+            $("#group_ids").val($('#cc').combobox('getValues').join(','));
+        }
+    });
+    var $radios = $('.addstatus');
+    $radios.filter('[value=1]').prop('checked', true);
+    url="{:U('Admin/Rule/add_admin')}";
+}
+function addAdminUserSubmit(){
+    $('#addAdminUserForm').form('submit',{
+        url: url,
+        onSubmit: function(){
+            return $(this).form('validate');
+        },
+        success:function(data){
+            data=$.parseJSON(data);
+            if(data.status==1){
+                $.messager.alert('Info', data.message, 'info');
+                $('#addAdminUser').dialog('close');
+                $('#adminUserGrid').datagrid('reload');
+            }else {
+                $.messager.alert('Warning', data.message, 'info');
+                $('#addAdminUser').dialog('close');
+                $('#adminUserGrid').datagrid('reload');
+            }
+        }
+    });
+}
+function editAdminUserSubmit(){
+    $('#editAdminUserForm').form('submit',{
+        url: url,
+        onSubmit: function(){
+            return $(this).form('validate');
+        },
+        success:function(data){
+            data=$.parseJSON(data);
+            if(data.status==1){
+                $.messager.alert('Info', data.message, 'info');
+                $('#editAdminUser').dialog('close');
+                $('#adminUserGrid').datagrid('reload');
+            }else {
+                $.messager.alert('Warning', data.message, 'info');
+                $('#editAdminUser').dialog('close');
+                $('#adminUserGrid').datagrid('reload');
+            }
+        }
+    });
+}
+//编辑会员对话窗
+function editAdminUser(){
+    var row = $('#adminUserGrid').datagrid('getSelected');
+    if(row==null){
+        $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
+    }
+    if (row){
+        $('#editAdminUser').dialog('open').dialog('setTitle','编辑');
+        $('#editAdminUserForm').form('load',{
+            username:row.username,
+            id:row.id,
+            status:row.status
+        });
+        $('#ccd').combobox({
+            url:"{:U('Admin/Rule/ajaxGroupAll')}/id/"+row.id,
+            valueField:'id',
+            textField:'title',
+            onLoadSuccess:function(){
+                // $('#ccd').combobox('setValues','[]');
+            },
+            onChange:function(){
+                $("#group_idsd").val($('#ccd').combobox('getValues').join(','));
+            }
+        });
+        url ="{:U('Admin/Rule/edit_admin')}"+'/id/'+row.id;
+    }
+}
+function destroyAdminUser(){
+    var row = $('#adminUserGrid').datagrid('getSelected');
+    if(row==null){
+        $.messager.alert('Warning',"请选择要删除的行", 'info');return false;
+    }
+    if (row){
+        $.messager.confirm('删除提示','真的要删除?',function(r){
+            if (r){
+                var durl="{:U('Admin/Rule/delete_users')}";
+                $.getJSON(durl,{id:row.id},function(result){
+                    if (result.status){
+                        $('#adminUserGrid').datagrid('reload');    // reload the user data
+                    } else {
+                        $.messager.alert('错误提示',result.message,'error');
+                    }
+                },'json').error(function(data){
+                    var info=eval('('+data.responseText+')');
+                    $.messager.confirm('错误提示',info.message,function(r){
+
+                    });
+                });
+            }
+        });
+    }
+}
+function formatStatus(val,rowData,row){
+    if(val==1){
+        val="<span style='color: green'>可用</span>";
+    }else {
+        val="<span style='color: red'>不可用</span>";
+    }
+    return val;
+}
