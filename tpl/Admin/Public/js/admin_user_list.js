@@ -16,7 +16,7 @@ function addAdminUser(){
     });
     var $radios = $('.addstatus');
     $radios.filter('[value=1]').prop('checked', true);
-    url=addAdminUrl;
+    url= addAdminUrl;
 }
 function addAdminUserSubmit(){
     $('#addAdminUserForm').form('submit',{
