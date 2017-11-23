@@ -63,8 +63,7 @@
     <div class="easyui-accordion" data-options="border:false,fit:true,selected:true">
             <foreach name="data" item="v">
                 <empty name="v['_data']">
-                    <div title= {$v['name']} href="{:U($v['mca'])}" data-options="iconCls:'{$v['ico']}'" style="padding-left: 10px;">
-                    </div>
+                    <div title= "{$v['name']}" data-options="iconCls:'{$v['ico']}'"></div>
                     <else />
                     <div  title= {$v['name']} data-options="iconCls:'{$v['ico']}'">
                         <ul>
@@ -93,8 +92,8 @@
 <div data-options="region:'south'" class="super-south">
     <!--页脚-->
     <div class="super-footer-info">
-        <span><i class="fa fa-info-circle"></i>启凡科技</span>
-        <span><i class="fa fa-copyright"></i> CopyRight 2017 版权所有 <i class="fa fa-caret-right"></i></span>
+        <!--<span><i class="fa fa-info-circle"></i></span>-->
+        <span><i class="fa fa-copyright"></i>启凡科技 CopyRight 2017 版权所有 <i class="fa fa-caret-right"></i></span>
     </div>
 </div>
 
