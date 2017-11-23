@@ -56,7 +56,6 @@ class AdminNavModel extends BaseModel{
 				}
 			}
 		}
-		print_r($data);die;
 		return $data;
 	}
 
