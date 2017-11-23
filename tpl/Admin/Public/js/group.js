@@ -21,7 +21,7 @@ function giveAuth(){
             if (loading) {
                 return;
             } else {
-                var rules=getChecked($('#authtree').tree('getChecked'));
+                var rules=getChecked($('#authtree').tree('getChecked',['checked','indeterminate']));
                 $.post(ruleGroupUrl, {
                     rules: rules,
                     id: row.id
