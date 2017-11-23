@@ -9,7 +9,7 @@ function add(id){
             $(".parent").empty().append(data.title);
         })
     }
-    url="{:U('Admin/Rule/add')}";
+    url=addRuleUrl;
 }
 function addRule(){
     $('#rulefm').form('submit',{
@@ -61,13 +61,13 @@ function editRule(id){
             $("#editRuleTitle").textbox('setValue',data.title);
             $("#editRuleName").textbox('setValue',data.name);
         })
-        url ="{:U('Admin/Rule/edit','','')}"+'/id/'+id;
+        url =editRuleUrl+'/id/'+id;
     }
 }
 function deleteRule(id){
     $.messager.confirm('删除提示','确定要删除吗?',function(r){
         if (r){
-            var durl="{:U('Admin/Rule/delete')}";
+            var durl=deleteRuleUrl;
             $.getJSON(durl,{id:id},function(result){
                 if (result.status){
                     $('#ruleGrid').treegrid('reload');    // reload the user data
