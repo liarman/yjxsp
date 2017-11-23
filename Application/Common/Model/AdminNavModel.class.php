@@ -40,7 +40,7 @@ class AdminNavModel extends BaseModel{
 			$data=\Org\Nx\Data::tree($data,'name','id','pid');
 		}elseif($type="level"){
 			$data=\Org\Nx\Data::channelLevel($data,0,'&nbsp;','id');
-
+		//	print_r($data);die;
 			// 显示有权限的菜单
 			$auth=new \Think\Auth();
 			foreach ($data as $k => $v) {
@@ -58,6 +58,4 @@ class AdminNavModel extends BaseModel{
 		}
 		return $data;
 	}
-
-
 }
