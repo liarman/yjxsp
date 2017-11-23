@@ -142,12 +142,12 @@ $("#log").on('click', function() {
     logout();
 });
 function logout(){
-    var url="{:U('Admin/Login/logout')}";
+    var url= LogoutUrl;
     $.ajax({
         async:false,
         url:url,
         success: function(r){
-            location.href="{:U('Admin/Login/index')}";
+            location.href= LoginUrl;
         }
     });
 }
