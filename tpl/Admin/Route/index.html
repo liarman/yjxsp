@@ -1,0 +1,76 @@
+<script type="text/javascript">
+    var addRouteUrl="{:U('Admin/Route/add')}";
+    var editRouteUrl="{:U('Admin/Route/edit')}";
+    var deleteRouteUrl="{:U('Admin/Route/delete')}";
+    var ajaxRouteUrl="{:U('Admin/Route/ajaxRouteList')}";
+    var usingUrl = "{:U('Admin/Route/usingRoute')}";
+    var forbiddenUrl="{:U('Admin/Route/forbiddenRoute')}";
+</script>
+<script src="__ADMIN_JS__/route.js" type="text/javascript" charset="utf-8"></script>
+<table id="RouteGrid" class="easyui-datagrid" url="{:U('Admin/Route/ajaxRouteList')}" pagination="true"  toolbar="#toolbar_route" singleSelect="true" rownumbers="true">
+    <thead>
+    <tr>
+        <th field="name" width="200" >名称</th>
+        <th field="status" width="200" formatter="RouteformatStatus">状态</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar_route">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addRoute()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editRoute()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyRoute()">删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" plain="true" onclick="usingRoute()">启用</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-ban" plain="true" onclick="forbiddenRoute()">停用</a>
+</div>
+<!-- 添加 -->
+<div id="addRoute" class="easyui-dialog" title="添加" style="width:400px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addRouteForm" method="post">
+        <table>
+            <tr>
+                <td>名称:</td>
+                <td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+            </tr>
+
+            <tr>
+                <td>状态:</td>
+                <td>
+                    <input type="radio" name="status" checked="checked" value="1" class="easyui-validatebox addstatus" /><label>启用</label>
+                    <input type="radio" name="status" value="0" class="easyui-validatebox addstatus" /><label>停用</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addRouteSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addRoute').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+<div id="editRoute" class="easyui-dialog" title="编辑" style="width:400px;padding:10px 20px;" closed="true" modal="true">
+    <form id="editRouteForm" method="post">
+        <input type="hidden" name="id" value="">
+        <table>
+            <tr>
+                <td>名称:</td>
+                <td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+            </tr>
+
+            <tr>
+                <td>状态:</td>
+                <td>
+                    <input type="radio" name="status"
+                           class="easyui-validatebox" checked="checked" value="1"><label>启用</label></input>
+                    <input type="radio" name="status"
+                           class="easyui-validatebox" value="0"><label>停用</label></input>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editRouteSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editRoute').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
