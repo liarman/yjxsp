@@ -9,7 +9,7 @@ function add(id){
             $(".parent").empty().append(data.title);
         })
     }
-    url="{:U('Admin/Rule/add')}";
+    url= addRuleUrl;
 }
 function addRule(){
     $('#rulefm').form('submit',{
