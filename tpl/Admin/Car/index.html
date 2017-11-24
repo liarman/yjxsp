@@ -2,6 +2,8 @@
     var addCarUrl= "{:U('Admin/Car/addCar')}";
     var editCarUrl="{:U('Admin/Car/editCar')}";
     var deleteCarUrl="{:U('Admin/Car/deleteCar')}";
+    var usingUrl = "{:U('Admin/Car/usingCar')}";
+    var forbiddenUrl="{:U('Admin/Car/forbiddenCar')}";
 </script>
 <script src="__ADMIN_JS__/carmanage.js" type="text/javascript" charset="utf-8"></script>
 <table id="CarGrid" class="easyui-datagrid"url="{:U('Admin/Car/ajaxCarList')}" pagination="true" toolbar="#toolbar" singleSelect="true" rownumbers="true" pageSize="20">
@@ -16,9 +18,11 @@
 </table>
 
 <div id="toolbar">
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addCar()">添加</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editCar()">编辑</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyCar()">删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addCar()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editCar()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyCar()">删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" plain="true" onclick="usingCar()">启用</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-ban" plain="true" onclick="forbiddenCar()">停用</a>
 
 
 </div>

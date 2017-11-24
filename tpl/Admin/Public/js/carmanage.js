@@ -81,12 +81,64 @@ function destroyCar(){
         });
     }
 }
+/**
+ * 启用
+ */
+function usingCar(){
+    var row = $('#CarGrid').datagrid('getSelected');
+    if(row==null){
+        $.messager.alert('警告',"请选择要启用的行", 'info');return false;
+    }
+    if (row){
+        $.messager.confirm('启用提示','真的要启用?',function(r){
+            if (r){
+                var durl=usingUrl +'/id/'+row.id;
+                $.getJSON(durl,{status:row.status},function(result){
+                    if (result.status){
+                        $('#CarGrid').datagrid('reload');    // reload the user data
+                    } else {
+                        $.messager.alert('错误提示',result.message,'error');
+                    }
+                },'json').error(function(data){
+                    var info=eval('('+data.responseText+')');
+                    $.messager.confirm('错误提示',info.message,function(r){});
+                });
+            }
+        });
+    }
+}
 
+/**
+ * 禁用
+ */
+function forbiddenCar(){
+    var row = $('#CarGrid').datagrid('getSelected');
+    if(row==null){
+        $.messager.alert('警告',"请选择要禁用的行", 'info');return false;
+    }
+    if (row){
+        $.messager.confirm('停用提示','真的要停用?',function(r){
+            if (r){
+                var durl=forbiddenUrl +'/id/'+row.id;
+                $.getJSON(durl,{status:row.status},function(result){
+                    if (result.status){
+                        $('#CarGrid').datagrid('reload');    // reload the user data
+                    } else {
+                        $.messager.alert('错误提示',result.message,'error');
+                    }
+                },'json').error(function(data){
+                    var info=eval('('+data.responseText+')');
+                    $.messager.confirm('错误提示',info.message,function(r){});
+                });
+            }
+        });
+    }
+}
 function  formatCar(val,rowData,row){
-    if(val==0){
-        val="停用";
-    }else{
-        val="启用";
+    if(val==1){
+        val="<span style='color: green'>启用</span>";
+    }else {
+        val="<span style='color: red'>停用</span>";
     }
     return val;
 }

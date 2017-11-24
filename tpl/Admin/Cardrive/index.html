@@ -1,0 +1,70 @@
+<script type="text/javascript">
+    var addCardriveUrl= "{:U('Admin/Cardrive/addCardrive')}";
+    var editCarUrl="{:U('Admin/Cardrive/editCardrive')}";
+    var deleteCarUrl="{:U('Admin/Cardrive/deleteCardrive')}";
+    var numberListUrl="{:U('Admin/Cardrive/numberList')}";
+    var addarriveListUrl="{:U('Admin/Cardrive/ajaxarrive')}";
+    var addarriveUrl="{:U('Admin/Cardrive/addarrive')}";
+</script>
+<script src="__ADMIN_JS__/Cardrive.js" type="text/javascript" charset="utf-8"></script>
+<table id="CardriveGrid" class="easyui-datagrid"url="{:U('Admin/Cardrive/ajaxCardriveList')}" pagination="true" toolbar="#toolbar_cardiver" singleSelect="true" rownumbers="true" pageSize="20">
+    <thead>
+    <tr>
+        <th field="id" width="200" >编号</th>
+        <th field="carnumber" width="300" >车牌号</th>
+        <th field="driver" width="150" >司机</th>
+        <th field="startdate" width="270" formatter="Common.TimeFormatter">发车时间</th>
+    </tr>
+    </thead>
+</table>
+
+<div id="toolbar_cardiver">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addCardrive()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-car" plain="true" onclick="cararrive()">到站列表</a>
+</div>
+<!-- 添加 -->
+<div id="addCardrive" class="easyui-dialog" title="添加" style="width:450px;height:500px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addCardriveForm" method="post">
+        <table>
+            <tr>
+                <td>车牌号:</td>
+                <td><input id="number" name="carid" url="{:U('Admin/Cardrive/numberList')}" valueField="id" textField="carnumber"  /></td>
+            </tr>
+            <tr>
+                <td>发车时间:</td>
+                <td><input name="startdate" class="easyui-datetimebox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addCardriveSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addCardrive').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+<div id="arriveDlg" class="easyui-dialog" title="到站列表" style="width:600px;padding:10px 20px;height: 400px" closed="true" modal="true">
+    <div id="arriveGrid" style=""></div>
+</div>
+<div id="addarrive" class="easyui-dialog" title="添加" style="width:400px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addarriveForm" method="post">
+        <input name="id" type="hidden" id="addarrive_id"/>
+        <input name="cardriveid" type="hidden" id="cardrive_id"/>
+        <table>
+            <tr>
+                <td>到达站点:</td>
+                <td><input id="route" name="routeid" url="{:U('Admin/Cardrive/routeList')}" valueField="id" textField="name"></td>
+            </tr>
+            <tr>
+                <td>到达时间:</td>
+                <td><input name="arrivedate" class="easyui-datetimebox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addarriveSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addarrive').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>

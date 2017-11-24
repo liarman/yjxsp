@@ -86,21 +86,54 @@ class CarController extends AdminBaseController{
         }
         $this->ajaxReturn($message,'JSON');
     }
-    public function cameras(){
-      /*  $id=I("get.id",0);
-        if($id>0){*//*->where(array('type'=>$id))*/
-            $cameras=D('Car')->select();
-            $this->assign("cameras",$cameras);
-            $this->display();
-        //}
-    }
-    public function camera(){
-        $id=I("get.id",0);
-        if($id>0){
-            $camera=D('Car')->where(array('id'=>$id))->find();
-            $this->assign("camera",$camera);
-            $this->display();
+    /**
+     * 启用
+     */
+    public function usingCar(){
+        $data['id']=I('get.id');
+        $status= I('get.status');
+        if($status == 1){
+            $message['status']=0;
+            $message['message']='已经启用，请勿再次启用！';
+        }else{
+            $data['status'] = 1;
+            $where['id']=$data['id'];
+            $result=D('Car')->editData($where,$data);
+            if($result){
+                $message['status']=1;
+                $message['message']='启用成功';
+            }else {
+                $message['status']=0;
+                $message['message']='启用失败';
+            }
         }
+
+        $this->ajaxReturn($message,'JSON');
+    }
+
+    /**
+     * 禁用
+     */
+    public function forbiddenCar(){
+        $data['id']=I('get.id');
+        $status= I('get.status');
+        if($status == 0){
+            $message['status']=0;
+            $message['message']='已经停用，请勿再次停用！';
+        }else{
+            $data['status'] = 0;
+            $where['id']=$data['id'];
+            $result=D('Car')->editData($where,$data);
+            if($result){
+                $message['status']=1;
+                $message['message']='停用成功';
+            }else {
+                $message['status']=0;
+                $message['message']='停用失败';
+            }
+        }
+
+        $this->ajaxReturn($message,'JSON');
     }
 
 
