@@ -30,6 +30,7 @@ class CarController extends AdminBaseController{
             $data['status']=I('post.status');
             unset($data['id']);
             $result=D('Car')->addData($data);
+
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -53,6 +54,7 @@ class CarController extends AdminBaseController{
             $data['driver']=I('post.driver');
             $data['carnumber']=I('post.carnumber');
             $data['status']=I('post.status');
+            //print_r($data);die;
             $where['id']=$data['id'];
             $result=D('Car')->editData($where,$data);
             if($result){

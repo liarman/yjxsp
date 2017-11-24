@@ -1,10 +1,10 @@
 <script type="text/javascript">
-    var addCarUrl= "{:U('Admin/Carmanage/addCar')}";
-    var editCarUrl="{:U('Admin/Carmanage/editCar')}";
-    var deleteCarUrl="{:U('Admin/Carmanage/deleteCar')}";
+    var addCarUrl= "{:U('Admin/Car/addCar')}";
+    var editCarUrl="{:U('Admin/Car/editCar')}";
+    var deleteCarUrl="{:U('Admin/Car/deleteCar')}";
 </script>
 <script src="__ADMIN_JS__/carmanage.js" type="text/javascript" charset="utf-8"></script>
-<table id="CarGrid" class="easyui-datagrid"url="{:U('Admin/Carmanage/ajaxCarList')}" pagination="true" toolbar="#toolbar" singleSelect="true" rownumbers="true" pageSize="20">
+<table id="CarGrid" class="easyui-datagrid"url="{:U('Admin/Car/ajaxCarList')}" pagination="true" toolbar="#toolbar" singleSelect="true" rownumbers="true" pageSize="20">
     <thead>
     <tr>
         <th field="id" width="200" >编号</th>
@@ -28,16 +28,16 @@
         <table>
             <tr>
                 <td>司机姓名:</td>
-                <td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+                <td><input name="driver" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
                 <td>车牌号:</td>
-                <td><input name="deviceid" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+                <td><input name="carnumber" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
                 <td>状态:</td>
                 <td>
-                    <select  panelMaxHeight="100px" name="areaid" class="easyui-combobox" style="width:174px" data-options="delay:1000,required:true,multiple:false">
+                    <select  panelMaxHeight="100px" name="status" class="easyui-combobox" style="width:174px" data-options="delay:1000,required:true,multiple:false">
                         <option value="0">停用</option>
                         <option value="1">启用</option>
                     </select>
@@ -58,16 +58,16 @@
         <table>
             <tr>
                 <td>司机姓名:</td>
-                <td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+                <td><input name="driver" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
                 <td>车牌号:</td>
-                <td><input name="deviceid" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+                <td><input name="carnumber" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
                 <td>状态:</td>
                 <td>
-                    <select  panelMaxHeight="100px" name="areaid" class="easyui-combobox" style="width:174px" data-options="delay:1000,required:true,multiple:false">
+                    <select  panelMaxHeight="100px" name="status" class="easyui-combobox" style="width:174px" data-options="delay:1000,required:true,multiple:false">
                         <option value="0">停用</option>
                         <option value="1">启用</option>
                     </select>
