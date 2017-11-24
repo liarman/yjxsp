@@ -1,0 +1,184 @@
+<script type="text/javascript">
+    var addOrderUrl="{:U('Admin/Order/add')}";
+    var editOrderUrl="{:U('Admin/Order/edit')}";
+    var deleteOrderUrl="{:U('Admin/Order/delete')}";
+    var ajaxOrderUrl="{:U('Admin/Order/ajaxOrderList')}";
+</script>
+<style>
+    .div-a{ float:left;width:49%;}
+    .div-b{ float:left;width:49%;}
+</style>
+<script src="__ADMIN_JS__/order.js" type="text/javascript" charset="utf-8"></script>
+<table id="OrderGrid" class="easyui-datagrid" url="{:U('Admin/Order/ajaxOrderList')}" pagination="true"  toolbar="#toolbar_order" singleSelect="true" rownumbers="true">
+    <thead>
+    <tr>
+
+        <th field="orderno" width="150" >运单编号</th>
+        <th field="shipper" width="100" >发货人</th>
+        <th field="shippertel" width="150" >发货人电话</th>
+        <th field="goodsname" width="100" >货物名称</th>
+        <th field="goodscount" width="100" >货物数量</th>
+        <th field="goodsweight" width="100" >重量</th>
+        <th field="receivername" width="100" >收件人</th>
+        <th field="receivertel" width="150" >收件人电话</th>
+        <th field="receiveraddress" width="150" >收货地址</th>
+        <th field="endcity" width="150" >收货城市</th>
+        <th field="assembledate" width="150" >装车时间</th>
+        <th field="createdate" width="150" >订单提交时间</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar_order">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addOrder()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editOrder()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyOrder()">删除</a>
+    货物名称:
+    <input class="easyui-textbox" style="width:110px" name="goodsname"id="goodsnamesearch">
+    收货人:
+    <input class="easyui-textbox" style="width:110px" name="receivername"id="receivernamesearch">
+    收货人:
+    <input class="easyui-textbox" style="width:110px" name="shipper"id="shippersearch">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doSearch()" iconCls="icon-search">搜索</a>
+</div>
+<!--添加-->
+<div id="addOrder" class="easyui-dialog" title="添加" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
+
+        <table>
+            <tr>
+                <td align="right">发货人姓名:<input name="shipper" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+                <td align="right">收货人姓名:<input name="receivername"  style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+            </tr>
+
+            <tr>
+                <td   align="right">发货人电话:<input name="shippertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+                <td  align="right">收货人电话:<input name="receivertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+            </tr>
+            <tr>
+                <td  align="right">收货人地址:<input name="receiveraddress" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+            </tr>
+            <tr>
+                <td   align="right">货物名称: <input name="goodsname" class="easyui-textbox" style="width:300px"  data-options="delay:1000" /></td>
+
+                <td  align="right">件数:<input name="name" class="easyui-numberbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="right">数量:<input name="goodscount" class="easyui-numberbox"style="width: 300px"   data-options="delay:1000" /></td>
+
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位:
+                    <select  panelMaxHeight="100px" name="goodsunit" class="easyui-combobox" style="width:300px" data-options="delay:1000,multiple:false">
+                        <option value="1">千克</option>
+                        <option value="2">箱</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td align="right">运费: <input name="goodsfee" class="easyui-numberbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+                <td align="right">货物保险金额:<input name="goodsinsurance" class="easyui-numberbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="right">保险费:<input name="insurance" class="easyui-numberbox"  style="width: 300px"  data-options="delay:1000" /></td>
+
+                <td align="right">合计金额: <input name="countFee" class="easyui-numberbox"  style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付款方式:
+                    <select  panelMaxHeight="100px" name="paytype" class="easyui-combobox" style="width:300px" data-options="delay:1000,required:true,multiple:false">
+                        <option value="1">欠付</option>
+                        <option value="2">货到付款</option>
+                        <option value="2">现付</option>
+                    </select>
+
+                </td>
+                <td align="right">托运时间: <input name="assembledate" class="easyui-datebox" style="width: 300px" data-options="delay:1000" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td ><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addOrderSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addOrder').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<div id="editOrder" class="easyui-dialog" title="编辑" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
+    <form id="editOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
+        <input type="hidden" name="id" value="">
+        <table>
+            <tr>
+                <td align="right">发货人姓名:<input name="shipper" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+                <td align="right">收货人姓名:<input name="receivername"  style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+            </tr>
+
+            <tr>
+                <td   align="right">发货人电话:<input name="shippertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+                <td  align="right">收货人电话:<input name="receivertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+            </tr>
+            <tr>
+                <td  align="right">收货人地址:<input name="receiveraddress" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+            </tr>
+            <tr>
+                <td   align="right">货物名称: <input name="goodsname" class="easyui-textbox" style="width:300px"  data-options="delay:1000,required:true " /></td>
+
+                <td  align="right">件数:<input name="name" class="easyui-textbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="right">数量:<input name="goodscount" class="easyui-textbox"style="width: 300px"   data-options="delay:1000 " /></td>
+
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位:
+                    <select  panelMaxHeight="100px" name="goodsunit" class="easyui-combobox" style="width:300px" data-options="delay:1000,required:true,multiple:false">
+                        <option value="1">千克</option>
+                        <option value="2">箱</option>
+                    </select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td align="right">运费: <input name="goodsfee" class="easyui-textbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+                <td align="right">货物保险金额:<input name="goodsinsurance" class="easyui-textbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="right">保险费:<input name="insurance" class="easyui-textbox"  style="width: 300px"  data-options="delay:1000" /></td>
+
+                <td align="right">合计金额: <input name="countFee" class="easyui-textbox"  style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付款方式:
+                    <select  panelMaxHeight="100px" name="paytype" class="easyui-combobox" style="width:300px" data-options="delay:1000,multiple:false">
+                        <option value="1">欠付</option>
+                        <option value="2">货到付款</option>
+                        <option value="2">现付</option>
+                    </select>
+                </td>
+
+                <td align="right">托运时间: <input name="assembledate" class="easyui-datebox" style="width: 300px" data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td ><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editOrderSubmit()" style="width:90px">保存</a>
+                  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editOrder').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>

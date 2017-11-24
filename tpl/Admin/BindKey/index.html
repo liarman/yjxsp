@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    var addBindkeyUrl="{:U('Admin/Bindkey/add')}";
+    var deleteBindkeyUrl="{:U('Admin/Bindkey/delete')}";
+    var ajaxBindkeyUrl="{:U('Admin/Bindkey/ajaxList')}";
+</script>
+<script src="__ADMIN_JS__/bindkey.js" type="text/javascript" charset="utf-8"></script>
+<table id="BindKeyGrid" class="easyui-datagrid"  url="{:U('Admin/Bindkey/ajaxList')}" pagination="true"  toolbar="#toolbar_bindkey" singleSelect="true" rownumbers="true"pageSize="20">
+    <thead>
+    <tr>
+        <th field="key" width="200" >秘钥</th>
+        <th field="status" width="200" formatter="attrValue" >是否可用</th>
+        <th field="action" width="200" align="center" formatter="formatAction1">操作</th>
+    </tr>
+    </thead>
+</table>
+<div id="toolbar_bindkey">
+    <a class="easyui-linkbutton bigbtn"  iconCls="fa fa-plus" plain="true"   href="javascript:void(0);">
+        添加密钥</a>
+    秘钥:<input class="easyui-textbox" style="width:110px" name="key" id="keysearch">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doSearch()" iconCls="icon-search">搜索</a>
+</div>
+
+<div class="imgdlg"><img class="simg"></div>
+</body>
+</html>
