@@ -7,12 +7,11 @@ use Common\Controller\WapController;
 class BindController extends WapController{
     public function _initialize() {
 		
-		parent::_initialize();
+		//parent::_initialize();
 
         $this->assign('staticFilePath',str_replace('./','/',StaticFilePath.'Static'));
     }
     public  function bind(){
-
         $bindingModel = D("Binding");
         $bindkeyModel = D("Bindkey");
 		
@@ -55,4 +54,30 @@ class BindController extends WapController{
             $this->display();
         }
     }
+
+	public function register(){
+		if(IS_POST) {
+			$user['wecha_id'] = I("post.wecha_id", '');
+			$user['phone'] = I("post.phone", '');
+			$user['username'] = I("post.username", '');
+			if ($user['wecha_id'] && $user['phone'] && $user['username']) {
+				$user['regtime'] = time();
+				$result = D("Customer")->add($user);
+				if ($result) {
+					$data['status'] = 1;
+					$data['message'] = '注册成功';
+				} else {
+					$data['status'] = 0;
+					$data['message'] = '注册失败';
+				}
+			} else {
+				$data['status'] = 0;
+				$data['message'] = '注册失败';
+			}
+			$this->ajaxReturn($data, 'JSON');
+		}else {
+			$data['status'] = 0;
+			$data['message'] = '注册失败';
+		}
+	}
 }
