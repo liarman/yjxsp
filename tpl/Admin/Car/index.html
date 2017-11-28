@@ -1,12 +1,27 @@
-<script type="text/javascript">
-    var addCarUrl= "{:U('Admin/Car/addCar')}";
-    var editCarUrl="{:U('Admin/Car/editCar')}";
-    var deleteCarUrl="{:U('Admin/Car/deleteCar')}";
-    var usingUrl = "{:U('Admin/Car/usingCar')}";
-    var forbiddenUrl="{:U('Admin/Car/forbiddenCar')}";
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>管理后台</title>
+    <script src="__EASYUI__/jquery.min.js"></script>
+    <script src="__EASYUI__/jquery.easyui.min.js"></script>
+    <script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="__EASYUI__/super/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__EASYUI__/super/superRed.css" id="themeCss">
+    <script src="__EASYUI__/super/super.js"></script>
+    <script src="__ADMIN_JS__/index.js" type="text/javascript" charset="utf-8"></script>
+
+    <link href="__PUBLIC__/statics/css/admin.css" rel="stylesheet" />
+    <script src="__EASYUI__/common.js"></script>
+    <script src="__EASYUI__/formatter.js"></script>
+    <script src="__EASYUI__/extend/validate.js"></script>
+    <script src="__KINDEDITOR__/kindeditor-all.js"></script>
+    <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+</head>
+<body style="padding: 0">
+
 <script src="__ADMIN_JS__/carmanage.js" type="text/javascript" charset="utf-8"></script>
-<table id="CarGrid" class="easyui-datagrid"url="{:U('Admin/Car/ajaxCarList')}" pagination="true" toolbar="#toolbar" singleSelect="true" rownumbers="true" pageSize="20">
+<table id="CarGrid" class="easyui-datagrid"url="{:U('Admin/Car/ajaxCarList')}" pagination="true" toolbar="#toolbar_car" singleSelect="true" rownumbers="true" pageSize="20">
     <thead>
     <tr>
         <th field="id" width="200" >编号</th>
@@ -17,7 +32,7 @@
     </thead>
 </table>
 
-<div id="toolbar">
+<div id="toolbar_car">
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addCar()">添加</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editCar()">编辑</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyCar()">删除</a>
@@ -86,3 +101,13 @@
 
     </form>
 </div>
+
+<script type="text/javascript">
+    var addCarUrl= "{:U('Admin/Car/addCar')}";
+    var editCarUrl="{:U('Admin/Car/editCar')}";
+    var deleteCarUrl="{:U('Admin/Car/deleteCar')}";
+    var usingUrl = "{:U('Admin/Car/usingCar')}";
+    var forbiddenUrl="{:U('Admin/Car/forbiddenCar')}";
+</script>
+</body>
+</html>

@@ -1,13 +1,28 @@
-<script type="text/javascript">
-    var addOrderUrl="{:U('Admin/Order/add')}";
-    var editOrderUrl="{:U('Admin/Order/edit')}";
-    var deleteOrderUrl="{:U('Admin/Order/delete')}";
-    var ajaxOrderUrl="{:U('Admin/Order/ajaxOrderList')}";
-</script>
-<style>
-    .div-a{ float:left;width:49%;}
-    .div-b{ float:left;width:49%;}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>管理后台</title>
+    <script src="__EASYUI__/jquery.min.js"></script>
+    <script src="__EASYUI__/jquery.easyui.min.js"></script>
+    <script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="__EASYUI__/super/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__EASYUI__/super/superRed.css" id="themeCss">
+    <script src="__EASYUI__/super/super.js"></script>
+    <script src="__ADMIN_JS__/index.js" type="text/javascript" charset="utf-8"></script>
+
+    <link href="__PUBLIC__/statics/css/admin.css" rel="stylesheet" />
+    <script src="__EASYUI__/common.js"></script>
+    <script src="__EASYUI__/formatter.js"></script>
+    <script src="__EASYUI__/extend/validate.js"></script>
+    <script src="__KINDEDITOR__/kindeditor-all.js"></script>
+    <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+    <style>
+        .div-a{ float:left;width:49%;}
+        .div-b{ float:left;width:49%;}
+    </style>
+</head>
+<body style="padding: 0">
 <script src="__ADMIN_JS__/order.js" type="text/javascript" charset="utf-8"></script>
 <table id="OrderGrid" class="easyui-datagrid" url="{:U('Admin/Order/ajaxOrderList')}" pagination="true"  toolbar="#toolbar_order" singleSelect="true" rownumbers="true">
     <thead>
@@ -182,3 +197,11 @@
 
     </form>
 </div>
+<script type="text/javascript">
+    var addOrderUrl="{:U('Admin/Order/add')}";
+    var editOrderUrl="{:U('Admin/Order/edit')}";
+    var deleteOrderUrl="{:U('Admin/Order/delete')}";
+    var ajaxOrderUrl="{:U('Admin/Order/ajaxOrderList')}";
+</script>
+</body>
+</html>
