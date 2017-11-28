@@ -36,7 +36,6 @@ $(function() {
             $('#qfantTabs').tabs('add', {
                 title: tabTitle,
                 content: content,
-                href: tabUrl,
                 closable: true
             });
         }
