@@ -325,4 +325,5 @@ class IndexController extends AppBaseController
         $this->assign("photo", $photo);
         $this->display();
     }
+
 }

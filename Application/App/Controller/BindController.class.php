@@ -74,10 +74,79 @@ class BindController extends WapController{
 				$data['status'] = 0;
 				$data['message'] = '注册失败';
 			}
-			$this->ajaxReturn($data, 'JSON');
 		}else {
 			$data['status'] = 0;
 			$data['message'] = '注册失败';
 		}
+		$this->ajaxReturn($data,'JSON');
+	}
+
+	public function sendAdd(){
+		if(IS_POST){
+			$data['receivername']=I("post.receivername");
+			$data['receivertel']=I("post.receivertel");
+			$data['receiveraddress']=I("post.receiveraddress");
+			unset($data['id']);
+			D("Order")->add($data);
+			$res= M('Order')->field('id')->where($data)->find();
+			$id=$res['id'];
+			$where['id']=$res['id'];
+			$data['orderno']=$this->OrdernoMethod($id,"J");
+			$result=D('Order')->editData($where,$data);
+				if ($result) {
+					$data['status'] = 1;
+					$data['message'] = '成功';
+				} else {
+					$data['status'] = 0;
+					$data['message'] = '失败';
+				}
+			}else{
+				$data['status'] = 0;
+				$data['message'] = '失败';
+			}
+		$this->ajaxReturn($data,'JSON');
+
+	}
+
+	public function myInfoEdit(){
+		if(IS_POST){
+			$data=I('post.');
+			$where['id']=$data['id'];
+			$result=D('Customer')->editData($where,$data);
+			if($result){
+				$message['status']=1;
+				$message['message']='保存成功';
+			}else {
+				$message['status']=0;
+				$message['message']='保存失败';
+			}
+		}
+		$this->ajaxReturn($message,'JSON');
+	}
+	public  function myInfo(){
+	$d['wecha_id']=I("get.wecha_id");
+	if($d) {
+		$customer = M('Customer')->where($d)->find();
+		$this->assign("customer",$customer);
+		$this->display('myInfo');
+	}
+}
+
+	public function myOrder(){
+		$this->display('myOrder');
+	}
+	public  function mySend(){
+		$this->display('mySend');
+	}
+	public function OrdernoMethod($id,$type){
+		$time=date('yyMMddHHmm');
+		$str=strval($id);
+		for($i = 0; $i <strlen($str); $i++)
+		{
+			$time=$time."0";
+		}
+		$code=$type.$time.$id;
+		return $code;
+
 	}
 }
