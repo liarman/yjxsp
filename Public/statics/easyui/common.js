@@ -2,7 +2,7 @@
  * Created by Liarman on 2017/9/7.
  */
 function closes(){
-    $("#Loading").fadeOut("normal",function(){
+    $("#Loading").fadeOut("fast",function(){
         $(this).remove();
     });
 }
