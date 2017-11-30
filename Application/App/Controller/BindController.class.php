@@ -83,6 +83,7 @@ class BindController extends WapController{
 
 	public function sendAdd(){
 		if(IS_POST){
+			$data['wecha_id']=I("post.wecha_id");
 			$data['receivername']=I("post.receivername");
 			$data['receivertel']=I("post.receivertel");
 			$data['receiveraddress']=I("post.receiveraddress");
@@ -133,7 +134,27 @@ class BindController extends WapController{
 }
 
 	public function myOrder(){
-		$this->display('myOrder');
+		$wecha_id=I("get.wecha_id",'');
+		$this->assign("wecha_id",$wecha_id);
+		$this->display();
+	}
+	public function ajaxMyOrder(){
+		$d=I("get.wecha_id");
+		$pageNo = I("get.pageNo");
+		if($pageNo==0){
+			$pageNo =1;
+		}
+		$rows = 10;
+		$offset = ($pageNo-1)*$rows;
+		$data=D('Order')->where(array('wecha_id'=>$d))->limit($offset.','.$rows)->select();
+//		if($data){
+//			$data['status'] = 1;
+//			$data['message'] = '成功';
+//		} else {
+//			$data['status'] = 0;
+//			$data['message'] = '失败';
+//		}
+		$this->ajaxReturn($data,'JSON');
 	}
 	public  function mySend(){
 		$this->display('mySend');
