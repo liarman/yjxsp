@@ -112,4 +112,10 @@ class RouteController extends AdminBaseController{
         }
         $this->ajaxReturn($message,'JSON');
     }
+
+    public function ajaxRoute(){
+        $data=D('Route')->where(array('status'=>1))->select();
+        $this->ajaxReturn($data,'JSON');
+    }
+
 }

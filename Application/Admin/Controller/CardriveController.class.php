@@ -142,5 +142,9 @@ class CardriveController extends AdminBaseController{
         $this->ajaxReturn($message,'JSON');
     }
 
-
+    public function ajaxCarDriv(){
+        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ;";
+        $data=D('Cardrive')->query($sql,"");
+        $this->ajaxReturn($data,'JSON');
+    }
 }

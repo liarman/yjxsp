@@ -13,7 +13,7 @@ class OrderController extends AdminBaseController{
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql = "SELECT	count(o.id) AS total FROM	qfant_order o WHERE	1 = 1 ";
-        $sql = "SELECT	o.*  FROM	qfant_order o	WHERE 1=1";
+        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_car c on o.cardriveid=c.id	LEFT JOIN qfant_route r on r.id=o.endcity WHERE 1=1";
         $param=array();
         if(!empty($goodsname)){
             $countsql.=" and o.goodsname like '%s'";
@@ -96,6 +96,22 @@ class OrderController extends AdminBaseController{
         }else {
             $message['status']=0;
             $message['message']='删除失败';
+        }
+        $this->ajaxReturn($message,'JSON');
+    }
+
+    public function addCarOrder(){
+        $data['cardriveid']=I('get.id');//司机id
+        $data['id']=I("get.orderid");//订单id
+        $data['assembledate']=time();
+        $where['id']=$data['id'];
+        $result=D('Order')->editData($where,$data);
+        if($result){
+            $message['status']=1;
+            $message['message']='装车成功';
+        }else {
+            $message['status']=0;
+            $message['message']='装车失败';
         }
         $this->ajaxReturn($message,'JSON');
     }
