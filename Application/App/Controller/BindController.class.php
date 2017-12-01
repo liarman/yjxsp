@@ -87,6 +87,7 @@ class BindController extends WapController{
 			$data['receivername']=I("post.receivername");
 			$data['receivertel']=I("post.receivertel");
 			$data['receiveraddress']=I("post.receiveraddress");
+			$data['createdate']=time();
 			unset($data['id']);
 			D("Order")->add($data);
 			$res= M('Order')->field('id')->where($data)->find();
@@ -160,7 +161,7 @@ class BindController extends WapController{
 		$this->display('mySend');
 	}
 	public function OrdernoMethod($id,$type){
-		$time=date('yyMMddHHmm');
+		$time=date('YmdHis');
 		$str=strval($id);
 		for($i = 0; $i <strlen($str); $i++)
 		{
