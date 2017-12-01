@@ -29,18 +29,19 @@
     <thead>
     <tr>
 
-        <th field="orderno" width="150" >运单编号</th>
+        <th field="orderno" width="250" >运单编号</th>
         <th field="shipper" width="100" >发货人</th>
-        <th field="shippertel" width="150" >发货人电话</th>
+        <th field="shippertel" width="100" >发货人电话</th>
         <th field="goodsname" width="100" >货物名称</th>
         <th field="goodscount" width="100" >货物数量</th>
         <th field="goodsweight" width="100" >重量</th>
         <th field="receivername" width="100" >收件人</th>
         <th field="receivertel" width="150" >收件人电话</th>
-        <th field="receiveraddress" width="150" >收货地址</th>
-        <th field="endcity" width="150" >收货城市</th>
-        <th field="assembledate" width="150" >装车时间</th>
-        <th field="createdate" width="150" >订单提交时间</th>
+        <th field="receiveraddress" width="250" >收货地址</th>
+        <th field="endcityname" width="150" >收货城市</th>
+        <th field="driver" width="150" >司机</th>
+        <th field="assembledate" width="100" formatter="timeStatus">装车时间</th>
+        <th field="createdate" width="100" formatter="timeStatus" >订单提交时间</th>
     </tr>
     </thead>
 </table>
@@ -48,6 +49,7 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addOrder()">添加</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editOrder()">编辑</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyOrder()">删除</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">装车</a>
     货物名称:
     <input class="easyui-textbox" style="width:110px" name="goodsname"id="goodsnamesearch">
     收货人:
@@ -189,6 +191,12 @@
                 <td align="right">托运时间: <input name="assembledate" class="easyui-datebox" style="width: 300px" data-options="delay:1000" /></td>
 
             </tr>
+
+            <tr>
+
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货城市:<input  class="easyui-combobox" name="endcity" panelHeight="150px" style="width:300px" data-options=" valueField:'id', textField:'name', url:'{:U('Admin/Route/ajaxRoute')}'"></td>
+
+            </tr>
             <tr>
                 <td></td>
                 <td ><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editOrderSubmit()" style="width:90px">保存</a>
@@ -198,11 +206,21 @@
 
     </form>
 </div>
+
+<div id="carorderDlg" class="easyui-dialog" title="发车列表" style="width:600px;padding:10px 20px;height: 400px" closed="true" modal="true">
+<div id="carorderGrid" style="">
+    <input name="orderId" type="hidden" id="order_id"/>
+</div>
+</div>
 <script type="text/javascript">
     var addOrderUrl="{:U('Admin/Order/add')}";
     var editOrderUrl="{:U('Admin/Order/edit')}";
     var deleteOrderUrl="{:U('Admin/Order/delete')}";
     var ajaxOrderUrl="{:U('Admin/Order/ajaxOrderList')}";
+    var ajaxCarUrl="{:U('Admin/Cardrive/ajaxCarDriv')}";//发车记录列表
+    var chooseCarUrl="{:U('Admin/Order/addCarOrder')}";//确定装车，保存路径
+    var ajaxRouteUrl="{:U('Admin/Route/ajaxRoute')}";//终点站设置
+   // cascade('route_add');
 </script>
 </body>
 </html>

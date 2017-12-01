@@ -53,7 +53,9 @@ function editOrder(){
     }
     if (row){
         $('#editOrder').dialog('open').dialog('setTitle','编辑');
+
         $('#editOrderForm').form('load',row);
+
           url =editOrderUrl+'/id/'+row.id;
     }
 }
@@ -103,4 +105,76 @@ function  formatUnit(val,rowData,row){
 
     }
     return val;
+}
+
+function ajaxCarList(){
+    var row = $('#OrderGrid').datagrid('getSelected');
+    if(row==null){
+        $.messager.alert('Warning',"请选择运单", 'info');return false;
+    }
+    $('#carorderDlg').dialog('open').dialog('setTitle','发车列表');
+    $('#carorderGrid').datagrid({
+        url:ajaxCarUrl,
+        columns:[[
+            {field:'driver',title:'司机',width:100},
+            {field:'carnumber',title:'车牌号',width:100},
+            {field:'carid',title:'司机id',width:100,hidden:'true'}
+        ]],
+        toolbar: [{
+            iconCls: 'fa fa-plus',
+            handler: function(){chooseCar(row.id);}
+        }]
+    });
+}
+
+function RouteformatStatus(val,rowData,row){
+    if(val==1){
+        val="<span style='color: green'>启用</span>";
+    }else {
+        val="<span style='color: red'>禁用</span>";
+    }
+    return val;
+}
+function chooseCar(orderid){
+    var row = $('#carorderGrid').datagrid('getSelected');//发车行
+    var orderid=orderid;//运单id
+    if(row==null){
+        $.messager.alert('Warning',"请选择发车", 'info');return false;
+    }
+    if (row){
+        $.messager.confirm('装车提示','真的要装车?',function(r){
+            if (r){
+                var durl=chooseCarUrl;//装车更新哪一个数据库表
+                $.getJSON(durl,{id:row.carid,orderid:orderid},function(result){
+                    if (result.status){
+                        $('#carorderDlg').dialog('close');
+                        $('#OrderGrid').datagrid('reload');    // reload the user data
+
+                    } else {
+                        $.messager.alert('错误提示',result.message,'error');
+                    }
+                },'json').error(function(data){
+                    var info=eval('('+data.responseText+')');
+                    $.messager.confirm('错误提示',info.message,function(r){});
+                });
+            }
+        });
+    }
+}
+
+/*
+function cascade(route) {
+    $("#"+route).combobox({
+        url:ajaxRouteUrl,
+        valueField:'id',
+        textField:'name'
+    });
+}*/
+
+function timeStatus(val,rowData,row){
+    if(val==null){
+        return "";
+    }else{
+    return Common.TimeFormatter(val);
+    }
 }
