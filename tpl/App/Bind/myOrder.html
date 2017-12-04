@@ -82,8 +82,8 @@
                       for (var i = 0; i < data.length; i++) {
                           content = content
                                   + '<li class="ui-border-t"><p><span>订单编号</span><span class="date">' + data[i].orderno + '</span></p>'
-                                  + '<h4>  收件人：' +data[i].receivername + '  收件人电话：' + data[i].receivertel + '  收件人地址：'
-                                  + data[i].receiveraddress + '</h4></li>';
+                                  + '<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 收件人：' +data[i].receivername + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 收件人电话：' + data[i].receivertel + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 收件人地址：'
+                                  + data[i].receiveraddress +'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 运单状态： '+data[i].status+ '</h4></li>';
                       }
                       $(".trade-area").append(content);
                   }
@@ -92,8 +92,8 @@
                   for (var i = 0; i < data.length; i++) {
                       content = content
                               + '<li class="ui-border-t"><p><span>订单编号</span><span class="date">' + data[i].orderno + '</span></p>'
-                              + '<h4>  收件人：' +data[i].receivername + '  收件人电话：' + data[i].receivertel + ' 收件人地址：'
-                              + data[i].receiveraddress + '</h4></li>';
+                              + '<h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 收件人：' +data[i].receivername + '&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  收件人电话：' + data[i].receivertel + '&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 收件人地址：'
+                              + data[i].receiveraddress +' &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;运单状态： '+data[i].status+ '</h4></li>';
                   }
                   $(".trade-area").append(content);
 
