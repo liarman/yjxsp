@@ -83,6 +83,20 @@ class OrderController extends AdminBaseController{
     }
 
     /**
+     *
+     * 查看
+     */
+    public  function look(){
+        $data=I('get.');
+        $id=$data['id'];
+        $sql="select * from qfant_order where id='$id'";
+        $data=D('Order')->query($sql,"");
+        $data['time']=time();
+
+        $this->ajaxReturn($data,'JSON');
+    }
+
+    /**
      * 删除
      */
     public function delete(){

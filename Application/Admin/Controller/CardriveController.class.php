@@ -157,8 +157,25 @@ class CardriveController extends AdminBaseController{
     }
 
     public function ajaxCarDriv(){
+        $orderid=I('get.orderid');
+        $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+        $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+        $offset = ($page-1)*$rows;
+        $countsql="select  count(r.id )as total  FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ";
         $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate as startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ;";
-        $data=D('Cardrive')->query($sql,"");
-        $this->ajaxReturn($data,'JSON');
+
+        $param=array();
+        array_push($param,$offset);
+        array_push($param,$rows);
+        $sql.=" limit %d,%d";
+        $data=D('Cardrive')->query($countsql,$param);
+        $result['total']=$data[0]['total'];
+        $data=D('Cardrive')->query($sql,$param);
+        foreach ($data as $key=>$basevalue){
+                $data[$key]['orderid']= $orderid;
+        }
+        $result["rows"] = $data;
+        $this->ajaxReturn($result,'JSON');
+
     }
 }
