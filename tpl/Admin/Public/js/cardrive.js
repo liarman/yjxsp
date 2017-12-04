@@ -100,6 +100,25 @@ function cararrive(){
         }]
     });
 }
+function orderList(){
+    var row = $('#CardriveGrid').datagrid('getSelected');
+    if(row==null){
+        $.messager.alert('Warning',"请选择要查看的运单的车辆", 'info');return false;
+    }
+    $('#orderListDlg').dialog('open').dialog('setTitle','运单列表');
+    $('#orderListGrid').datagrid({
+        url: orderListUrl +'/id/'+row.cardriveid,
+        columns: [[
+            {field: 'orderno', title: '运单编号', width: 100},
+            {field: 'shipper', title: '寄件人姓名', width: 100},
+            {field: 'shippertel', title: '寄件人电话', width: 100},
+            {field: 'receivername', title: '收件人姓名', width: 100},
+            {field: 'receiveraddress', title: '收件人电话', width: 100},
+            {field: 'receivertel', title: '收件人地址', width: 100},
+            {field: 'rname', title: '目的地', width: 100}
+        ]]
+    });
+}
 function addarrive(row){
     $('#addarrive').dialog('open').dialog('setTitle','添加');
     $('#addarriveForm').form('clear');

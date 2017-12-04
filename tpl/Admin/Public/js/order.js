@@ -116,17 +116,27 @@ function ajaxCarList(){
     $('#carorderGrid').datagrid({
         url:ajaxCarUrl,
         columns:[[
-            {field:'driver',title:'司机',width:100},
-            {field:'carnumber',title:'车牌号',width:100},
-            {field:'carid',title:'司机id',width:100,hidden:'true'}
+            {field:'driver',title:'司机',width:150},
+            {field:'carnumber',title:'车牌号',width:150},
+            {field:'startdate',title:'发车时间',width:200,formatter:Common.TimeFormatter},
+            {field:'cardriveid',title:'发车id',width:100,hidden:'true'}
+
         ]],
+      /*  onLoadSuccess:function(data){
+            $("a[name='lookButton']").linkbutton({plain:true,iconCls:'fa fa-check'});
+        },*/
         toolbar: [{
-            iconCls: 'fa fa-plus',
+            iconCls: 'fa fa-check',
             handler: function(){chooseCar(row.id);}
         }]
     });
 }
-
+function  btnDetailed(id){
+   id=row.id;
+    alert(id);
+    var OpeninfoIntroButton = '<a href="javascript:void(0);" name="lookButton" class="easyui-linkbutton"  onclick="chooseCar('+id+')"></a>';
+    return OpeninfoIntroButton;
+}
 function RouteformatStatus(val,rowData,row){
     if(val==1){
         val="<span style='color: green'>启用</span>";
@@ -145,7 +155,7 @@ function chooseCar(orderid){
         $.messager.confirm('装车提示','真的要装车?',function(r){
             if (r){
                 var durl=chooseCarUrl;//装车更新哪一个数据库表
-                $.getJSON(durl,{id:row.carid,orderid:orderid},function(result){
+                $.getJSON(durl,{id:row.cardriveid,orderid:orderid},function(result){
                     if (result.status){
                         $('#carorderDlg').dialog('close');
                         $('#OrderGrid').datagrid('reload');    // reload the user data
@@ -176,5 +186,14 @@ function timeStatus(val,rowData,row){
         return "";
     }else{
     return Common.TimeFormatter(val);
+    }
+}
+function Status(val,rowData,row){
+    if(val==0){
+        return "";
+    }else if(val==1){
+        return "已装车";
+    }else if(val==2){
+        return "已到站";
     }
 }
