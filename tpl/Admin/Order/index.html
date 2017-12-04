@@ -17,6 +17,10 @@
     <script src="__EASYUI__/extend/validate.js"></script>
     <script src="__KINDEDITOR__/kindeditor-all.js"></script>
     <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+    <script language="javascript" src="__PUBLIC__/statics/print/LodopFuncs.js"></script>
+    <object id="LODOP" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width="0" height="0">
+        <embed id="LODOP_EM" type="application/x-print-lodop" width="0" height="0"></embed>
+    </object>
     <style>
         .div-a{ float:left;width:49%;}
         .div-b{ float:left;width:49%;}
@@ -49,8 +53,11 @@
 <div id="toolbar_order">
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addOrder()">添加</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editOrder()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-file-pdf-o" plain="true" onclick="lookOrder()">查看</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyOrder()">删除</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">装车</a>
+
+   <!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">打印</a>-->
     货物名称:
     <input class="easyui-textbox" style="width:110px" name="goodsname"id="goodsnamesearch">
     收货人:
@@ -114,7 +121,7 @@
                     <select  panelMaxHeight="100px" name="paytype" class="easyui-combobox" style="width:300px" data-options="delay:1000,required:true,multiple:false">
                         <option value="1">欠付</option>
                         <option value="2">货到付款</option>
-                        <option value="2">现付</option>
+                        <option value="3">现付</option>
                     </select>
 
                 </td>
@@ -129,7 +136,7 @@
     </form>
 </div>
 
-
+<!--编辑-->
 <div id="editOrder" class="easyui-dialog" title="编辑" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
     <form id="editOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
         <input type="hidden" name="id" value="">
@@ -185,7 +192,7 @@
                     <select  panelMaxHeight="100px" name="paytype" class="easyui-combobox" style="width:300px" data-options="delay:1000,multiple:false">
                         <option value="1">欠付</option>
                         <option value="2">货到付款</option>
-                        <option value="2">现付</option>
+                        <option value="3">现付</option>
                     </select>
                 </td>
 
@@ -208,8 +215,88 @@
     </form>
 </div>
 
+<!--查看-->
+
+<div id="lookOrder" class="easyui-dialog" title="查看" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
+    <form id="lookOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
+        <input type="hidden" name="id" value="" id="lookId">
+        <table>
+            <tr>
+                <td align="right">发货人姓名:<input name="shipper" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+                <td align="right">收货人姓名:<input name="receivername"  style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+
+            </tr>
+
+            <tr>
+                <td   align="right">发货人电话:<input name="shippertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'mobile',required:true " /></td>
+
+                <td  align="right">收货人电话:<input name="receivertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'mobile',required:true " /></td>
+
+            </tr>
+            <tr>
+                <td  align="right">收货人地址:<input name="receiveraddress" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+            </tr>
+            <tr>
+                <td   align="right">货物名称: <input name="goodsname" class="easyui-textbox" style="width:300px"  data-options="delay:1000,required:true " /></td>
+
+                <td  align="right">件数:<input name="name" class="easyui-textbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="right">数量:<input name="goodscount" class="easyui-textbox"style="width: 300px"   data-options="delay:1000 " /></td>
+
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位:
+                    <select  panelMaxHeight="100px" name="goodsunit" class="easyui-combobox" style="width:300px" data-options="delay:1000,required:true,multiple:false">
+                        <option value="1">千克</option>
+                        <option value="2">箱</option>
+                    </select>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td align="right">运费: <input name="goodsfee" class="easyui-textbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+                <td align="right">货物保险金额:<input name="goodsinsurance" class="easyui-textbox" style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="right">保险费:<input name="insurance" class="easyui-textbox"  style="width: 300px"  data-options="delay:1000" /></td>
+
+                <td align="right">合计金额: <input name="countFee" class="easyui-textbox"  style="width: 300px"  data-options="delay:1000" /></td>
+
+            </tr>
+            <tr>
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付款方式:
+                    <select  panelMaxHeight="100px" name="paytype" class="easyui-combobox" style="width:300px" data-options="delay:1000,multiple:false">
+                        <option value="1">欠付</option>
+                        <option value="2">货到付款</option>
+                        <option value="3">现付</option>
+                    </select>
+                </td>
+
+                <td align="right">托运时间: <input name="assembledate" class="easyui-datebox" style="width: 300px" data-options="delay:1000" /></td>
+
+            </tr>
+
+            <tr>
+
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货城市:<input  class="easyui-combobox" name="endcity" panelHeight="150px" style="width:300px" data-options=" valueField:'id', textField:'name', url:'{:U('Admin/Route/ajaxRoute')}'"></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td > <a href="#" class="easyui-linkbutton" icon="icon-print" onclick="print('view');">打印运单</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#lookOrder').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+
 <div id="carorderDlg" class="easyui-dialog" title="发车列表" style="width:600px;padding:10px 20px;height: 400px" closed="true" modal="true">
-<div id="carorderGrid" style="">
+<div id="carorderGrid" style="" pagination="true"   singleSelect="true" rownumbers="true">
     <input name="orderId" type="hidden" id="order_id"/>
 </div>
 </div>
@@ -221,7 +308,7 @@
     var ajaxCarUrl="{:U('Admin/Cardrive/ajaxCarDriv')}";//发车记录列表
     var chooseCarUrl="{:U('Admin/Order/addCarOrder')}";//确定装车，保存路径
     var ajaxRouteUrl="{:U('Admin/Route/ajaxRoute')}";//终点站设置
-   // cascade('route_add');
+    var lookUrl="{:U('Admin/Order/look')}";
 </script>
 </body>
 </html>
