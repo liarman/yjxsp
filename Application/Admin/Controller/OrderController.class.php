@@ -13,7 +13,8 @@ class OrderController extends AdminBaseController{
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql = "SELECT	count(o.id) AS total FROM	qfant_order o WHERE	1 = 1 ";
-        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_car c on o.cardriveid=c.id	LEFT JOIN qfant_route r on r.id=o.endcity WHERE 1=1";
+      //  $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_cardrive c on o.cardriveid=c.id	LEFT JOIN qfant_route r on r.id=o.endcity WHERE 1=1";
+        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_cardrive cd on o.cardriveid=cd.id	LEFT JOIN qfant_route r on r.id=o.endcity LEFT JOIN qfant_car  c on c.id=cd.carid";
         $param=array();
         if(!empty($goodsname)){
             $countsql.=" and o.goodsname like '%s'";
@@ -101,9 +102,10 @@ class OrderController extends AdminBaseController{
     }
 
     public function addCarOrder(){
-        $data['cardriveid']=I('get.id');//司机id
+        $data['cardriveid']=I('get.id');//发车id
         $data['id']=I("get.orderid");//订单id
         $data['assembledate']=time();
+        $data['status']='1';//已装车
         $where['id']=$data['id'];
         $result=D('Order')->editData($where,$data);
         if($result){
@@ -114,5 +116,13 @@ class OrderController extends AdminBaseController{
             $message['message']='装车失败';
         }
         $this->ajaxReturn($message,'JSON');
+    }
+
+    public function orderList(){
+        $cardriveid=I('get.id');//发车id
+        $sql ="select o.orderno ,o.shipper,o.shippertel,o.receivername,o.receiveraddress,o.receivertel,r.name as rname from qfant_order as o ,qfant_cardrive as cd ,qfant_route as r where o.cardriveid=cd.id and o.status=1 and r.id=o.endcity and cd.id='$cardriveid'";
+        $data=D('Order')->query($sql,"");
+        $this->ajaxReturn($data,'JSON');
+
     }
 }

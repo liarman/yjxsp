@@ -64,8 +64,22 @@ class CardriveController extends AdminBaseController{
             $result=D('Cardriveroute')->addData($data);
 
             if($result){
-                $message['status']=1;
-                $message['message']='保存成功';
+                $cardriveid=I('post.cardriveid');
+                $routeid=I('post.routeid');
+                $sql = "select o.* from qfant_order as o ,qfant_cardrive as cd ,qfant_cardriveroute as cdr where o.endcity=cdr.routeid AND cd.id=cdr.cardriveid and o.cardriveid=cd.id  and o.endcity='$routeid' and o.cardriveid='$cardriveid'";
+                $d=D('Order')->query($sql,"");
+                if($d){
+                    $order['status']='2';
+                    for($i = 0; $i <sizeof($d); $i++)
+                    {
+                        $where['id']=$d[$i]['id'];
+                        D('Order')->editData($where,$order);
+                    }
+                    $where['id']=$d['id'];
+                    D('Order')->editData($where,$order);
+                    $message['status']=1;
+                    $message['message']='保存成功';
+                }
             }else {
                 $message['status']=0;
                 $message['message']='保存失败';
@@ -143,7 +157,7 @@ class CardriveController extends AdminBaseController{
     }
 
     public function ajaxCarDriv(){
-        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ;";
+        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate as startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ;";
         $data=D('Cardrive')->query($sql,"");
         $this->ajaxReturn($data,'JSON');
     }
