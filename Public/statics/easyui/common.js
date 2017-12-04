@@ -8,7 +8,7 @@ function closes(){
 }
 var pc;
 $.parser.onComplete = function(){
-    if(pc) clearTimeout(pc);
+     if(pc) clearTimeout(pc);
     pc = setTimeout(closes, 500);
 }
 
