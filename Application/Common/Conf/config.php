@@ -18,6 +18,7 @@ return array(
         '__ADMIN_IMAGES__'   => OSS_URL.trim(TMPL_PATH,'.').'Admin/Public/images',
         '__ADMIN_ACEADMIN__' => __ROOT__.trim(TMPL_PATH,'.').'Admin/Public/aceadmin',
         '__EASYUI__' => OSS_URL.__ROOT__.'/Public/statics/easyui',
+        '__FROZEN_UI__' => OSS_URL.__ROOT__.'/Public/statics/frozenui-1.3.0',
         '__FONTAWESOME__' => OSS_URL.__ROOT__.'/Public/statics/font-awesome-4.4.0/css/font-awesome.min.css',
         '__KINDEDITOR__' => OSS_URL.__ROOT__.'/Public/statics/kindeditor',
         '__PUBLIC_CSS__'     => __ROOT__.trim(TMPL_PATH,'.').'Public/css',
@@ -33,7 +34,7 @@ return array(
 //***********************************URL设置**************************************
     'MODULE_ALLOW_LIST'      => array('Home','Admin','Api','User','App'), //允许访问列表
     'URL_HTML_SUFFIX'        => '',  // URL伪静态后缀设置
-    'URL_MODEL'              => 1,  //启用rewrite
+    'URL_MODEL'              => 2,  //启用rewrite
 //***********************************SESSION设置**********************************
     'SESSION_OPTIONS'        => array(
         'name'               => 'YIJUADMIN',//设置session名
