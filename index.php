@@ -35,7 +35,7 @@ define("TMPL_PATH","./tpl/");
 
 // 定义oss的url
 define("OSS_URL","");
-
+define('__APP__', '');
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';
 
