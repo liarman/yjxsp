@@ -28,7 +28,7 @@ class LoginController extends BaseController{
 				$this->error('账号或密码错误');
 			}else{
 				M('Users')->where(array('id'=>$data['id']))->save(array('last_login_time'=>time(),'last_login_ip'=>get_client_ip()));
-				$user=array(
+				$_SESSION['user']=array(
 					'id'=>$data['id'],
 					'username'=>$data['username'],
 					'avatar'=>$data['avatar']
@@ -37,7 +37,6 @@ class LoginController extends BaseController{
 				$loginrecord['loginTime']=date('Y-m-d H:i:s');
 				$loginrecord['loginip']=get_client_ip();
 				M('LoginAdmin')->add($loginrecord);
-				session('user',$user);
 				$this->success('登录成功、前往管理后台',U('Admin/Index/index'));
 			}
 		}else{
