@@ -15,10 +15,8 @@ class CarController extends AdminBaseController{
         $result["total"]=D('Car')->count();
         $data=D('Car')->limit($offset.','.$rows)->select();
         $result["rows"] = $data;
+        $result["status"] = 1;
         $this->ajaxReturn($result,'JSON');
-        /*  $Car=D('Car')->select();
-          $this->assign("Car",$Car);
-          $this->display();*/
     }
     /**
      * 添加
