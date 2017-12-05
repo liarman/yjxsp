@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="__PUBLIC__/statics/login/css/style.css" />
     <script type="text/javascript" src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>
     <script language="javascript">
-        if (window != top)
-            top.location.href = location.href;
+        if (window != top){
+            top.location.href = "{:U('Admin/Login/index')}";
+        }
     </script>
 </head>
 <body>
