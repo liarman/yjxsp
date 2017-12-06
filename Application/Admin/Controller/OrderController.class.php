@@ -134,9 +134,21 @@ class OrderController extends AdminBaseController{
 
     public function orderList(){
         $cardriveid=I('get.id');//发车id
-        $sql ="select o.orderno ,o.shipper,o.shippertel,o.receivername,o.receiveraddress,o.receivertel,r.name as rname from qfant_order as o ,qfant_cardrive as cd ,qfant_route as r where o.cardriveid=cd.id and o.status=1 and r.id=o.endcity and cd.id='$cardriveid'";
+        $sql ="select o.id as oid,o.orderno ,o.shipper,o.shippertel,o.receivername,o.receiveraddress,o.receivertel,r.name as rname from qfant_order as o ,qfant_cardrive as cd ,qfant_route as r where o.cardriveid=cd.id and o.status=1 and r.id=o.endcity and cd.id='$cardriveid'";
         $data=D('Order')->query($sql,"");
         $this->ajaxReturn($data,'JSON');
+
+    }
+    public  function printorderList(){
+        $ids=I('get.id');
+        $arr1 = explode("@@",$ids);
+        for($index=0;$index<count($arr1);$index++) {
+            $sql="select * from qfant_order where id='$arr1[$index]'";
+            $data=D('Order')->query($sql,"");
+            $datap[$index]=$data;
+
+        }
+        $this->ajaxReturn($datap,'JSON');
 
     }
 }
