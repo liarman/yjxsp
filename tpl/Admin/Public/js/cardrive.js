@@ -108,16 +108,81 @@ function orderList(){
     $('#orderListDlg').dialog('open').dialog('setTitle','运单列表');
     $('#orderListGrid').datagrid({
         url: orderListUrl +'/id/'+row.cardriveid,
+        singleSelect: false,
+        selectOnCheck: true,
+        checkOnSelect: true,
         columns: [[
+            {field: 'ck', checkbox:"true", width: 100},
+            {field: 'oid', title: '运单id',hidden:'true' ,width: 100},
             {field: 'orderno', title: '运单编号', width: 100},
             {field: 'shipper', title: '寄件人姓名', width: 100},
             {field: 'shippertel', title: '寄件人电话', width: 100},
             {field: 'receivername', title: '收件人姓名', width: 100},
             {field: 'receiveraddress', title: '收件人电话', width: 100},
             {field: 'receivertel', title: '收件人地址', width: 100},
-            {field: 'rname', title: '目的地', width: 100}
-        ]]
+            {field: 'rname', title: '目的地', width: 100},
+        ]],
+        onLoadSuccess:function(data){
+           if(data){
+               $.each(data.rows, function(index, item){
+                   if(item.checked){
+                      $('#orderListGrid').datagrid('checkRow', index);
+                        }
+                    });
+               }
+           },
+        toolbar: [{
+            iconCls: 'fa fa-plus',
+            id:'ButonGetCheck',
+            handler: function(){printList();}
+        }]
     });
+}
+function printList(){
+    $('#ButonGetCheck').click(function(){
+        var checkedItems = $('#orderListGrid').datagrid('getChecked');
+        var ids = [];
+        $.each(checkedItems, function(index, item){
+            ids.push(item.oid);
+            });
+        ids=ids.join("@@");
+        if (ids.length>0) {
+            var url=printUrl;
+            $.getJSON(url,{id:ids}, function(datap){
+                var LODOP=getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));
+                LODOP.PRINT_INIT("");
+                LODOP.SET_PRINT_STYLE("FontSize",12);
+                var y=150;
+                $.each(datap,function (i,n) {
+                    LODOP.ADD_PRINT_TEXT(y,0,100,30,n.shipper);
+                    LODOP.ADD_PRINT_TEXT(y,100,100,30,n.goodsname);
+                    LODOP.ADD_PRINT_TEXT(y,200,300,30,n.receiveraddress+"  "+n.receivername+"  "+n.receivertel);
+                    LODOP.ADD_PRINT_TEXT(y,500,55,30,n.goodscount);
+                    y+=34;
+                });
+                LODOP.PREVIEW();
+            });
+        }else {
+            alert("要打印运单列表为空！");
+            return;
+        }
+
+        });
+
+    /*var selRow = $('#orderListGrid').datagrid("getChecked");
+    if(selRow.length==0){
+        alert("请至少选择一行数据!");
+        return false;
+    }
+    var ids=[];
+    for (var i = 0; i < selRow.length; i++) {
+        //获取自定义table 的中的checkbox值
+        var id=selRow[i].OTRECORDID;   //OTRECORDID这个是你要在列表中取的单个id
+        ids.push(id); //然后把单个id循环放到ids的数组中
+    }
+    console.log(ids);*/
+
+
 }
 function addarrive(row){
     $('#addarrive').dialog('open').dialog('setTitle','添加');

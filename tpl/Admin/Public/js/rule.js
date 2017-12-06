@@ -5,15 +5,15 @@ function add(id){
     $('#rulefm').form('clear');
     if(id>0){
         $("input[name='pid']").val(id);
-        $.getJSON("{:U('Admin/Rule/get')}/id/"+id,function(data){
+        var url =getRuleUrl;
+        $.getJSON(url,{id:id},function(data){
             $(".parent").empty().append(data.title);
         })
     }
-    url=addRuleUrl;
 }
-function addRule(){
+function addRuleSubmit(){
     $('#rulefm').form('submit',{
-        url: url,
+        url: addRuleUrl,
         onSubmit: function(){
             return $(this).form('validate');
         },
@@ -33,7 +33,7 @@ function addRule(){
 }
 function editRuleSubmit(){
     $('#ruleeditfm').form('submit',{
-        url: url,
+        url: editRuleUrl+'/id/'+id,
         onSubmit: function(){
             return $(this).form('validate');
         },
@@ -55,7 +55,8 @@ function editRuleSubmit(){
 function editRule(id){
     if (id>0){
         $('#editrule').dialog('open').dialog('setTitle','编辑');
-        $.getJSON("{:U('Admin/Rule/get')}/id/"+id,function(data){
+        var url =getRuleUrl;
+        $.getJSON(url,{id:id},function(data){
             $("#editRulePid").val(data.pid);
             $("#editRuleId").val(data.id);
             $("#editRuleTitle").textbox('setValue',data.title);

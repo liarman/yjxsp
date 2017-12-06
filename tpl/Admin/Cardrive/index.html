@@ -18,11 +18,15 @@
     <script src="__EASYUI__/extend/validate.js"></script>
     <script src="__KINDEDITOR__/kindeditor-all.js"></script>
     <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+    <script language="javascript" src="__PUBLIC__/statics/print/LodopFuncs.js"></script>
+    <object id="LODOP" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width="0" height="0">
+        <embed id="LODOP_EM" type="application/x-print-lodop" width="0" height="0"></embed>
+    </object>
 </head>
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
 <script src="__ADMIN_JS__/Cardrive.js" type="text/javascript" charset="utf-8"></script>
-<table id="CardriveGrid" class="easyui-datagrid"url="{:U('Admin/Cardrive/ajaxCardriveList')}" pagination="true" toolbar="#toolbar_cardiver" singleSelect="true" rownumbers="true" pageSize="20">
+<table id="CardriveGrid" class="easyui-datagrid"url="{:U('Admin/Cardrive/ajaxCardriveList')}" pagination="true" toolbar="#toolbar_cardiver" singleSelect="true"  pageSize="20">
     <thead>
     <tr>
         <th field="id" width="200" >编号</th>
@@ -62,8 +66,8 @@
 <div id="arriveDlg" class="easyui-dialog" title="到站列表" style="width:600px;padding:10px 20px;height: 400px" closed="true" modal="true">
     <div id="arriveGrid" style=""></div>
 </div>
-<div id="orderListDlg" class="easyui-dialog" title="到站列表" style="width:700px;padding:10px 20px;height: 400px" closed="true" modal="true">
-    <div id="orderListGrid" style=""></div>
+<div id="orderListDlg" class="easyui-dialog" title="运单列表" style="width:750px;padding:10px 20px;height: 400px" closed="true" modal="true">
+    <div id="orderListGrid" style="width:730px;" rownumbers="true"></div>
 </div>
 <div id="addarrive" class="easyui-dialog" title="添加" style="width:400px;padding:10px 20px;" closed="true" modal="true">
     <form id="addarriveForm" method="post">
@@ -96,6 +100,7 @@
     var addarriveListUrl="{:U('Admin/Cardrive/ajaxarrive')}";
     var addarriveUrl="{:U('Admin/Cardrive/addarrive')}";
     var orderListUrl="{:U('Admin/Order/orderList')}";
+     var printUrl ="{:U('Admin/Order/printorderList')}";
 </script>
 </body>
 </html>

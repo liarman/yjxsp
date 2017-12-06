@@ -58,6 +58,7 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyOrder()">删除</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">装车</a>
 
+
    <!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">打印</a>-->
     货物名称:
     <input class="easyui-textbox" style="width:110px" name="goodsname"id="goodsnamesearch">
@@ -70,19 +71,25 @@
 <!--添加-->
 <div id="addOrder" class="easyui-dialog" title="添加" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
     <form id="addOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
-
+        <input name="shipperid" id="shipperid" class="easyui-textbox" type="hidden"  />
         <table>
             <tr>
-                <td align="right">发货人姓名:<input name="shipper" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+                <td align="right">
+                    发货人姓名:<input name="shipper" style="width: 230px" class="easyui-textbox" data-options="delay:1000,required:true " />
+                   <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="shiperList()">选择</a>
+                </td>
 
-                <td align="right">收货人姓名:<input name="receivername"  style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+                <td align="right">
+                    收货人姓名:<input name="receivername"  style="width: 230px" class="easyui-textbox" data-options="delay:1000,required:true " />
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="receiveList()">选择</a>
+                </td>
 
             </tr>
 
             <tr>
-                <td   align="right">发货人电话:<input name="shippertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'phone',required:true " /></td>
+                <td   align="right">发货人电话:<input name="shippertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,required:true " /></td>
 
-                <td  align="right">收货人电话:<input name="receivertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'phone',required:true " /></td>
+                <td  align="right">收货人电话:<input name="receivertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,required:true " /></td>
 
             </tr>
             <tr>
@@ -143,20 +150,20 @@
         <input type="hidden" name="id" value="">
         <table>
             <tr>
-                <td align="right">发货人姓名:<input name="shipper" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+                <td align="right">发货人姓名:<input name="shipper" id="addShipper" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
 
-                <td align="right">收货人姓名:<input name="receivername"  style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+                <td align="right">收货人姓名:<input name="receivername" id="addReceivename"  style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
 
             </tr>
 
             <tr>
-                <td   align="right">发货人电话:<input name="shippertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'mobile',required:true " /></td>
+                <td   align="right">发货人电话:<input name="shippertel"  id="addShippertel" style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'mobile',required:true " /></td>
 
-                <td  align="right">收货人电话:<input name="receivertel"  style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'mobile',required:true " /></td>
+                <td  align="right">收货人电话:<input name="receivertel" id="addReceivetel" style="width: 300px"  class="easyui-textbox" data-options="delay:1000,validType:'mobile',required:true " /></td>
 
             </tr>
             <tr>
-                <td  align="right">收货人地址:<input name="receiveraddress" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
+                <td  align="right">收货人地址:<input name="receiveraddress" id="addReceiveAddress" style="width: 300px" class="easyui-textbox" data-options="delay:1000,required:true " /></td>
             </tr>
             <tr>
                 <td   align="right">货物名称: <input name="goodsname" class="easyui-textbox" style="width:300px"  data-options="delay:1000,required:true " /></td>
@@ -289,18 +296,28 @@
             <tr>
                 <td></td>
                 <td > <a href="#" class="easyui-linkbutton" icon="icon-print" onclick="print('view');">打印运单</a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#lookOrder').dialog('close')" style="width:90px">取消</a></td>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#lookOrder').dialog('close')" style="width:90px">取消</a>
+                </td>
             </tr>
         </table>
 
     </form>
 </div>
 
-<div id="carorderDlg" class="easyui-dialog" title="发车列表" style="width:600px;padding:10px 20px;height: 400px" closed="true" modal="true">
+<div id="carorderDlg" class="easyui-dialog" title="发车列表" style="width:625px;padding:10px 20px;height: 400px" closed="true" modal="true">
 <div id="carorderGrid" style="" pagination="true"   singleSelect="true" rownumbers="true">
     <input name="orderId" type="hidden" id="order_id"/>
 </div>
+
+<div id="shiperDlg" class="easyui-dialog" title="发货人列表" style="width:625px;padding:10px 20px;height: 400px" closed="true" modal="true">
+        <div id="shiperGrid" style="" pagination="true"   singleSelect="true" rownumbers="true">
+        </div>
 </div>
+
+    <div id="receiveDlg" class="easyui-dialog" title="收货人人列表" style="width:625px;padding:10px 20px;height: 400px" closed="true" modal="true">
+        <div id="receiveGrid" style="" pagination="true"   singleSelect="true" rownumbers="true">
+        </div>
+    </div>
 <script type="text/javascript">
     var addOrderUrl="{:U('Admin/Order/add')}";
     var editOrderUrl="{:U('Admin/Order/edit')}";
@@ -310,6 +327,8 @@
     var chooseCarUrl="{:U('Admin/Order/addCarOrder')}";//确定装车，保存路径
     var ajaxRouteUrl="{:U('Admin/Route/ajaxRoute')}";//终点站设置
     var lookUrl="{:U('Admin/Order/look')}";
+    var ajaxShiperUrl="{:U('Admin/Shipper/shiperList')}";//发货人列表
+    var ajaxReceiveUrl="{:U('Admin/Receive/receiveList')}";//收货人列表
 </script>
 </body>
 </html>
