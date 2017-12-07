@@ -5,16 +5,34 @@ use Common\Controller\AdminBaseController;
  * 后台权限管理
  */
 class ReceiveController extends AdminBaseController{
-    public function receiveList(){
-        $shipperid=I('get.shipperid');
+    public function ajaxReceiveList(){
+        /*条件查询*/
+        $receivername=I("post.receivername");
+        $receivertel=I("post.receivertel");
+        $shipperid=I("get.shipperid");
+
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
-        if($shipperid) {
-            $countsql = "select count(id) AS total from qfant_receive where shipperid='$shipperid'";
-            $sql = "select * from qfant_receive where shipperid='$shipperid'";
-        }
+        $countsql ="select count(id) AS total from qfant_receive s where 1=1";
+        $sql ="select * from qfant_receive s where 1=1";
+
         $param=array();
+        if(!empty($receivername)){
+            $countsql.=" and s.receivername like '%s'";
+            $sql.=" and s.receivername like '%s'";
+            array_push($param,'%'.$receivername.'%');
+        }
+        if(!empty($receivertel)){
+            $countsql.=" and s.receivertel like '%s'";
+            $sql.=" and s.receivertel like '%s'";
+            array_push($param,'%'.$receivertel.'%');
+        }
+        if(!empty($shipperid)){
+            $countsql.=" and s.shipperid =%d";
+            $sql.=" and s.shipperid =%d";
+            array_push($param,$shipperid);
+        }
         array_push($param,$offset);
         array_push($param,$rows);
         $sql.=" limit %d,%d";
@@ -32,7 +50,7 @@ class ReceiveController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             unset($data['id']);
-            $result=D('Order')->addData($data);
+            $result=D('Receive')->addData($data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -54,7 +72,7 @@ class ReceiveController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             $where['id']=$data['id'];
-            $result=D('Order')->editData($where,$data);
+            $result=D('Receive')->editData($where,$data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -66,19 +84,6 @@ class ReceiveController extends AdminBaseController{
         $this->ajaxReturn($message,'JSON');
     }
 
-    /**
-     *
-     * 查看
-     */
-    public  function look(){
-        $data=I('get.');
-        $id=$data['id'];
-        $sql="select * from qfant_order where id='$id'";
-        $data=D('Order')->query($sql,"");
-        $data['time']=time();
-
-        $this->ajaxReturn($data,'JSON');
-    }
 
     /**
      * 删除
@@ -88,7 +93,7 @@ class ReceiveController extends AdminBaseController{
         $map=array(
             'id'=>$id
         );
-        $result=D('Order')->deleteData($map);
+        $result=D('Receive')->deleteData($map);
         if($result){
             $message['status']=1;
             $message['message']='删除成功';
@@ -99,19 +104,24 @@ class ReceiveController extends AdminBaseController{
         $this->ajaxReturn($message,'JSON');
     }
 
-    public function addCarOrder(){
-        $data['cardriveid']=I('get.id');//发车id
-        $data['id']=I("get.orderid");//订单id
-        $data['assembledate']=time();
-        $data['status']='1';//已装车
+    public function addReceiveShipper(){
+        $data['id']=I('get.id');//收货人id
+        $data['shipperid']=I("get.shipperid");//发货人id
         $where['id']=$data['id'];
-        $result=D('Order')->editData($where,$data);
-        if($result){
-            $message['status']=1;
-            $message['message']='装车成功';
-        }else {
-            $message['status']=0;
-            $message['message']='装车失败';
+        $id=$data['id'];
+        $da=D('Receive')->where(array('id'=>$id))->find();
+        if($da['shipperid']!=null){
+            $message['status']=2;
+            $message['message']='该收货人已经与发货人建立关系！请重新选择！';
+        }else{
+            $result=D('Receive')->editData($where,$data);
+            if($result){
+                $message['status']=1;
+                $message['message']='成功';
+            }else {
+                $message['status']=0;
+                $message['message']='失败';
+            }
         }
         $this->ajaxReturn($message,'JSON');
     }

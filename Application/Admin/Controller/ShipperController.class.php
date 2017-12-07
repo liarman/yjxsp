@@ -5,14 +5,28 @@ use Common\Controller\AdminBaseController;
  * 后台权限管理
  */
 class ShipperController extends AdminBaseController{
-    public function shiperList(){
+    public function ajaxShipperList(){
+        /*条件查询*/
+        $shippertel=I("post.shippertel");
+        $shipper=I("post.shipper");
+
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
-        $countsql ="select count(id) AS total from qfant_shipper ";
-        $sql ="select * from qfant_shipper ";
+        $countsql ="select count(id) AS total from qfant_shipper s where 1=1";
+        $sql ="select * from qfant_shipper s where 1=1";
 
         $param=array();
+        if(!empty($shippertel)){
+            $countsql.=" and s.shippertel like '%s'";
+            $sql.=" and s.shippertel like '%s'";
+            array_push($param,'%'.$shippertel.'%');
+        }
+        if(!empty($shipper)){
+            $countsql.=" and s.shipper like '%s'";
+            $sql.=" and s.shipper like '%s'";
+            array_push($param,'%'.$shipper.'%');
+        }
         array_push($param,$offset);
         array_push($param,$rows);
         $sql.=" limit %d,%d";
@@ -30,7 +44,7 @@ class ShipperController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             unset($data['id']);
-            $result=D('Order')->addData($data);
+            $result=D('Shipper')->addData($data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -52,7 +66,7 @@ class ShipperController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             $where['id']=$data['id'];
-            $result=D('Order')->editData($where,$data);
+            $result=D('Shipper')->editData($where,$data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -64,19 +78,6 @@ class ShipperController extends AdminBaseController{
         $this->ajaxReturn($message,'JSON');
     }
 
-    /**
-     *
-     * 查看
-     */
-    public  function look(){
-        $data=I('get.');
-        $id=$data['id'];
-        $sql="select * from qfant_order where id='$id'";
-        $data=D('Order')->query($sql,"");
-        $data['time']=time();
-
-        $this->ajaxReturn($data,'JSON');
-    }
 
     /**
      * 删除
@@ -86,7 +87,7 @@ class ShipperController extends AdminBaseController{
         $map=array(
             'id'=>$id
         );
-        $result=D('Order')->deleteData($map);
+        $result=D('Shipper')->deleteData($map);
         if($result){
             $message['status']=1;
             $message['message']='删除成功';

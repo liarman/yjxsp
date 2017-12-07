@@ -143,8 +143,8 @@ class OrderController extends AdminBaseController{
         $ids=I('get.id');
         $arr1 = explode("@@",$ids);
         for($index=0;$index<count($arr1);$index++) {
-            $sql="select * from qfant_order where id='$arr1[$index]'";
-            $data=D('Order')->query($sql,"");
+//            $sql="select * from qfant_order where id='$arr1[$index]'";
+            $data=D('Order')->where(array('id'=>$arr1[$index]))->find();
             $datap[$index]=$data;
 
         }
