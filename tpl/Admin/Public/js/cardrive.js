@@ -149,6 +149,7 @@ function printList(){
         if (ids.length>0) {
             var url=printUrl;
             $.getJSON(url,{id:ids}, function(datap){
+                console.log(datap);
                 var LODOP=getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));
                 LODOP.PRINT_INIT("");
                 LODOP.SET_PRINT_STYLE("FontSize",12);
