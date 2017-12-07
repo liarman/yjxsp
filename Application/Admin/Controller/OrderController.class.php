@@ -70,6 +70,7 @@ class OrderController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             $where['id']=$data['id'];
+            $data['orderno']=$this->OrdernoMethod($data['id'],"J");
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
@@ -80,6 +81,17 @@ class OrderController extends AdminBaseController{
             }
         }
         $this->ajaxReturn($message,'JSON');
+    }
+    public function OrdernoMethod($id,$type){
+        $time=date('YmdHis');
+        $str=strval($id);
+        for($i = 0; $i <strlen($str); $i++)
+        {
+            $time=$time."0";
+        }
+        $code=$type.$time.$id;
+        return $code;
+
     }
 
     /**
