@@ -89,7 +89,8 @@ class BindController extends WapController{
 			$data['receiveraddress']=I("post.receiveraddress");
 			$data['createdate']=time();
 			unset($data['id']);
-			D("Order")->add($data);
+			D("Order")->add($data);//写入订单表
+			D("Receive")->add($data);//写入收货人表
 			$res= M('Order')->field('id')->where($data)->find();
 			$id=$res['id'];
 			$where['id']=$res['id'];
@@ -162,6 +163,19 @@ class BindController extends WapController{
 	public  function mySend(){
 		$this->display('mySend');
 	}
+	public  function driveRoute(){
+		$cardriveid=I("get.cardriveid");
+		if($cardriveid){
+			$sql ="SELECT r.name,c3.arrivedate FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
+			$data=D('Order')->query($sql,"");
+			foreach ($data as $key=>$basevalue){
+				$data[$key]['arrivedate']=date('Y-m-d H:i' , $basevalue['arrivedate']) ;
+			}
+			$this->assign("driveRoute",$data);
+			$this->display('driveRoute');
+		}
+	}
+
 	public function OrdernoMethod($id,$type){
 		$time=date('YmdHis');
 		$str=strval($id);
