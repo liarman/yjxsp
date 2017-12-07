@@ -28,11 +28,11 @@
     <section id="list">
         <div class="demo-item">
             <div class="demo-block">
-                <ul class="ui-list ui-list-pure ui-border-b">
+               <!-- <ul class="ui-list ui-list-pure ui-border-b">-->
                     <input type="hidden" name="pageNo" id="pageNo" value="1" />
                     <input type="hidden"  name="wecha_id" id="wecha_id" value="1234">
                   <!-- <ul class="ui-list ui-list-pure ui-border-tb trade-area">-->
-                       <ul class="ui-list ui-list-function ui-list-link ui-border-tb trade-area">
+                       <ul class="ui-list ui-list-function  ui-border-tb trade-area">
                            <!--<li class="ui-border-t">-->
                                <!--<div class="ui-list-info">-->
                                    <!--<h4 class="ui-nowrap">这是标题，加ui-nowrap可以超出长度截断</h4>-->
@@ -41,7 +41,7 @@
                            </li>
                       </ul>
                   <!--  </ul>-->
-                </ul>
+               <!-- </ul>-->
             </div>
         </div>
     </section>
@@ -80,7 +80,7 @@
                           content = content
                                   + ' <li> <div class="ui-list-info ui-border-t"><h4 class="ui-nowrap">订单编号' + data[i].orderno + '</h4>'
                                   + '<p class="ui-nowrap">收件人：' +data[i].receivername + '<br/>收件人电话：' + data[i].receivertel + '<br/>收件人地址：'
-                                  + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><td><br/></td><td><br/></td><a style="float: left" href="'+url+'"></a>';
+                                  + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><td><br/></td><td><br/></td><a style="float: left" href="'+url+'">轨迹</a>';
                       }
                       $(".trade-area").append(content);
                   }
@@ -92,7 +92,7 @@
                       content = content
                               + ' <li> <div class="ui-list-info ui-border-t"><h4 class="ui-nowrap">订单编号' + data[i].orderno + '</h4>'
                               + '<p class="ui-nowrap">收件人：' +data[i].receivername + '<br/>收件人电话：' + data[i].receivertel + '<br/>收件人地址：'
-                              + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><td><br/></td><td><br/></td><a style="float: left" href="'+url+'"></a>';
+                              + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><br/><br/><a  href="'+url+'">轨迹</a>';
                   }
                   $(".trade-area").append(content);
 
