@@ -76,10 +76,11 @@
                   } else {
                       var content = "";
                       for (var i = 0; i < data.length; i++) {
+                          var url= "{:U('App/Bind/driveRoute')}/cardriveid/"+data[i].cardriveid+"";
                           content = content
                                   + ' <li> <div class="ui-list-info ui-border-t"><h4 class="ui-nowrap">订单编号' + data[i].orderno + '</h4>'
                                   + '<p class="ui-nowrap">收件人：' +data[i].receivername + '<br/>收件人电话：' + data[i].receivertel + '<br/>收件人地址：'
-                                  + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p>';
+                                  + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><td><br/></td><td><br/></td><a style="float: left" href="'+url+'"></a>';
                       }
                       $(".trade-area").append(content);
                   }
@@ -91,7 +92,7 @@
                       content = content
                               + ' <li> <div class="ui-list-info ui-border-t"><h4 class="ui-nowrap">订单编号' + data[i].orderno + '</h4>'
                               + '<p class="ui-nowrap">收件人：' +data[i].receivername + '<br/>收件人电话：' + data[i].receivertel + '<br/>收件人地址：'
-                              + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><a  href="'+url+'">11</a>';
+                              + data[i].receiveraddress +'<br/>运单状态： '+data[i].status+ '</p></div><td><br/></td><td><br/></td><a style="float: left" href="'+url+'"></a>';
                   }
                   $(".trade-area").append(content);
 
