@@ -132,8 +132,9 @@ function orderList(){
                }
            },
         toolbar: [{
-            iconCls: 'fa fa-plus',
+            iconCls: 'fa fa-file-text-o',
             id:'ButonGetCheck',
+            text:'打印',
             handler: function(){printList();}
         }]
     });
