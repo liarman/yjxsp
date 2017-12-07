@@ -69,9 +69,9 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doSearch()" iconCls="icon-search">搜索</a>
 </div>
 <!--添加-->
-<div id="addOrder" class="easyui-dialog" title="添加" style="width:950px; height:600px;padding:10px 5px;" closed="true" modal="true">
-    <form id="addOrderForm" method="post"style="width:950px; height:600px;padding:10px 5px;" >
-        <input name="shipperid" id="shipperid"  type="hidden"  />
+<div id="addOrder" class="easyui-dialog" title="添加" style="width:900px;height:500px;padding:10px 20px;" closed="true" modal="true">
+    <form id="addOrderForm" method="post">
+        <input name="shipperid" id="addSid"  type="hidden"  />
         <table>
             <tr>
                 <td align="right">
@@ -149,8 +149,8 @@
 </div>
 
 <!--编辑-->
-<div id="editOrder" class="easyui-dialog" title="编辑" style="width:950px; height:550px;padding:10px 5px;" closed="true" modal="true">
-    <form id="editOrderForm" method="post"style="width:950px; height:500px;padding:10px 5px;" >
+<div id="editOrder" class="easyui-dialog" title="编辑" style="width:900px;height:500px;padding:10px 20px;"  closed="true" modal="true">
+    <form id="editOrderForm" method="post" >
         <input type="hidden" name="id" value="">
         <table>
             <tr>
@@ -233,8 +233,8 @@
 
 <!--查看-->
 
-<div id="lookOrder" class="easyui-dialog" title="查看" style="width:950px; height:550px;padding:10px 5px;" closed="true" modal="true">
-    <form id="lookOrderForm" method="post"style="width:950px; height:500px;padding:10px 5px;" >
+<div id="lookOrder" class="easyui-dialog" title="查看" style="width:900px;height:500px;padding:10px 20px;"  closed="true" modal="true">
+    <form id="lookOrderForm" method="post">
         <input type="hidden" name="id" value="" id="lookId">
         <table>
             <tr>
@@ -339,8 +339,8 @@
     var chooseCarUrl="{:U('Admin/Order/addCarOrder')}";//确定装车，保存路径
     var ajaxRouteUrl="{:U('Admin/Route/ajaxRoute')}";//终点站设置
     var lookUrl="{:U('Admin/Order/look')}";
-    var ajaxShiperUrl="{:U('Admin/Shipper/shiperList')}";//发货人列表
-    var ajaxReceiveUrl="{:U('Admin/Receive/receiveList')}";//收货人列表
+    var ajaxShiperUrl="{:U('Admin/Shipper/ajaxShipperList')}";//发货人列表
+    var ajaxReceiveUrl="{:U('Admin/Receive/ajaxReceiveList')}";//收货人列表
 </script>
 </body>
 </html>

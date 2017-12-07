@@ -153,7 +153,7 @@ function shiperList(){
 
 function  receiveList(){
     $('#receiveDlg').dialog('open').dialog('setTitle','发货人列表');
-    var  shipperid=$('#shipperid').val();
+    var  shipperid=$('#addSid').val();
     $('#receiveGrid').datagrid({
         url:ajaxReceiveUrl+'/shipperid/'+shipperid,
         columns:[[
@@ -202,14 +202,14 @@ function chooseShipper(shipper,shippertel,id){
     var shipper=shipper;//发货人
     var shippertel=shippertel;//发货人电话
     var id=id;
-    console.log(shipper+"..."+shippertel);
+    console.log(shipper+"..."+shippertel+".."+id);
     if(row==null){
         $.messager.alert('Warning',"请选择发货人", 'info');return false;
     }
     if(row){
             $('#addShipper').textbox('setValue', shipper);
             $('#addShippertel').textbox('setValue', shippertel);
-            $('#shipperid').textbox('setValue', id);
+            $('#addSid').val(id);
             $('#shiperDlg').dialog('close');
             $('#addOrderForm').form('load',row);
     }
