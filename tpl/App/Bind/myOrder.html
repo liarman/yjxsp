@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,7 +120,14 @@
       $('.date>div>img:last').css({"margin-left":"-25px"});
   }
 
-
+  $('.ui-list li,.ui-tiled li').click(function(){
+      if($(this).data('href')){
+          location.href= $(this).data('href');
+      }
+  });
+  $('.ui-header .ui-btn').click(function(){
+      location.href= "{:U('App/Bind/myInfo',array('wecha_id'=>1234))}";
+  });
 </script>
 </body>
 </html>
