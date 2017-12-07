@@ -69,9 +69,9 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doSearch()" iconCls="icon-search">搜索</a>
 </div>
 <!--添加-->
-<div id="addOrder" class="easyui-dialog" title="添加" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
-    <form id="addOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
-        <input name="shipperid" id="shipperid" class="easyui-textbox" type="hidden"  />
+<div id="addOrder" class="easyui-dialog" title="添加" style="width:950px; height:600px;padding:10px 5px;" closed="true" modal="true">
+    <form id="addOrderForm" method="post"style="width:950px; height:600px;padding:10px 5px;" >
+        <input name="shipperid" id="shipperid"  type="hidden"  />
         <table>
             <tr>
                 <td align="right">
@@ -104,7 +104,7 @@
             <tr>
                 <td align="right">数量:<input name="goodscount" class="easyui-numberbox"style="width: 300px"   data-options="delay:1000" /></td>
 
-                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位:
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单位:
                     <select  panelMaxHeight="100px" name="goodsunit" class="easyui-combobox" style="width:300px" data-options="delay:1000,multiple:false">
                         <option value="1">千克</option>
                         <option value="2">箱</option>
@@ -125,7 +125,7 @@
 
             </tr>
             <tr>
-                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付款方式:
+                <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付款方式:
                     <select  panelMaxHeight="100px" name="paytype" class="easyui-combobox" style="width:300px" data-options="delay:1000,required:true,multiple:false">
                         <option value="1">欠付</option>
                         <option value="2">货到付款</option>
@@ -134,6 +134,10 @@
 
                 </td>
                 <td align="right">托运时间: <input name="assembledate" class="easyui-datebox" style="width: 300px" data-options="delay:1000" /></td>
+            </tr>
+            <tr>
+                <td align="right">备注:
+                    <input class="easyui-textbox" name="col" data-options="multiline:true" style="width:300px;height:60px;align:center"/></td>
             </tr>
             <tr>
                 <td></td>
@@ -145,8 +149,8 @@
 </div>
 
 <!--编辑-->
-<div id="editOrder" class="easyui-dialog" title="编辑" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
-    <form id="editOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
+<div id="editOrder" class="easyui-dialog" title="编辑" style="width:950px; height:550px;padding:10px 5px;" closed="true" modal="true">
+    <form id="editOrderForm" method="post"style="width:950px; height:500px;padding:10px 5px;" >
         <input type="hidden" name="id" value="">
         <table>
             <tr>
@@ -214,6 +218,10 @@
 
             </tr>
             <tr>
+                <td align="right">备注:
+                    <input class="easyui-textbox" name="col" data-options="multiline:true" style="width:300px;height:60px;align:center"/></td>
+            </tr>
+            <tr>
                 <td></td>
                 <td ><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editOrderSubmit()" style="width:90px">保存</a>
                   <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editOrder').dialog('close')" style="width:90px">取消</a></td>
@@ -225,8 +233,8 @@
 
 <!--查看-->
 
-<div id="lookOrder" class="easyui-dialog" title="查看" style="width:950px; height:450px;padding:10px 20px;" closed="true" modal="true">
-    <form id="lookOrderForm" method="post"style="width:950px; height:450px;padding:10px 20px;" >
+<div id="lookOrder" class="easyui-dialog" title="查看" style="width:950px; height:550px;padding:10px 5px;" closed="true" modal="true">
+    <form id="lookOrderForm" method="post"style="width:950px; height:500px;padding:10px 5px;" >
         <input type="hidden" name="id" value="" id="lookId">
         <table>
             <tr>
@@ -292,6 +300,10 @@
 
                 <td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收货城市:<input  class="easyui-combobox" name="endcity" panelHeight="150px" style="width:300px" data-options=" valueField:'id', textField:'name', url:'{:U('Admin/Route/ajaxRoute')}'"></td>
 
+            </tr>
+            <tr>
+                <td align="right">备注:
+                    <input class="easyui-textbox" name="col" data-options="multiline:true" style="width:300px;height:60px;align:center"/></td>
             </tr>
             <tr>
                 <td></td>
