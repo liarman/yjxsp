@@ -24,7 +24,7 @@ class CardriveController extends AdminBaseController{
         $offset = ($page-1)*$rows;
         $cardriveid = I('get.cardriveid');
         $countsql ="select count(id) AS total from qfant_cardriveroute ";
-        $sql ="SELECT r.name,c3.arrivedate FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
+        $sql ="SELECT r.name,c3.arrivedate ,c2.number FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
 
         $param=array();
         array_push($param,$offset);
@@ -44,7 +44,7 @@ class CardriveController extends AdminBaseController{
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql ="select count(id) AS total from qfant_cardrive where 1=1 ";
-        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid  ;";
+        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid  ;";
 
         $param=array();
         if(!empty($driver)){
@@ -109,6 +109,7 @@ class CardriveController extends AdminBaseController{
     public function addCardrive(){
         if(IS_POST){
             $data['carid']=I('post.carid');
+            $data['number']=I('post.number');
             $data['startdate']=strtotime(I('post.startdate'));
             unset($data['id']);
             $result=D('Cardrive')->addData($data);
@@ -135,6 +136,7 @@ class CardriveController extends AdminBaseController{
             $data['id']=I('post.id');
             $data['driver']=I('post.driver');
             $data['carnumber']=I('post.carnumber');
+            $data['number']=I('post.number');
             $data['status']=I('post.status');
             //print_r($data);die;
             $where['id']=$data['id'];
