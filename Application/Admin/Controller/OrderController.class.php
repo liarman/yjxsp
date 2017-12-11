@@ -12,9 +12,9 @@ class OrderController extends AdminBaseController{
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
-        $countsql = "SELECT	count(o.id) AS total FROM	qfant_order o WHERE	1 = 1 ";
+        $countsql = "SELECT	 count(o.id) AS total FROM	qfant_order o WHERE	1 = 1 ";
       //  $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_cardrive c on o.cardriveid=c.id	LEFT JOIN qfant_route r on r.id=o.endcity WHERE 1=1";
-        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_cardrive cd on o.cardriveid=cd.id	LEFT JOIN qfant_route r on r.id=o.endcity LEFT JOIN qfant_car  c on c.id=cd.carid";
+        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_cardrive cd on o.cardriveid=cd.id	LEFT JOIN qfant_route r on r.id=o.endcity LEFT JOIN qfant_car  c on c.id=cd.carid where 1=1";
         $param=array();
         if(!empty($goodsname)){
             $countsql.=" and o.goodsname like '%s'";
@@ -31,7 +31,7 @@ class OrderController extends AdminBaseController{
             $sql.=" and o.shipper like '%s'";
             array_push($param,'%'.$shipper.'%');
         }
-        $sql.=" limit %d,%d";
+        $sql.=" limit %d,%d ";
         array_push($param,$offset);
         array_push($param,$rows);
         $data=D('Order')->query($countsql,$param);
@@ -47,6 +47,7 @@ class OrderController extends AdminBaseController{
     public function add(){
         if(IS_POST){
             $data=I('post.');
+            $data['createdate']=time();
             unset($data['id']);
             $result=D('Order')->addData($data);
             if($result){
@@ -70,7 +71,7 @@ class OrderController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             $where['id']=$data['id'];
-            $data['orderno']=$this->OrdernoMethod($data['id'],"J");
+           $data['orderno']=$this->OrdernoMethod($data['id'],"J");
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
