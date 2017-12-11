@@ -49,7 +49,11 @@ class OrderController extends AdminBaseController{
             $data=I('post.');
             $data['createdate']=time();
             unset($data['id']);
-            $result=D('Order')->addData($data);
+            $res=D('Order')->addData($data);
+            $id=$res;
+            $where['id']=$res;
+            $data['orderno']=$this->OrdernoMethod($id,"J");
+            $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -71,7 +75,7 @@ class OrderController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             $where['id']=$data['id'];
-           $data['orderno']=$this->OrdernoMethod($data['id'],"J");
+         //  $data['orderno']=$this->OrdernoMethod($data['id'],"J");
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
