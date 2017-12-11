@@ -119,8 +119,7 @@ function orderList(){
             {field: 'shippertel', title: '寄件人电话', width: 100},
             {field: 'receivername', title: '收件人姓名', width: 100},
             {field: 'receiveraddress', title: '收件人电话', width: 100},
-            {field: 'receivertel', title: '收件人地址', width: 100},
-            {field: 'rname', title: '目的地', width: 100},
+            {field: 'receivertel', title: '收件人地址', width: 100}
         ]],
         onLoadSuccess:function(data){
            if(data){

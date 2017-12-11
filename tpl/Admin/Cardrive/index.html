@@ -32,6 +32,7 @@
        <!-- <th field="id" width="200" >编号</th>-->
         <th field="carnumber" width="300" >车牌号</th>
         <th field="driver" width="150" >司机</th>
+        <th field="number" width="150" >车次</th>
         <th field="startdate" width="270" formatter="Common.TimeFormatter">发车时间</th>
     </tr>
     </thead>
@@ -53,6 +54,10 @@
             <tr>
                 <td>发车时间:</td>
                 <td><input name="startdate" class="easyui-datetimebox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>车次:</td>
+                <td><input name="number" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
                 <td></td>
@@ -81,6 +86,10 @@
             <tr>
                 <td>到达时间:</td>
                 <td><input name="arrivedate" class="easyui-datetimebox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>车次:</td>
+                <td><input name="number" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
                 <td></td>

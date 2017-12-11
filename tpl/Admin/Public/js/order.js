@@ -225,6 +225,7 @@ function chooseCar(orderid,cardriveid){
     var row = $('#carorderGrid').datagrid('getSelected');//发车行
     var orderid=orderid;//运单id
     var cardriveid=cardriveid;//发车id
+    alert(orderid+"..."+cardriveid);
     if(row==null){
         $.messager.alert('Warning',"请选择发车", 'info');return false;
     }
