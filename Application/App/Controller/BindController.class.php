@@ -89,11 +89,11 @@ class BindController extends WapController{
 			$data['receiveraddress']=I("post.receiveraddress");
 			$data['createdate']=time();
 			unset($data['id']);
-			D("Order")->add($data);//写入订单表
+			$res=D("Order")->add($data);//写入订单表
 			D("Receive")->add($data);//写入收货人表
-			$res= M('Order')->field('id')->where($data)->find();
-			$id=$res['id'];
-			$where['id']=$res['id'];
+		//	$res= M('Order')->field('id')->where($data)->find();
+			$id=$res;
+			$where['id']=$res;
 			$data['orderno']=$this->OrdernoMethod($id,"J");
 			$result=D('Order')->editData($where,$data);
 				if ($result) {
