@@ -26,10 +26,10 @@
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
 <script src="__ADMIN_JS__/Cardrive.js" type="text/javascript" charset="utf-8"></script>
-<table id="CardriveGrid" class="easyui-datagrid"url="{:U('Admin/Cardrive/ajaxCardriveList')}" pagination="true" toolbar="#toolbar_cardiver" singleSelect="true"  pageSize="20">
+<table id="CardriveGrid" class="easyui-datagrid"url="{:U('Admin/Cardrive/ajaxCardriveList')}" pagination="true" toolbar="#toolbar_cardiver" rownumbers="true" singleSelect="true"  pageSize="20">
     <thead>
     <tr>
-        <th field="id" width="200" >编号</th>
+       <!-- <th field="id" width="200" >编号</th>-->
         <th field="carnumber" width="300" >车牌号</th>
         <th field="driver" width="150" >司机</th>
         <th field="startdate" width="270" formatter="Common.TimeFormatter">发车时间</th>
@@ -48,7 +48,7 @@
         <table>
             <tr>
                 <td>车牌号:</td>
-                <td><input id="number" name="carid" url="{:U('Admin/Cardrive/numberList')}" valueField="id" textField="carnumber"  /></td>
+                <td><input id="number" name="carid" class="easyui-combobox" url="{:U('Admin/Cardrive/numberList')}" valueField="id" textField="carnumber"  /></td>
             </tr>
             <tr>
                 <td>发车时间:</td>
@@ -76,7 +76,7 @@
         <table>
             <tr>
                 <td>到达站点:</td>
-                <td><input id="route" name="routeid" url="{:U('Admin/Cardrive/routeList')}" valueField="id" textField="name"></td>
+                <td><input id="route" name="routeid" class="easyui-combobox"  url="{:U('Admin/Cardrive/routeList')}" valueField="id" textField="name"></td>
             </tr>
             <tr>
                 <td>到达时间:</td>

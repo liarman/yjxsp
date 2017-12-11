@@ -92,21 +92,27 @@ function doSearch(){
     });
 }
 
-function  formatUnit(val,rowData,row){
-    if(val==1){
-        val="谯城区";
-    }else if(val==2){
-        val="涡阳县";
-    }else if(val==3){
-        val="蒙城县";
-    }else if(val==4){
-        val="利辛县";
-    }else{
+function  doShipperSearch(){
+    $('#shiperGrid').datagrid('load',{
+        shipper: $('#namesearch').val(),
+        shippertel: $('#telsearch').val()
+    });
 
-    }
-    return val;
+}
+function doReceiveSearch(){
+    $('#receiveGrid').datagrid('load',{
+        receivername: $('#renamesearch').val(),
+        receivertel: $('#retelsearch').val()
+    });
 }
 
+function doCarSearch(){
+    $('#carorderGrid').datagrid('load',{
+
+       name: $('#driversearch').val(),
+       id: $('#caridsearch').val()
+    });
+}
 function ajaxCarList(){
     var row = $('#OrderGrid').datagrid('getSelected');
     if(row==null){
@@ -310,13 +316,13 @@ function print(inventoryId){
         LODOP.ADD_PRINT_TEXT(260,155,79,47,data[0].goodsweight+goodsunit);//重量
         LODOP.ADD_PRINT_TEXT(270,300,104,25,data[0].goodsinsurance);//保险金额
         LODOP.ADD_PRINT_TEXT(270,480,72,28,data[0].insurance);//保险费
-        LODOP.ADD_PRINT_TEXT(310,50,300,28,data[0].countFee);//合计金额
+        LODOP.ADD_PRINT_TEXT(310,50,300,28,data[0].countFee);//合计金额.rmb
         LODOP.ADD_PRINT_TEXT(310,460,72,28,data[0].countFee);//合计金额
-        if (data.paytype=="1"){
+        if (data[0].paytype=="1"){
             paytype="欠付";
-        }else if (data.paytype=="2") {
+        }else if (data[0].paytype=="2") {
             paytype="货到付款";
-        }else {
+        }else if(data[0].paytype=="3"){
             paytype="现付";
         }
        LODOP.ADD_PRINT_TEXT(347,50,180,25,paytype+"    "+data[0].col);//付款方式。备注表格字段没有添加
