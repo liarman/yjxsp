@@ -289,16 +289,10 @@ function print(inventoryId){
     }
     var purl =lookUrl;
     $.getJSON(purl,{id:id,r:Math.random()},function(data){
-        console.log(data);
-   // $.getJSON(editOrderUrl?id="+inventoryId+"&r="+Math.random(), function(json){
         var LODOP=getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));
-        var payType="",goodUnit="";
-     //   var backimg=root+"images/print_backg.jpg";
        LODOP.PRINT_INIT("");
-        //LODOP.ADD_PRINT_SETUP_BKIMG("<img src='"+backimg+"' />");
-        //LODOP.SET_SHOW_MODE("BKIMG_IN_PREVIEW",true);
         LODOP.SET_PRINT_STYLE("FontSize",12);
-        LODOP.ADD_PRINT_TEXT(110,40,200,27,data[0].time);//打印时间
+        LODOP.ADD_PRINT_TEXT(110,40,200,27,data.printtime);//打印时间
         LODOP.ADD_PRINT_TEXT(158,50,98,27,data[0].shipper);//托运人姓名
         LODOP.ADD_PRINT_TEXT(186,413,110,24,"");//
         LODOP.ADD_PRINT_TEXT(150,435,115,25,data[0].shippertel);//电话
@@ -317,8 +311,8 @@ function print(inventoryId){
         LODOP.ADD_PRINT_TEXT(260,155,79,47,data[0].goodsweight+goodsunit);//重量
         LODOP.ADD_PRINT_TEXT(270,300,104,25,data[0].goodsinsurance);//保险金额
         LODOP.ADD_PRINT_TEXT(270,480,72,28,data[0].insurance);//保险费
-     //   LODOP.ADD_PRINT_TEXT(310,50,300,28,data[0].countFee);//合计金额.rmb
-        LODOP.ADD_PRINT_TEXT(310,460,72,28,data[0].countFee);//合计金额
+      //  LODOP.ADD_PRINT_TEXT(310,50,300,28,data[0].countfee);//合计金额.rmb
+        LODOP.ADD_PRINT_TEXT(310,460,72,28,data[0].countfee);//合计金额
         if (data[0].paytype=="1"){
             paytype="欠付";
         }else if (data[0].paytype=="2") {
@@ -326,6 +320,7 @@ function print(inventoryId){
         }else if(data[0].paytype=="3"){
             paytype="现付";
         }
+
        LODOP.ADD_PRINT_TEXT(347,50,180,25,paytype+"    "+data[0].col);//付款方式。备注表格字段没有添加
      //   LODOP.ADD_PRINT_TEXT(320,420,77,35,json.printuser);//经办人经办人没有添加
         LODOP.PREVIEW();
