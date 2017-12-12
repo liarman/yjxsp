@@ -29,7 +29,7 @@ class CardriveController extends AdminBaseController{
         $param=array();
         array_push($param,$offset);
         array_push($param,$rows);
-        $sql.=" limit %d,%d";
+        $sql.=" order by c2.startdate desc limit %d,%d";
         $data=D('Cardriveroute')->query($countsql,$param);
         $result['total']=$data[0]['total'];
         $data=D('Cardriveroute')->query($sql,$param);
@@ -44,7 +44,7 @@ class CardriveController extends AdminBaseController{
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql ="select count(id) AS total from qfant_cardrive where 1=1 ";
-        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid  ;";
+        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid";
 
         $param=array();
         if(!empty($driver)){
@@ -59,7 +59,7 @@ class CardriveController extends AdminBaseController{
         }
         array_push($param,$offset);
         array_push($param,$rows);
-        $sql.=" order by d.id desc limit %d,%d";
+        $sql.="  order by d.startdate desc limit %d,%d";
         $data=D('Cardrive')->query($countsql,$param);
         $result['total']=$data[0]['total'];
         $data=D('Cardrive')->query($sql,$param);

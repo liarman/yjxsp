@@ -31,7 +31,7 @@ class OrderController extends AdminBaseController{
             $sql.=" and o.shipper like '%s'";
             array_push($param,'%'.$shipper.'%');
         }
-        $sql.=" limit %d,%d ";
+        $sql.=" order by o.createdate desc limit %d,%d ";
         array_push($param,$offset);
         array_push($param,$rows);
         $data=D('Order')->query($countsql,$param);
@@ -111,7 +111,15 @@ class OrderController extends AdminBaseController{
         $sql="select * from qfant_order where id='$id'";
         $data=D('Order')->query($sql,"");
         $time = time();
-        $data['printtime']=date('Y-m-d H:i' ,$time ) ;
+        if($data[0]['assembledate']==0){
+            $data['printtime']=date('Y-m-d H:i' ,$time ) ;
+            $data[0]['assembledate']=$data['printtime'];
+        }
+        else{
+            $data[0]['assembledate']=date('Y-m-d H:i' , $data[0]['assembledate'] ) ;
+        }
+
+
 
         $this->ajaxReturn($data,'JSON');
     }
