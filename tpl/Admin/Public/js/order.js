@@ -225,7 +225,7 @@ function chooseCar(orderid,cardriveid){
     var row = $('#carorderGrid').datagrid('getSelected');//发车行
     var orderid=orderid;//运单id
     var cardriveid=cardriveid;//发车id
-    alert(orderid+"..."+cardriveid);
+ //   alert(orderid+"..."+cardriveid);
     if(row==null){
         $.messager.alert('Warning',"请选择发车", 'info');return false;
     }
@@ -289,12 +289,13 @@ function print(inventoryId){
     }
     var purl =lookUrl;
     $.getJSON(purl,{id:id,r:Math.random()},function(data){
+
         var LODOP=getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));
        LODOP.PRINT_INIT("");
         LODOP.SET_PRINT_STYLE("FontSize",12);
-        LODOP.ADD_PRINT_TEXT(110,40,200,27,data.printtime);//打印时间
+        LODOP.ADD_PRINT_TEXT(110,40,200,27,data[0].assembledate);//打印时间
         LODOP.ADD_PRINT_TEXT(158,50,98,27,data[0].shipper);//托运人姓名
-        LODOP.ADD_PRINT_TEXT(186,413,110,24,"");//
+       // LODOP.ADD_PRINT_TEXT(186,413,110,24,data.printtime);//
         LODOP.ADD_PRINT_TEXT(150,435,115,25,data[0].shippertel);//电话
         LODOP.ADD_PRINT_TEXT(193,50,105,22,data[0].receivername);//收获人名称
         LODOP.ADD_PRINT_TEXT(190,235,170,28,data[0].receiveraddress);//收货地址
