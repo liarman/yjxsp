@@ -88,6 +88,7 @@ class BindController extends WapController{
 			$data['receivertel']=I("post.receivertel");
 			$data['receiveraddress']=I("post.receiveraddress");
 			$data['createdate']=time();
+			$data['assembledate']="";
 			unset($data['id']);
 			$res=D("Order")->add($data);//写入订单表
 			D("Receive")->add($data);//写入收货人表
