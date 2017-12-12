@@ -53,6 +53,7 @@ class OrderController extends AdminBaseController{
             $id=$res;
             $where['id']=$res;
             $data['orderno']=$this->OrdernoMethod($id,"J");
+            $data['assembledate']="";
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
@@ -76,6 +77,7 @@ class OrderController extends AdminBaseController{
             $data=I('post.');
             $where['id']=$data['id'];
          //  $data['orderno']=$this->OrdernoMethod($data['id'],"J");
+            $data['assembledate']="";
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
@@ -108,7 +110,8 @@ class OrderController extends AdminBaseController{
         $id=$data['id'];
         $sql="select * from qfant_order where id='$id'";
         $data=D('Order')->query($sql,"");
-        $data['time']=time();
+        $time = time();
+        $data['printtime']=date('Y-m-d H:i' ,$time ) ;
 
         $this->ajaxReturn($data,'JSON');
     }
