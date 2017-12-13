@@ -20,7 +20,7 @@
                 <tr><td class="title">用户名：</td><td><input type="text" class="form-control txt" name="username"/></td></tr>
                 <tr><td class="title">密   码：</td><td><input type="password" class="form-control txt" name="password"/></td></tr>
                 <tr><td class="title">验证码：</td><td><input type="text" class="form-control txt txt2" name="verify"/><span class="yzm"><img class="verify" src="{:U('Home/Reg/verify')}" alt="验证码" onClick="this.src=this.src+'?'+Math.random()" /></span></td></tr>
-                <tr class="errortd"></tr>
+                <tr class="errortd"><td>&nbsp;</td><td><i class="ico-error"></i><span class="errorword">用户名或密码错误，请重新输入！</span></td></tr>
                 <tr><td>&nbsp;</td><td><input type="button" class="loginbtn" value="登录"  id="login"/><input type="button" class="resetbtn" value="重置" onclick="reset()" /></td></tr>
                <!-- <tr><td>&nbsp;</td><td class="forgetpsw"><a href="login_forgetA.html">忘记密码？</a></td></tr>-->
             </table>
@@ -30,14 +30,24 @@
 </div>
 <div class="footer">启凡科技 CopyRight 2017 版权所有 </div>
 <script>
+    $(".errortd").hide();
     $("#login").click(function () {
         if($("input[name='username']").val()==""){
-            alert("账号不能为空");return false;
+            $(".errorword").empty().html("账号输入不正确");
+            $(".errortd").show();
+            return false;
         }
         if($("input[name='password']").val()==""){
-            alert("账号不能为空");return false;
+            $(".errorword").empty().html("密码输入不正确");
+            $(".errortd").show();
+            return false;
         }
         var code=$("input[name='verify']").val();
+        if(code==""){
+            $(".errorword").empty().html("验证码输入不正确");
+            $(".errortd").show();
+            return false;
+        }
         var postData={
             code: code
         }
@@ -45,11 +55,8 @@
             if ($res) {
                 $("#loginForm").submit();
             }else{
-                alert("验证码错误，请重新输入！");
-               /* var content = "";
-                content = content
-                        + '<td>&nbsp;</td><td><i class="ico-error"></i><span class="errorword">验证码错误，请重新输入！</span></td>'
-                $(".errortd").append(content);*/
+                $(".errorword").empty().html("验证码输入不正确");
+                $(".errortd").show();
                 return false;
             }
         });
