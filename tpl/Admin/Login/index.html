@@ -45,10 +45,11 @@
             if ($res) {
                 $("#loginForm").submit();
             }else{
-                var content = "";
+                alert("验证码错误，请重新输入！");
+               /* var content = "";
                 content = content
                         + '<td>&nbsp;</td><td><i class="ico-error"></i><span class="errorword">验证码错误，请重新输入！</span></td>'
-                $(".errortd").append(content);
+                $(".errortd").append(content);*/
                 return false;
             }
         });

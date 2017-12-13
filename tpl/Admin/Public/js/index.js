@@ -92,19 +92,25 @@ $(function() {
             }
         });
     });
+
+    $("#set").on('click', function() {
+        openSet();
+    });
+    $("#log").on('click', function() {
+        logout();
+    });
 });
 /**
  * Created by Liarman on 2017/11/22.
  */
 //清除缓存
 function clearCache(){
-    var url="{:U('Admin/System/clearCache')}";
     $.ajax({
         async:false,
         type:"get",
-        url:url,
+        url:clearcachUrl,
         success: function(result){
-            if(result.status) $.messager.confirm('提示消息','缓存更新成功!',function(r){location.href="{:U('Admin/Login/index')}";});
+            if(result.status) $.messager.confirm('提示消息','缓存更新成功!',function(r){location.href=indexUrl;});
 
         }
     });
@@ -116,13 +122,12 @@ function openSet(){
 
 //更改密码
 function setinfo(){
-    var url="{:U('Admin/User/setPassword')}";
     $.ajax({
         async:false,
         type:"post",
-        url:url,
+        url:setPwdUrl,
         success: function(result){
-            if(result.status) $.messager.confirm('提示消息','密码更新成功!',function(r){location.href="{:U('Admin/Login/index')}";});
+            if(result.status) $.messager.confirm('提示消息','密码更新成功!',function(r){location.href=indexUrl;});
         }
     });
 }
@@ -131,25 +136,13 @@ function clearform(){
     $('#editInfo').dialog('close');
 }
 
-$("#clearCache").on('click', function() {
-    clearCache();
-});
-$("#set").on('click', function() {
-    openSet();
-});
-$("#log").on('click', function() {
-    logout();
-});
 function logout(){
-    var url= LogoutUrl;
+    var url=logoutUrl;
     $.ajax({
         async:false,
         url:url,
         success: function(r){
-            location.href= LoginUrl;
+            location.href=indexUrl;
         }
     });
 }
-$("#submit").on('click', function() {
-    setinfo();
-});
