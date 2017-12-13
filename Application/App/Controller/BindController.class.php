@@ -188,4 +188,79 @@ class BindController extends WapController{
 		return $code;
 
 	}
+	//删除订单
+	public function deleteOrder(){
+		$id=I("post.id");
+		if($id){
+			$data=D('Order')->field('status')->where(array('id'=>$id))->find();
+			if($data['status']=='1'){
+				$message['status']=2;
+				$message['message']='该订单已装车，不能删除！';
+			}else{
+				$map=array(
+					'id'=>$id
+				);
+				$result=D('Order')->deleteData($map);
+				if($result){
+					$message['status']=1;
+					$message['message']='删除成功！';
+				}else{
+					$message['status']=0;
+					$message['message']='删除失败！';
+				}
+			}
+		}else{
+			$message['status']=0;
+			$message['message']='删除失败！';
+		}
+		$this->ajaxReturn($message,'JSON');
+	}
+
+	public  function EditMyOrder(){
+		$orderno=I("get.id");
+		if($orderno) {
+			$order = D('Order')->where(array('id' => $orderno))->find();
+			/*if($order['status']=='1'){
+				$message['status']=1;
+				$message['message']='该订单已装车，不可修改';
+				$this->ajaxReturn($message,'JSON');
+			}else if($order['status']=='2'){
+				$message['status']=2;
+				$message['message']='该订单已到站，不可修改';
+				$this->ajaxReturn($message,'JSON');
+			}else{*/
+				$this->assign("order",$order);
+				$this->display('EditMyOrder');
+			/*}*/
+
+		}
+	}
+	public  function orderSubmit(){
+		$id=I("post.id");
+		$data=I("post.");
+		if($id){
+			$order = D('Order')->where(array('id' => $id))->find();
+			if($order['status']=='1'){
+				$message['status']=1;
+				$message['message']='该订单已装车，不可修改';
+			}else if($order['status']=='2'){
+				$message['status']=2;
+				$message['message']='该订单已到站，不可修改';
+			}else if($order['status']=='0'){
+				$where['id']=$id;
+				$result=D('Order')->editData($where,$data);
+				if($result){
+					$message['status']=3;
+					$message['message']='保存成功';
+				}else{
+					$message['status']=4;
+					$message['message']='保存失败';
+				}
+			}
+		}else{
+			$message['status']=4;
+			$message['message']='保存失败';
+		}
+		$this->ajaxReturn($message,'JSON');
+	}
 }
