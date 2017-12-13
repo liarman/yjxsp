@@ -54,6 +54,7 @@ class RegController extends HomeBaseController
     /* 验证码校验 */
     public function check_verify($code, $id = '')
     {
+        $code=I('post.code');
         $verify = new \Think\Verify();
         $res = $verify->check($code, $id);
         $this->ajaxReturn($res, 'json');
