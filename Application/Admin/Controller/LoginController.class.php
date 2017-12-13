@@ -13,15 +13,12 @@ class LoginController extends BaseController{
 		if(IS_POST){
 			// 做一个简单的登录 组合where数组条件
 			$map=I('post.');
-			$geetest['geetest_challenge']=$map['geetest_challenge'];
+			/*$geetest['geetest_challenge']=$map['geetest_challenge'];
 			$geetest['geetest_validate']=$map['geetest_validate'];
-			$geetest['geetest_seccode']=$map['geetest_seccode'];
+			$geetest['geetest_seccode']=$map['geetest_seccode'];*/
 			$logindata['username']=$map['username'];
 			$logindata['password']=$map['password'];
-			
-			if(geetest_chcek_verify($geetest)!=1){
-				$this->error('验证错误',U('Admin/Login/index'));
-			}
+
 			$logindata['password']=md5($logindata['password']);
 			$data=M('Users')->where($logindata)->find();
 			if (empty($data)) {
@@ -92,4 +89,5 @@ class LoginController extends BaseController{
 		$data=I('post.');
 		echo intval(geetest_chcek_verify($data));
 	}
+
 }
