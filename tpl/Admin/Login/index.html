@@ -1,39 +1,34 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>后台登录</title>
-    <link rel="stylesheet" href="__PUBLIC__/statics/login/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户登录（普通）</title>
+    <link rel="stylesheet" href="__PUBLIC__/statics/css/base.css" />
+    <link rel="stylesheet" href="__PUBLIC__/statics/css/login.css" />
     <script type="text/javascript" src="__PUBLIC__/statics/js/jquery-1.10.2.min.js"></script>
-    <script language="javascript">
-        if (window != top){
-            top.location.href = "{:U('Admin/Login/index')}";
-        }
-    </script>
 </head>
 <body>
-<section class="container">
-    <div class="login">
-        <h1>后台登录</h1>
-        <form method="post" action="{:U('Admin/Login/index')}" id="loginForm">
-            <p><input type="text" name="username" value="" placeholder="账号"></p>
-            <p><input type="password" name="password" value="" placeholder="密码"></p>
-            <p>
-            <div id="captcha"></div>
-            </p>
-            <p class="submit"><input type="submit" name="commit" value="登录" id="login"></p>
-        </form>
+<div class="superloginA"></div>
+<div class="loginBox">
+   <!-- <div class="logo"><img src="images/logo_login.png"/></div>-->
+    <div class="loginMain">
+        <div class="tabwrap">
+            <form method="post" action="{:U('Admin/Login/index')}" id="loginForm">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr><td class="title">用户名：</td><td><input type="text" class="form-control txt" name="username"/></td></tr>
+                <tr><td class="title">密   码：</td><td><input type="password" class="form-control txt" name="password"/></td></tr>
+                <tr><td class="title">验证码：</td><td><input type="text" class="form-control txt txt2" name="verify"/><span class="yzm"><img class="verify" src="{:U('Home/Reg/verify')}" alt="验证码" onClick="this.src=this.src+'?'+Math.random()" /></span></td></tr>
+                <tr class="errortd"></tr>
+                <tr><td>&nbsp;</td><td><input type="button" class="loginbtn" value="登录"  id="login"/><input type="button" class="resetbtn" value="重置" onclick="reset()" /></td></tr>
+               <!-- <tr><td>&nbsp;</td><td class="forgetpsw"><a href="login_forgetA.html">忘记密码？</a></td></tr>-->
+            </table>
+                </form>
+        </div>
     </div>
-
-
-</section>
-
-<bootstrapjs />
-<script src="http://static.geetest.com/static/tools/gt.js"></script>
+</div>
+<div class="footer">启凡科技 CopyRight 2017 版权所有 </div>
 <script>
     $("#login").click(function () {
         if($("input[name='username']").val()==""){
@@ -42,42 +37,24 @@
         if($("input[name='password']").val()==""){
             alert("账号不能为空");return false;
         }
-    });
-    var handler = function (captchaObj) {
-        // 将验证码加到id为captcha的元素里
-        captchaObj.appendTo("#captcha");
-    };
-    // 获取验证码
-    $.get("{:U('Admin/Login/geetest_show_verify')}", function(data) {
-        // 使用initGeetest接口
-        // 参数1：配置参数，与创建Geetest实例时接受的参数一致
-        // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它做appendTo之类的事件
-        initGeetest({
-            gt: data.gt,
-            challenge: data.challenge,
-            product: "float", // 产品形式
-            offline: !data.success
-        }, handler);
-    },'json');
-    // 检测验证码
-    function check_verify(){
-        // 组合验证需要用的数据
-        var test=$('.geetest_challenge').val();
+        var code=$("input[name='verify']").val();
         var postData={
-            geetest_challenge: $('.geetest_challenge').val(),
-            geetest_validate: $('.geetest_validate').val(),
-            geetest_seccode: $('.geetest_seccode').val()
+            code: code
         }
-        // 验证是否通过
-        $.post("{:U('Admin/Login/geetest_ajax_check')}", postData, function(data) {
-            if (data==1) {
-              $("#loginForm").submit();
+        $.post("{:U('Home/Reg/check_verify')}", postData, function($res) {
+            if ($res) {
+                $("#loginForm").submit();
             }else{
-                alert('验证失败');
+                var content = "";
+                content = content
+                        + '<td>&nbsp;</td><td><i class="ico-error"></i><span class="errorword">验证码错误，请重新输入！</span></td>'
+                $(".errortd").append(content);
                 return false;
             }
         });
-    }
+    });
+
 </script>
 </body>
 </html>
+
