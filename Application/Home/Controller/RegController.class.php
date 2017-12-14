@@ -43,9 +43,9 @@ class RegController extends HomeBaseController
         $config = [
             'fontSize' => 16, // 验证码字体大小
             'length' => 4, // 验证码位数
-            'imageH' => 35,
+            'imageH' => 37,
             'imageW' => 106,
-            'useNoise'    =>    true
+            'useNoise'    =>    false
         ];
         $Verify = new Verify($config);
         $Verify->entry();
