@@ -33,18 +33,18 @@
     $(".errortd").hide();
     $("#login").click(function () {
         if($("input[name='username']").val()==""){
-            $(".errorword").empty().html("账号输入不正确");
+            $(".errorword").empty().html("账号输入不能为空");
             $(".errortd").show();
             return false;
         }
         if($("input[name='password']").val()==""){
-            $(".errorword").empty().html("密码输入不正确");
+            $(".errorword").empty().html("密码输入不能为空");
             $(".errortd").show();
             return false;
         }
         var code=$("input[name='verify']").val();
         if(code==""){
-            $(".errorword").empty().html("验证码输入不正确");
+            $(".errorword").empty().html("验证码输入不能为空");
             $(".errortd").show();
             return false;
         }
@@ -53,9 +53,25 @@
         }
         $.post("{:U('Home/Reg/check_verify')}", postData, function($res) {
             if ($res) {
-                $("#loginForm").submit();
+               /* $("#loginForm").submit();*/
+                url="{:U('Admin/Login/index')}";
+                var username=$("input[name='username']").val();
+                var password=$("input[name='password']").val();
+                var Data={
+                    username:username,
+                    password:password
+                }
+                $.post("{:U('Admin/Login/index')}", Data, function(message) {
+                    if(message.status==0){
+                        $(".errorword").empty().html("账号或者密码输入错误");
+                        $(".errortd").show();
+                        return false;
+                    }else{
+                        location.href="{:U('Admin/Index/index')}";
+                    }
+                });
             }else{
-                $(".errorword").empty().html("验证码输入不正确");
+                $(".errorword").empty().html("验证码输入错误");
                 $(".errortd").show();
                 return false;
             }
