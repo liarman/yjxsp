@@ -321,8 +321,13 @@ function print(inventoryId){
         }else if(data[0].paytype=="3"){
             paytype="现付";
         }
+        if(data[0].col==null){
+            col="";
+        }else{
+            col=data[0].col;
+        }
 
-       LODOP.ADD_PRINT_TEXT(347,50,180,25,paytype+"    "+data[0].col);//付款方式。备注表格字段没有添加
+       LODOP.ADD_PRINT_TEXT(347,50,180,25,paytype+"    "+col);//付款方式。备注表格字段没有添加
      //   LODOP.ADD_PRINT_TEXT(320,420,77,35,json.printuser);//经办人经办人没有添加
         LODOP.PREVIEW();
     });
