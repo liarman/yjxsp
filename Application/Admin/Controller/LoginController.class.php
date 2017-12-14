@@ -22,7 +22,10 @@ class LoginController extends BaseController{
 			$logindata['password']=md5($logindata['password']);
 			$data=M('Users')->where($logindata)->find();
 			if (empty($data)) {
-				$this->error('账号或密码错误');
+				//$this->error('账号或密码错误');
+				$message['status']=0;
+				$message['message']='账号或密码错误';
+				$this->ajaxReturn($message,'JSON');
 			}else{
 				M('Users')->where(array('id'=>$data['id']))->save(array('last_login_time'=>time(),'last_login_ip'=>get_client_ip()));
 				$_SESSION['user']=array(
@@ -34,7 +37,11 @@ class LoginController extends BaseController{
 				$loginrecord['loginTime']=date('Y-m-d H:i:s');
 				$loginrecord['loginip']=get_client_ip();
 				M('LoginAdmin')->add($loginrecord);
-				$this->success('登录成功、前往管理后台',U('Admin/Index/index'));
+				$message['status']=1;
+				$message['message']='登录成功';
+				$this->ajaxReturn($message,'JSON');
+			//	$this->success('登录成功、前往管理后台',U('Admin/Index/index'));
+			//	$this->redirect('Admin/Index/index');
 			}
 		}else{
 			$data=check_login() ? $_SESSION['user']['username'].'已登录' : '未登录';
