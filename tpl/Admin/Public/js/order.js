@@ -108,25 +108,36 @@ function doReceiveSearch(){
 
 function doCarSearch(){
     $('#carorderGrid').datagrid('load',{
-
-       name: $('#driversearch').val(),
-       id: $('#caridsearch').val()
+        driver: $('#driversearch').val(),
+        number: $('#numbersearch').val()
     });
 }
 function ajaxCarList(){
-    var row = $('#OrderGrid').datagrid('getSelected');
+
+    $('#carButton').click(function(){
+        var checkedItems = $('#OrderGrid').datagrid('getChecked');
+        console.log("选中数据："+checkedItems);
+        var ids = [];
+        $.each(checkedItems, function(index, item){
+            ids.push(item.id);
+        });
+        ids=ids.join("@@");
+
+
+   /* var row = $('#OrderGrid').datagrid('getSelected');
     if(row==null){
         $.messager.alert('Warning',"请选择运单", 'info');return false;
-    }
+    }*/
     $('#carorderDlg').dialog('open').dialog('setTitle','发车列表');
     $('#carorderGrid').datagrid({
-        url:ajaxCarUrl+'/orderid/'+row.id,
+        url:ajaxCarUrl+'/orderid/'+ids,
         columns:[[
-            {field:'id',title:'运单id',width:150,hidden:'true'},
-            {field:'driver',title:'司机',width:150},
-            {field:'carnumber',title:'车牌号',width:150},
-            {field:'startdate',title:'发车时间',width:200,formatter:Common.TimeFormatter},
-            {field:'cardriveid',title:'发车id',width:100,hidden:'true'},
+            {field:'orderid',title:'运单id',width:10,hidden:'true'},
+            {field:'driver',title:'司机',width:80},
+            {field:'carnumber',title:'车牌号',width:110},
+            {field:'number',title:'车次',width:150},
+            {field:'startdate',title:'发车时间',width:150,formatter:Common.TimeFormatter},
+            {field:'cardriveid',title:'发车id',width:10,hidden:'true'},
             {field:'opt',title:'操作',width:50,align:'center',
                 formatter:function(value,row,index){
                     console.log("roworderid:"+row.orderid+"rowcardriveid"+row.cardriveid);
@@ -135,6 +146,7 @@ function ajaxCarList(){
                 }
             }
         ]]
+      });
     });
 }
 
@@ -333,3 +345,39 @@ function print(inventoryId){
     });
 }
 
+
+$(document).ready(init);
+function init() {
+    $('#OrderGrid').datagrid({
+       /* url: ajaxorderurl,
+        singleSelect: false,
+        selectOnCheck: true,
+        checkOnSelect: true,
+        columns: [[
+            {field: 'ck', checkbox:"true", width: 100},
+            {field: 'orderno', title: '运单编号', width: 160},
+            {field: 'shipper', title: '发货人姓名', width: 80},
+            {field: 'shippertel', title: '发货人电话', width: 110},
+            {field: 'goodsname', title: '货物名称', width: 80},
+            {field: 'goodscount', title: '件数', width: 110},
+            {field: 'receivername', title: '收件人姓名', width: 100},
+            {field: 'receiveraddress', title: '收件人电话', width: 100},
+            {field: 'receivertel', title: '收件人地址', width: 100}
+        ]],*/
+        onLoadSuccess:function(data){
+            if(data){
+                $.each(data.rows, function(index, item){
+                    if(item.checked){
+                        $('#OrderGrid').datagrid('checkRow', index);
+                    }
+                });
+            }
+        }/*,
+        toolbar: [{
+            iconCls: 'fa fa-truck',
+            id:'carButton',
+            text:'装车',
+            handler: function(){ajaxCarList();}
+        }]*/
+    });
+}
