@@ -173,16 +173,27 @@ class CardriveController extends AdminBaseController{
 
     public function ajaxCarDriv(){
         $orderid=I('get.orderid');
+        $driver=I('post.driver');
+        $number=I('post.number');
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql="select  count(r.id )as total  FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ";
-        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate as startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ;";
-
+        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate as startdate ,d.number as number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ";
         $param=array();
+        if(!empty($driver)){
+            $countsql.=" and r.driver like '%s'";
+            $sql.=" and r.driver like '%s'";
+            array_push($param,'%'.$driver.'%');
+        }
+        if(!empty($number)){
+            $countsql.=" and d.number like '%s'";
+            $sql.=" and d.number like '%s'";
+            array_push($param,'%'.$number.'%');
+        }
         array_push($param,$offset);
         array_push($param,$rows);
-        $sql.=" limit %d,%d";
+        $sql.=" order by d.startdate desc limit %d,%d";
         $data=D('Cardrive')->query($countsql,$param);
         $result['total']=$data[0]['total'];
         $data=D('Cardrive')->query($sql,$param);
