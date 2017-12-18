@@ -170,7 +170,7 @@ function shiperList(){
     }
 
 function  receiveList(){
-    $('#receiveDlg').dialog('open').dialog('setTitle','发货人列表');
+    $('#receiveDlg').dialog('open').dialog('setTitle','收货人列表');
     var  shipperid=$('#addSid').val();
     $('#receiveGrid').datagrid({
         url:ajaxReceiveUrl+'/shipperid/'+shipperid,

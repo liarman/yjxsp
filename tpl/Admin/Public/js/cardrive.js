@@ -49,16 +49,30 @@ function editCardriveSubmit(){
 //编辑会员对话窗
 function editCardrive(){
     var row = $('#CardriveGrid').datagrid('getSelected');
+    var  time=  row.startdate;
+    time=timeStatus(time);
     if(row==null){
         $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
     }
     if (row){
         $('#editCardrive').dialog('open').dialog('setTitle','编辑');
         $('#editCardriveForm').form('load',row);
-        url = editCardriveUrl +'/id/'+row.id;
+        $('#editStartdate').datetimebox('setValue', time);
+        url = editCarUrl +'/id/'+row.id;
     }
 }
-
+function timeStatus(value){
+    if (value == 0) {
+        return "";
+    }
+    var newDate = new Date();
+    newDate.setTime(value * 1000);
+    if (newDate.getFullYear() < 1900) {
+        return "";
+    }
+    var val = newDate.format("yyyy-MM-dd hh:mm:ss");
+    return val;
+}
 function destroyCardrive(){
     var row = $('#CardriveGrid').datagrid('getSelected');
     if(row==null){
@@ -67,7 +81,7 @@ function destroyCardrive(){
     if (row){
         $.messager.confirm('删除提示','真的要删除?',function(r){
             if (r){
-                var durl= deleteCardriveUrl;
+                var durl= deleteCarUrl;
                 $.getJSON(durl,{id:row.id},function(result){
                     if (result.status){
                         $('#CardriveGrid').datagrid('reload');    // reload the user data
