@@ -24,7 +24,7 @@ class CardriveController extends AdminBaseController{
         $offset = ($page-1)*$rows;
         $cardriveid = I('get.cardriveid');
         $countsql ="select count(id) AS total from qfant_cardriveroute ";
-        $sql ="SELECT r.name,c3.arrivedate ,c2.number FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
+        $sql ="SELECT c2.id,r.name,c3.arrivedate ,c2.number FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
 
         $param=array();
         array_push($param,$offset);
@@ -44,7 +44,7 @@ class CardriveController extends AdminBaseController{
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql ="select count(id) AS total from qfant_cardrive where 1=1 ";
-        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid";
+        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number,d.id FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid";
 
         $param=array();
         if(!empty($driver)){
@@ -134,13 +134,12 @@ class CardriveController extends AdminBaseController{
     public function editCardrive(){
         if(IS_POST){
             $data['id']=I('post.id');
-            $data['driver']=I('post.driver');
-            $data['carnumber']=I('post.carnumber');
+            $data['carid']=I('post.carid');
+            $data['startdate']=strtotime(I('post.startdate'));
             $data['number']=I('post.number');
-            $data['status']=I('post.status');
             //print_r($data);die;
             $where['id']=$data['id'];
-            $result=D('Car')->editData($where,$data);
+            $result=D('Cardrive')->editData($where,$data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -160,7 +159,7 @@ class CardriveController extends AdminBaseController{
         $map=array(
             'id'=>$id
         );
-        $result=D('Car')->deleteData($map);
+        $result=D('Cardrive')->deleteData($map);
         if($result){
             $message['status']=1;
             $message['message']='删除成功';
