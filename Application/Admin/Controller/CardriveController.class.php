@@ -24,7 +24,7 @@ class CardriveController extends AdminBaseController{
         $offset = ($page-1)*$rows;
         $cardriveid = I('get.cardriveid');
         $countsql ="select count(id) AS total from qfant_cardriveroute ";
-        $sql ="SELECT r.name,c3.arrivedate ,c2.number FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
+        $sql ="SELECT c2.id,r.name,c3.arrivedate ,c2.number FROM qfant_route AS r,qfant_car AS c1,qfant_cardrive AS c2,qfant_cardriveroute AS c3 WHERE c3.cardriveid = '$cardriveid' AND c3.cardriveid = c2.id AND c3.routeid = r.id AND c2.carid = c1.id ;";
 
         $param=array();
         array_push($param,$offset);
@@ -44,7 +44,7 @@ class CardriveController extends AdminBaseController{
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql ="select count(id) AS total from qfant_cardrive where 1=1 ";
-        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid";
+        $sql ="select r.id,r.driver,r.carnumber,d.id AS cardriveid,d.carid,d.startdate ,d.number,d.id FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid";
 
         $param=array();
         if(!empty($driver)){
@@ -134,13 +134,12 @@ class CardriveController extends AdminBaseController{
     public function editCardrive(){
         if(IS_POST){
             $data['id']=I('post.id');
-            $data['driver']=I('post.driver');
-            $data['carnumber']=I('post.carnumber');
+            $data['carid']=I('post.carid');
+            $data['startdate']=strtotime(I('post.startdate'));
             $data['number']=I('post.number');
-            $data['status']=I('post.status');
             //print_r($data);die;
             $where['id']=$data['id'];
-            $result=D('Car')->editData($where,$data);
+            $result=D('Cardrive')->editData($where,$data);
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -160,7 +159,7 @@ class CardriveController extends AdminBaseController{
         $map=array(
             'id'=>$id
         );
-        $result=D('Car')->deleteData($map);
+        $result=D('Cardrive')->deleteData($map);
         if($result){
             $message['status']=1;
             $message['message']='删除成功';
@@ -173,16 +172,27 @@ class CardriveController extends AdminBaseController{
 
     public function ajaxCarDriv(){
         $orderid=I('get.orderid');
+        $driver=I('post.driver');
+        $number=I('post.number');
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
         $countsql="select  count(r.id )as total  FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ";
-        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate as startdate FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ;";
-
+        $sql ="select r.id as carid,r.driver as driver ,r.carnumber as carnumber,d.id AS cardriveid,d.carid,d.startdate as startdate ,d.number as number FROM qfant_car AS r ,qfant_cardrive AS d WHERE r.id = d.carid ";
         $param=array();
+        if(!empty($driver)){
+            $countsql.=" and r.driver like '%s'";
+            $sql.=" and r.driver like '%s'";
+            array_push($param,'%'.$driver.'%');
+        }
+        if(!empty($number)){
+            $countsql.=" and d.number like '%s'";
+            $sql.=" and d.number like '%s'";
+            array_push($param,'%'.$number.'%');
+        }
         array_push($param,$offset);
         array_push($param,$rows);
-        $sql.=" limit %d,%d";
+        $sql.=" order by d.startdate desc limit %d,%d";
         $data=D('Cardrive')->query($countsql,$param);
         $result['total']=$data[0]['total'];
         $data=D('Cardrive')->query($sql,$param);

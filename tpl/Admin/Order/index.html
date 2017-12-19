@@ -30,10 +30,10 @@
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
 <script src="__ADMIN_JS__/order.js" type="text/javascript" charset="utf-8"></script>
-<table id="OrderGrid" class="easyui-datagrid" url="{:U('Admin/Order/ajaxOrderList')}" pagination="true"  toolbar="#toolbar_order" singleSelect="true" rownumbers="true">
-    <thead>
+<table id="OrderGrid" class="easyui-datagrid" url="{:U('Admin/Order/ajaxOrderList')}" pagination="true"  toolbar="#toolbar_order" singleSelect="false" selectOnCheck="true" checkOnSelect="true" rownumbers="true">
+   <thead>
     <tr>
-
+        <th data-options="field:'ck',checkbox:true"></th>
         <th field="orderno" width="160" >运单编号</th>
         <th field="shipper" width="80" >发货人</th>
         <th field="shippertel" width="110" >发货人电话</th>
@@ -56,7 +56,7 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editOrder()">编辑</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-file-pdf-o" plain="true" onclick="lookOrder()">查看</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyOrder()">删除</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">装车</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" id="carButton" onclick="ajaxCarList()">装车</a>
 
 
    <!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">打印</a>-->
@@ -320,13 +320,13 @@
 <div id="carorderDlg" class="easyui-dialog" title="发车列表" style="width:625px;padding:10px 20px;height: 400px" closed="true" modal="true">
 <div id="carorderGrid" style="" pagination="true"   singleSelect="true" rownumbers="true"  toolbar="#toolbar_carorderGrid">
     <input name="orderId" type="hidden" id="order_id"/>
-  <!--  <div id="toolbar_carorderGrid">
+   <div id="toolbar_carorderGrid">
         司机:
-        <input class="easyui-textbox" style="width:110px" name="shipper"id="driversearch">
-        车牌号:
-        <input class="easyui-textbox" style="width:110px" name="shippertel"id="caridsearch">
+        <input class="easyui-textbox" style="width:110px" name="driver" id="driversearch">
+        车次:
+        <input class="easyui-textbox" style="width:110px" name="number" id="numbersearch">
         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="doCarSearch()" iconCls="icon-search">搜索</a>
-    </div>-->
+    </div>
 </div>
 
 <div id="shiperDlg" class="easyui-dialog" title="发货人列表" style="width:625px;padding:10px 20px;height: 400px" closed="true" modal="true">
@@ -366,6 +366,7 @@
     var lookUrl="{:U('Admin/Order/look')}";
     var ajaxShiperUrl="{:U('Admin/Shipper/ajaxShipperList')}";//发货人列表
     var ajaxReceiveUrl="{:U('Admin/Receive/ajaxReceiveList')}";//收货人列表
+    var ajaxorderurl="{:U('Admin/Order/ajaxOrderList')}";//列表
 </script>
 </body>
 </html>

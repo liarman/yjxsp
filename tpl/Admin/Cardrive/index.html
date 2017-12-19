@@ -40,6 +40,8 @@
 
 <div id="toolbar_cardiver">
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addCardrive()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editCardrive()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyCardrive()">删除</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-car" plain="true" onclick="cararrive()">到站列表</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-car" plain="true" onclick="orderList()">运单列表</a>
 </div>
@@ -68,6 +70,33 @@
 
     </form>
 </div>
+
+<div id="editCardrive" class="easyui-dialog" title="添加" style="width:450px;height:500px;padding:10px 20px;" closed="true" modal="true">
+    <form id="editCardriveForm" method="post">
+        <input name="id" type="hidden" id="arrive_id"/>
+        <input name="cardriveid" type="hidden" id="cardriveid"/>
+        <table>
+            <tr>
+                <td>司机:</td>
+                <td><input id="editnumber" name="carid" class="easyui-combobox" url="{:U('Admin/Cardrive/numberList')}" valueField="id" textField="driver"  /></td>
+            </tr>
+            <tr>
+                <td>发车时间:</td>
+                <td><input name="startdate" id="editStartdate" class="easyui-datetimebox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>车次:</td>
+                <td><input name="number" class="easyui-numberbox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editCardriveSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editCardrive').dialog('close')" style="width:90px">取消</a></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
 <div id="arriveDlg" class="easyui-dialog" title="到站列表" style="width:600px;padding:10px 20px;height: 400px" closed="true" modal="true">
     <div id="arriveGrid" style=""></div>
 </div>
@@ -76,7 +105,7 @@
 </div>
 <div id="addarrive" class="easyui-dialog" title="添加" style="width:400px;padding:10px 20px;" closed="true" modal="true">
     <form id="addarriveForm" method="post">
-        <input name="id" type="hidden" id="addarrive_id"/>
+     <input name="id" type="hidden" id="addarrive_id"/>
         <input name="cardriveid" type="hidden" id="cardrive_id"/>
         <table>
             <tr>

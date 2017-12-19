@@ -45,6 +45,7 @@ class RegController extends HomeBaseController
             'length' => 4, // 验证码位数
             'imageH' => 37,
             'imageW' => 106,
+            'useCurve' =>false,
             'useNoise'    =>    false
         ];
         $Verify = new Verify($config);
