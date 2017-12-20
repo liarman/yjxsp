@@ -77,8 +77,6 @@ class OrderController extends AdminBaseController{
             $data=I('post.');
             $where['id']=$data['id'];
             $data['createdate']=strtotime(I('post.createdate'));
-         //  $data['orderno']=$this->OrdernoMethod($data['id'],"J");
-          //  $data['assembledate']="";
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
@@ -146,11 +144,14 @@ class OrderController extends AdminBaseController{
 
     public function addCarOrder(){
         $data['cardriveid']=I('get.id');//发车id
-        $data['id']=I("get.orderid");//订单id
-        $data['assembledate']=time();
+        $ids=I('get.orderid');//订单id
+        $arr1 = explode("@@",$ids);
         $data['status']='1';//已装车
-        $where['id']=$data['id'];
-        $result=D('Order')->editData($where,$data);
+        $result="";
+        for($index=0;$index<count($arr1);$index++) {
+            $where['id']=$arr1[$index];
+            $result=D('Order')->editData($where,$data);
+        }
         if($result){
             $message['status']=1;
             $message['message']='装车成功';
@@ -172,7 +173,6 @@ class OrderController extends AdminBaseController{
         $ids=I('get.id');
         $arr1 = explode("@@",$ids);
         for($index=0;$index<count($arr1);$index++) {
-//            $sql="select * from qfant_order where id='$arr1[$index]'";
             $data=D('Order')->where(array('id'=>$arr1[$index]))->find();
             $datap[$index]=$data;
 
