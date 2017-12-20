@@ -48,6 +48,8 @@ function editOrderSubmit(){
 //编辑会员对话窗
 function editOrder(){
     var row = $('#OrderGrid').datagrid('getSelected');
+    var  time=  row.createdate;
+    time=timeStatus1(time);
     if(row==null){
         $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
     }
@@ -55,11 +57,23 @@ function editOrder(){
         $('#editOrder').dialog('open').dialog('setTitle','编辑');
 
         $('#editOrderForm').form('load',row);
-
+        $('#editStartdate1').datetimebox('setValue', time);
           url =editOrderUrl+'/id/'+row.id;
     }
 }
 
+function timeStatus1(value){
+    if (value == 0) {
+        return "";
+    }
+    var newDate = new Date();
+    newDate.setTime(value * 1000);
+    if (newDate.getFullYear() < 1900) {
+        return "";
+    }
+    var val = newDate.format("yyyy-MM-dd hh:mm:ss");
+    return val;
+}
 function destroyOrder(){
     var row = $('#OrderGrid').datagrid('getSelected');
     if(row==null){
@@ -149,7 +163,6 @@ function ajaxCarList(){
       });
     });
 }
-
 function shiperList(){
     $('#shiperDlg').dialog('open').dialog('setTitle','发货人列表');
     $('#shiperGrid').datagrid({
@@ -283,12 +296,15 @@ function Status(val,rowData,row){
 //查看对话窗
 function lookOrder(){
     var row = $('#OrderGrid').datagrid('getSelected');
+    var  time=  row.createdate;
+    time=timeStatus1(time);
     if(row==null){
         $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
     }
     if (row){
         $('#lookOrder').dialog('open').dialog('setTitle','查看');
         $('#lookOrderForm').form('load',row);
+        $('#lookcreatedate').datetimebox('setValue', time);
         url =lookUrl+'/id/'+row.id;
     }
 }
