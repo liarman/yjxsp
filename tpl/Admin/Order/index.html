@@ -22,15 +22,12 @@
     <object id="LODOP" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width="0" height="0">
         <embed id="LODOP_EM" type="application/x-print-lodop" width="0" height="0"></embed>
     </object>
-    <style>
-        .div-a{ float:left;width:49%;}
-        .div-b{ float:left;width:49%;}
-    </style>
+
 </head>
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
 <script src="__ADMIN_JS__/order.js" type="text/javascript" charset="utf-8"></script>
-<table id="OrderGrid" class="easyui-datagrid" url="{:U('Admin/Order/ajaxOrderList')}" pagination="true"  toolbar="#toolbar_order" singleSelect="false" selectOnCheck="true" checkOnSelect="true" rownumbers="true">
+<table id="OrderGrid" class="easyui-datagrid" url="{:U('Admin/Order/ajaxOrderList')}" data-options="idField: 'id'"  pagination="true"  toolbar="#toolbar_order" singleSelect="false" selectOnCheck="true" checkOnSelect="true" rownumbers="true">
    <thead>
     <tr>
         <th data-options="field:'ck',checkbox:true"></th>
@@ -58,8 +55,6 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyOrder()">删除</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" id="carButton" onclick="ajaxCarList()">装车</a>
 
-
-   <!-- <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-truck" plain="true" onclick="ajaxCarList()">打印</a>-->
     货物名称:
     <input class="easyui-textbox" style="width:110px" name="goodsname"id="goodsnamesearch">
     发货人:
@@ -362,7 +357,7 @@
     var ajaxOrderUrl="{:U('Admin/Order/ajaxOrderList')}";
     var ajaxCarUrl="{:U('Admin/Cardrive/ajaxCarDriv')}";//发车记录列表
     var chooseCarUrl="{:U('Admin/Order/addCarOrder')}";//确定装车，保存路径
-    var ajaxRouteUrl="{:U('Admin/Route/ajaxRoute')}";//终点站设置
+    var ajaxRouteUrl="{:U('Admin/Route/ajaxRoute')}";// 终点站设置
     var lookUrl="{:U('Admin/Order/look')}";
     var ajaxShiperUrl="{:U('Admin/Shipper/ajaxShipperList')}";//发货人列表
     var ajaxReceiveUrl="{:U('Admin/Receive/ajaxReceiveList')}";//收货人列表
