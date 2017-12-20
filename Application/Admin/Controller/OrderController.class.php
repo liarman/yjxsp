@@ -14,7 +14,7 @@ class OrderController extends AdminBaseController{
         $offset = ($page-1)*$rows;
         $countsql = "SELECT	 count(o.id) AS total FROM	qfant_order o WHERE	1 = 1 ";
       //  $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname FROM	qfant_order o left join qfant_cardrive c on o.cardriveid=c.id	LEFT JOIN qfant_route r on r.id=o.endcity WHERE 1=1";
-        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname ,cd.number as number FROM	qfant_order o left join qfant_cardrive cd on o.cardriveid=cd.id	LEFT JOIN qfant_route r on r.id=o.endcity LEFT JOIN qfant_car  c on c.id=cd.carid where 1=1";
+        $sql = "SELECT	o.* ,c.driver as driver ,r.name as endcityname ,cd.number as number,cd.startdate as startdate FROM	qfant_order o left join qfant_cardrive cd on o.cardriveid=cd.id	LEFT JOIN qfant_route r on r.id=o.endcity LEFT JOIN qfant_car  c on c.id=cd.carid where 1=1";
         $param=array();
         if(!empty($goodsname)){
             $countsql.=" and o.goodsname like '%s'";
@@ -47,7 +47,7 @@ class OrderController extends AdminBaseController{
     public function add(){
         if(IS_POST){
             $data=I('post.');
-            $data['createdate']=time();
+            $data['createdate']=strtotime(I('post.createdate'));
             unset($data['id']);
             $res=D('Order')->addData($data);
             $id=$res;
@@ -76,8 +76,9 @@ class OrderController extends AdminBaseController{
         if(IS_POST){
             $data=I('post.');
             $where['id']=$data['id'];
+            $data['createdate']=strtotime(I('post.createdate'));
          //  $data['orderno']=$this->OrdernoMethod($data['id'],"J");
-            $data['assembledate']="";
+          //  $data['assembledate']="";
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
@@ -145,16 +146,11 @@ class OrderController extends AdminBaseController{
 
     public function addCarOrder(){
         $data['cardriveid']=I('get.id');//发车id
-        $ids=I('get.orderid');//订单id
-        $arr1 = explode("@@",$ids);
+        $data['id']=I("get.orderid");//订单id
         $data['assembledate']=time();
         $data['status']='1';//已装车
-        $result="";
-        for($index=0;$index<count($arr1);$index++) {
-            $where['id']=$arr1[$index];
-            $result=D('Order')->editData($where,$data);
-
-        }
+        $where['id']=$data['id'];
+        $result=D('Order')->editData($where,$data);
         if($result){
             $message['status']=1;
             $message['message']='装车成功';
