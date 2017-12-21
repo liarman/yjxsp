@@ -165,7 +165,7 @@ class OrderController extends AdminBaseController{
 
     public function orderList(){
         $cardriveid=I('get.id');//发车id
-        $sql ="SELECT o.id AS oid,	o.orderno,	o.shipper,	o.shippertel,	o.receivername,	o.receiveraddress,	o.receivertel,	cd.number AS number FROM	qfant_order AS o,	qfant_cardrive AS cd WHERE	o.cardriveid = cd.id AND o. STATUS = 1 AND cd.id = '$cardriveid' ";
+        $sql ="SELECT o.id AS oid,	o.orderno,	o.shipper,	o.shippertel,	o.receivername,	o.receiveraddress,	o.receivertel,	cd.number AS number FROM	qfant_order AS o,	qfant_cardrive AS cd WHERE	o.cardriveid = cd.id AND o. STATUS = 1 AND cd.id = '$cardriveid'  order by o.createdate desc";
         $data=D('Order')->query($sql,"");
         $this->ajaxReturn($data,'JSON');
 
