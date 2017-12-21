@@ -48,12 +48,13 @@ function editOrderSubmit(){
 //编辑会员对话窗
 function editOrder(){
     var row = $('#OrderGrid').datagrid('getSelected');
-    var  time=  row.createdate;
-    time=timeStatus1(time);
+
     if(row==null){
         $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
     }
     if (row){
+        var  time=  row.createdate;
+        time=timeStatus1(time);
         $('#editOrder').dialog('open').dialog('setTitle','编辑');
 
         $('#editOrderForm').form('load',row);
