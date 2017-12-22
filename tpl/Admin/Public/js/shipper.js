@@ -92,7 +92,12 @@ function doSearch(){
     });
 }
 
-
+function doReceiveS(){
+    $('#receiveListGrid').datagrid('load',{
+        receivername: $('#renamesear').val(),
+        receivertel: $('#retelsear').val()
+    });
+}
 
 function ajaxReceiveListByid(){
     var row = $('#ShipperGrid').datagrid('getSelected');
