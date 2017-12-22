@@ -78,6 +78,7 @@ class OrderController extends AdminBaseController{
             $where['id']=$data['id'];
             $data['createdate']=strtotime(I('post.createdate'));
             $data['cardriveid']="";
+            $data['status']="0";
             $result=D('Order')->editData($where,$data);
             if($result){
                 $message['status']=1;
