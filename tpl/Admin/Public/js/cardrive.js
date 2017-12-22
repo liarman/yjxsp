@@ -140,6 +140,7 @@ function orderList(){
                $.each(data.rows, function(index, item){
                    if(item.checked){
                       $('#orderListGrid').datagrid('checkRow', index);
+                       console.log(item);
                         }
                     });
                }
