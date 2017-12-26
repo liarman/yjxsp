@@ -48,7 +48,6 @@ function editOrderSubmit(){
 //编辑会员对话窗
 function editOrder(){
     var row = $('#OrderGrid').datagrid('getSelected');
-
     if(row==null){
         $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
     }
@@ -292,7 +291,15 @@ function Status(val,rowData,row){
         return "已到站";
     }
 }
-
+function Paytype(val,rowData,row){
+    if(val==1){
+        return "欠付";
+    }else if(val==2){
+        return "货到付款";
+    }else if(val==3){
+        return "现付";
+    }
+}
 
 //查看对话窗
 function lookOrder(){
