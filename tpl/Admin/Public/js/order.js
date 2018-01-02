@@ -373,21 +373,6 @@ function print(inventoryId){
 $(document).ready(init);
 function init() {
     $('#OrderGrid').datagrid({
-       /* url: ajaxorderurl,
-        singleSelect: false,
-        selectOnCheck: true,
-        checkOnSelect: true,
-        columns: [[
-            {field: 'ck', checkbox:"true", width: 100},
-            {field: 'orderno', title: '运单编号', width: 160},
-            {field: 'shipper', title: '发货人姓名', width: 80},
-            {field: 'shippertel', title: '发货人电话', width: 110},
-            {field: 'goodsname', title: '货物名称', width: 80},
-            {field: 'goodscount', title: '件数', width: 110},
-            {field: 'receivername', title: '收件人姓名', width: 100},
-            {field: 'receiveraddress', title: '收件人电话', width: 100},
-            {field: 'receivertel', title: '收件人地址', width: 100}
-        ]],*/
         onLoadSuccess:function(data){
             if(data){
                 $.each(data.rows, function(index, item){
@@ -396,12 +381,14 @@ function init() {
                     }
                 });
             }
-        }/*,
-        toolbar: [{
-            iconCls: 'fa fa-truck',
-            id:'carButton',
-            text:'装车',
-            handler: function(){ajaxCarList();}
-        }]*/
+        }
     });
 }
+
+function  ajaxCarcancle(){
+    $("#carcancleButton").click(function(){
+       var curSelectRow = $('#OrderGrid').datagrid('getSelections');//获取当前选中
+        $('#OrderGrid').datagrid('clearSelections');
+    });
+}
+
