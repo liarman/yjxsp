@@ -150,9 +150,14 @@ class OrderController extends AdminBaseController{
         $arr1 = explode("@@",$ids);
         $data['status']='1';//已装车
         $result="";
-        for($index=0;$index<count($arr1);$index++) {
+        for($index=count($arr1);$index>=0;$index--) {
+            if($arr1[$index]){
             $where['id']=$arr1[$index];
-            $result=D('Order')->editData($where,$data);
+            $data1['orderid']=$arr1[$index];
+            $data1['cardriveid']=I('get.id');//发车id
+            D('Order')->editData($where,$data);
+            $result=D('Driverorder')->addData($data1);
+            }
         }
         if($result){
             $message['status']=1;
@@ -166,7 +171,27 @@ class OrderController extends AdminBaseController{
 
     public function orderList(){
         $cardriveid=I('get.id');//发车id
-        $sql ="SELECT o.id AS oid,	o.orderno,	o.shipper,	o.shippertel,	o.receivername,	o.receiveraddress,	o.receivertel,	cd.number AS number FROM	qfant_order AS o,	qfant_cardrive AS cd WHERE	o.cardriveid = cd.id AND o. STATUS = 1 AND cd.id = '$cardriveid'  order by o.createdate desc";
+        $sql="SELECT
+	o.id AS oid,
+	o.orderno,
+	o.shipper,
+	o.shippertel,
+	o.receivername,
+	o.receiveraddress,
+	o.receivertel,
+	cd.number AS number
+FROM
+	qfant_order AS o,
+	qfant_cardrive AS cd,
+qfant_driverorder as dor
+WHERE
+	o.cardriveid = cd.id
+and o.id=dor.orderid
+AND o. STATUS = 1
+AND dor.cardriveid = '$cardriveid'
+ORDER BY
+	dor.id DESC";
+       /* $sql ="SELECT o.id AS oid,	o.orderno,	o.shipper,	o.shippertel,	o.receivername,	o.receiveraddress,	o.receivertel,	cd.number AS number FROM	qfant_order AS o,	qfant_cardrive AS cd WHERE	o.cardriveid = cd.id AND o. STATUS = 1 AND cd.id = '$cardriveid'  order by o.id desc";*/
         $data=D('Order')->query($sql,"");
         $this->ajaxReturn($data,'JSON');
 
