@@ -128,7 +128,7 @@ function orderList(){
         columns: [[
             {field: 'ck', checkbox:"true", width: 100},
             {field: 'oid', title: '运单id',hidden:'true' ,width: 100},
-            {field: 'orderno', title: '运单编号', width: 100},
+            {field: 'orderno', title: '运单编号', width: 180},
             {field: 'shipper', title: '寄件人姓名', width: 100},
             {field: 'shippertel', title: '寄件人电话', width: 100},
             {field: 'receivername', title: '收件人姓名', width: 100},
