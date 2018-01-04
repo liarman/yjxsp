@@ -285,7 +285,9 @@ function timeStatus(val,rowData,row){
     if(val==null){
         return "";
     }else{
-    return Common.TimeFormatter(val);
+    // return  Common.DateTimeFormatter(val);
+        //console.log(timess);
+   return Common.TimeFormatter(val);
     }
 }
 function Status(val,rowData,row){
@@ -376,7 +378,7 @@ function print(inventoryId){
 }
 
 
-$(document).ready(init);
+/*$(document).ready(init);
 function init() {
     $('#OrderGrid').datagrid({
         onLoadSuccess:function(data){
@@ -389,7 +391,7 @@ function init() {
             }
         }
     });
-}
+}*/
 
 function  ajaxCarcancle(){
     $("#carcancleButton").click(function(){
