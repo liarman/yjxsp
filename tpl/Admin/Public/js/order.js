@@ -129,6 +129,12 @@ function doCarSearch(){
 function ajaxCarList(){
 
     $('#carButton').click(function(){
+        var waitAssembleTrans=$("#transListForPrint").find("li[id!='transTitle']");
+        if (waitAssembleTrans.length<=0) {
+            $.messager.alert('错误提示','请选择要装车的运单!','error');
+          //  alert("请选择要装车的运单！");
+            return false;
+        }
         var checkedItems = $('#OrderGrid').datagrid('getChecked');
         console.log("选中数据："+checkedItems);
         var ids = [];
@@ -245,7 +251,7 @@ function chooseShipper(shipper,shippertel,id){
             $('#addOrderForm').form('load',row);
     }
 }
-function chooseCar(orderid,cardriveid){
+function chooseCar1(orderid,cardriveid){
 
     var row = $('#carorderGrid').datagrid('getSelected');//发车行
     var orderid=orderid;//运单id
@@ -387,8 +393,90 @@ function init() {
 
 function  ajaxCarcancle(){
     $("#carcancleButton").click(function(){
-       var curSelectRow = $('#OrderGrid').datagrid('getSelections');//获取当前选中
+      var i= $('#OrderGrid').datagrid('getSelections');//获取当前选中
         $('#OrderGrid').datagrid('clearSelections');
     });
 }
 
+function formatOper(val,row,index){
+    var btn = '<a class="editcls" onclick="editOrder(\''+row.id+'\')" href="javascript:void(0)">编辑</a>';
+    var btn1 = '<a class="editcls" onclick="destroyOrder(\''+row.id+'\')" href="javascript:void(0)">删除</a>';
+    var btn2 = '<a class="editcls" onclick="lookOrder(\''+row.id+'\')" href="javascript:void(0)">查看</a>';
+    var print = '<a class="editcls" onclick="print(\''+row.id+'\',\''+row.orderno+'\')" href="javascript:void(0)">添加到装车列表</a>';
+    var btnop = btn+"  "+btn1+"  "+btn2+" "+ print;
+    return btnop;
+}
+
+function print(inventoryId,transNo){
+    var count=$("#transListForPrint").find("li");
+    if (count.length>16) {
+        $.messager.alert('错误提示','最多只能同时装车十六个运单！','error');
+       // alert("最多只能同时装车十六个运单！");
+        return false;
+    }
+    var single=$("#transListForPrint").find("li[id='"+inventoryId+"']");
+    if (single.length<=0) {
+        $("#transListForPrint").append("<li class='transListLI' id='"+inventoryId+"'>"+transNo+"<span class='deleteSpan' onclick='deleteTransId("+inventoryId+");'></span></li>");
+    }else {
+        $.messager.alert('错误提示','此运单已经添加！','error');
+     //   alert("此运单已经添加！");
+        return false;
+    }
+
+}
+
+function deleteTransId(inventoryId) {
+    $("#"+inventoryId).remove();
+}
+function emptyTrans () {
+    $("#transListForPrint").empty();
+    $("#transListForPrint").append("<li style='list-style:none;float:left;font-weight: bold;' id='transTitle'>需要打印的运单：  </li>");
+}
+
+function chooseCar (orderid,cardriveid) {
+    var validateResult = true;
+    $('#table_inventoryListInfoAssemble input').each(function () {
+        if ($(this).attr('required') || $(this).attr('validType')) {
+            if (!$(this).validatebox('isValid')) {
+                //如果验证不通过，则返回false
+                validateResult = false;
+                return;
+            }
+        }
+    });
+    if(validateResult==false){
+        return;
+    }
+    var waitAssembleTrans=$("#transListForPrint").find("li[id!='transTitle']");
+    var waitAssembleTranIds="";
+    if (waitAssembleTrans.length>0) {
+        waitAssembleTrans.each (function (index){
+           // waitAssembleTranIds=$(this).attr("id").join("@@");
+            waitAssembleTranIds+=$(this).attr("id")+"@@";
+        });
+        var durl=chooseCarUrl;//装车更新哪一个数据库表
+        $.getJSON(durl,{id:cardriveid,orderid:waitAssembleTranIds},function(result){
+            if (result.status==1){
+                $('#carorderDlg').dialog('close');
+                $('#OrderGrid').datagrid('reload');    // reload the user data
+
+            } else {
+                $.messager.alert('错误提示',result.message,'error');
+            }
+        },'json').error(function(data){
+            var info=eval('('+data.responseText+')');
+            $.messager.confirm('错误提示',info.message,function(r){});
+        });
+    }
+}
+
+//关闭添加电话对话框
+function closeDialog_addAssemble(){
+    addAssembleReset();
+    $('#inventoryListAssemble').dialog('close');
+}
+function addAssembleReset () {
+    $("#inventoryListInfoAssemble_Ids").val();
+    $("#transListAssembleDate").val();
+    $("#transListAssembleNo").val();
+}
