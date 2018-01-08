@@ -172,7 +172,8 @@ class CustomerController extends AppBaseController
                  $pageNo = $param['pageNo'];
                  $pageSize = $param['pageSize'];
                  $offset = ($pageNo - 1) * $pageSize;
-                 $sql = "select * from qfant_fengcai  n  where 1=1 ";
+                 $company_id=$_SESSION['user']['company_id'];
+                 $sql = "select * from qfant_fengcai  n  where 1=1 and  n.district_id='$company_id' ";
                  $param = array();
                  $sql .= " limit %d,%d";
                  array_push($param, $offset);
@@ -226,7 +227,8 @@ class CustomerController extends AppBaseController
                 $pageNo = $param['pageNo'];
                 $pageSize = $param['pageSize'];
                 $offset = ($pageNo - 1) * $pageSize;
-                $sql = "select * from qfant_news  n  where 1=1 ";
+                $company_id=$_SESSION['user']['company_id'];
+                $sql = "select * from qfant_news  n  where 1=1 and  n.district_id='$company_id' ";
                 $param = array();
                 $sql .= " limit %d,%d";
                 array_push($param, $offset);
