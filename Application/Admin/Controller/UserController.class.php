@@ -27,17 +27,21 @@ class UserController extends AdminBaseController{
 	 * 修改面
 	 */
 	public function setPassword(){
-		$id=I('post.id');
-		$password=I('post.password','');
-		$password2=I('post.password','');
-		if($password!=$password2){
+		$map=I('post.');
+
+		$logindata['password2']=$map['password2'];
+		$logindata['password']=$map['password'];
+
+		if($logindata['password2']!=$logindata['password']){
 			$message['status']=0;
 			$message['message']='两次密码输入不一样';
 		}else {
-			$where['id']=$id;
-			$password=md5($password);
-			$data['password'] = $password;
-			$result=D('Users')->editData($where,$data);
+			$where['id']=$map['id'];
+			$loginda['password']=md5($logindata['password']);
+			$Model = M(); // 实例化一个空对象
+			$Model->startTrans(); // 开启事务
+			$result= $Model-> table('qfant_users')->where(array('id'=>$where['id']))->save($loginda);
+			$Model->commit();
 			if($result){
 				$message['status']=1;
 				$message['message']='修改密码成功';
