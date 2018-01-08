@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>管理后台</title>
+	<script src="__EASYUI__/jquery.min.js"></script>
+	<script src="__EASYUI__/jquery.easyui.min.js"></script>
+	<script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
+	<link rel="stylesheet" href="__EASYUI__/super/css/font-awesome.min.css">
+	<link rel="stylesheet" href="__EASYUI__/super/superRed.css" id="themeCss">
+	<script src="__EASYUI__/super/super.js"></script>
+	<script src="__ADMIN_JS__/index.js" type="text/javascript" charset="utf-8"></script>
+	<link href="__PUBLIC__/statics/css/admin.css" rel="stylesheet" />
+	<script src="__EASYUI__/common.js"></script>
+	<script src="__EASYUI__/formatter.js"></script>
+	<script src="__EASYUI__/extend/validate.js"></script>
+	<script src="__KINDEDITOR__/kindeditor-all.js"></script>
+	<script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+
+</head>
+<body style="padding: 0">
+<div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
+<script src="__ADMIN_JS__/district.js" type="text/javascript" charset="utf-8"></script>
+<table id="districtGrid" class="easyui-datagrid" url="{:U('Admin/District/ajaxDistrictList')}" pagination="true"  toolbar="#toolbar" singleSelect="true">
+	<thead>
+	<tr>
+		<th field="name" width="200" >小区名称</th>
+		<!--<th field="wuyefee" width="200" >物业费</th>-->
+		<th field="contact" width="200" >联系电话</th>
+
+	</tr>
+	</thead>
+</table>
+<div id="toolbar">
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addDistrict()">添加</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editDistrict()">编辑</a>
+	<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyDistrict()">删除</a>
+</div>
+<!-- 添加 -->
+<div id="addDistrict" class="easyui-dialog" title="添加" style="width:800px;height:400px;padding:10px 20px;" closed="true" modal="true">
+	<form id="addDistrictForm" method="post">
+		<table>
+			<tr>
+				<td>小区名称:</td>
+				<td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+			</tr>
+			<!--<tr>
+				<td>物业费:</td>
+				<td><input name="wuyefee" class="easyui-textbox"  data-options="delay:1000,required:true,validType:'checkFloat',height:30" /></td>
+			</tr>-->
+			<tr>
+				<td>联系电话:</td>
+				<td><textarea name="contact" class="addcontent"  data-options="validType:'phone'" style="width:200px;height:180px;"></textarea></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" onclick="addDistrictSubmit()" style="width:90px">保存</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" onclick="javascript:$('#addDistrict').dialog('close')" style="width:90px">取消</a></td>
+			</tr>
+		</table>
+
+	</form>
+</div>
+<div id="editDistrict" class="easyui-dialog" title="编辑" style="width:800px;height:400px;padding:10px 20px;" closed="true" modal="true">
+	<form id="editDistrictForm" method="post">
+		<input type="hidden" name="id" value="">
+		<table>
+			<tr>
+				<td>名称:</td>
+				<td><input name="name" class="easyui-textbox" data-options="delay:1000,required:true,height:30" id="editRuleTitle"/></td>
+			</tr>
+			<!--<tr>
+				<td>物业费:</td>
+				<td><input name="wuyefee" class="easyui-textbox"  data-options="delay:1000,required:true,validType:'checkFloat',height:30" /></td>
+			</tr>-->
+			<tr>
+				<td>联系电话:</td>
+				<td><textarea name="contact" class="editcontent" data-options="validType:'phone'"  style="width:200px;height:180px;"></textarea></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" onclick="editDistrictSubmit()" style="width:90px">保存</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" onclick="javascript:$('#editDistrict').dialog('close')" style="width:90px">取消</a></td>
+			</tr>
+		</table>
+
+	</form>
+</div>
+</div>
+<div class="imgdlg"><img class="simg"></div>
+<script type="text/javascript">
+	var addUrl= "{:U('Admin/District/add')}";
+	var editUrl= "{:U('Admin/District/edit')}";
+	var deleteUrl= "{:U('Admin/District/delete')}";
+</script>
+</body>
+</html>
