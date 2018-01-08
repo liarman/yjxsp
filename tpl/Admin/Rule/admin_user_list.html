@@ -5,7 +5,6 @@
     <title>管理后台</title>
     <script src="__EASYUI__/jquery.min.js"></script>
     <script src="__EASYUI__/jquery.easyui.min.js"></script>
-    <script src="__EASYUI__/ajaxSetup.js"></script>
     <script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
     <link rel="stylesheet" href="__EASYUI__/super/css/font-awesome.min.css">
     <link rel="stylesheet" href="__EASYUI__/super/superRed.css" id="themeCss">
@@ -33,6 +32,7 @@
     <tr>
         <th field="username" width="200" >账号</th>
         <th field="groupname" width="200" >用户组</th>
+        <th field="dname" width="200" >所属小区</th>
         <th field="email" width="200" >邮箱</th>
         <th field="phone" width="200" >电话</th>
         <th field="status" width="200" formatter="formatStatus">状态</th>
@@ -62,6 +62,12 @@
                 <td>用户组:</td>
                 <td><input id="cc" name="groups" value=""  data-options="delay:1000,required:true,multiple:true">
                     <input id="group_ids" name="group_ids" value="" type="hidden">
+                </td>
+            </tr>
+            <tr>
+                <td>所属小区:</td>
+                <td>
+                    <input   panelMaxHeight="150px" id="companyidAdd" name="company_id" class="easyui-combobox" url="{:U('Admin/District/ajaxDistrictAll')}" valueField="id" textField="name">
                 </td>
             </tr>
             <tr>
@@ -96,6 +102,12 @@
                 <td>用户组:</td>
                 <td><input id="ccd" name="groups" value=""  data-options="delay:1000,required:true,multiple:true">
                     <input id="group_idsd" name="group_ids" value="" type="hidden">
+                </td>
+            </tr>
+            <tr>
+                <td>所属小区:</td>
+                <td>
+                    <input   panelMaxHeight="150px" id="companyidEdit" name="company_id" class="easyui-combobox" url="{:U('Admin/District/ajaxDistrictAll')}" valueField="id" textField="name">
                 </td>
             </tr>
             <tr>
