@@ -30,10 +30,7 @@ class RuleController extends AdminBaseController{
                     $children[$key2]['state']='closed';
                 }
             }
-
-            if(count($children)>0){
-                $data[$key]['children']=$children;
-            }
+            $data[$key]['children']=$children;
             $data[$key]['addlevel']=1;
         }
         $result["rows"] = $data;
@@ -299,9 +296,35 @@ class RuleController extends AdminBaseController{
         $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
         $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
         $offset = ($page-1)*$rows;
-        $result["total"]=D('users')->count();
 
-        $data=D('users')->limit($offset.','.$rows)->select();
+
+        $countsql="select count(b.id) AS total from qfant_users b,qfant_district d where 1=1 AND b.company_id=d.id ";
+        $sql="select b.*,d.name as dname from qfant_users b,qfant_district d where 1=1 AND b.company_id=d.id ";
+
+
+        $loginid=$_SESSION['user']['id'];
+        $data['id']=$loginid;
+        $res=D('users')->field('company_id')->where(array('id'=>$data['id']))->find();
+        $com=$res[company_id];
+        if($com){
+            $countsql="select count(b.id) AS total from qfant_users b,qfant_district d where 1=1 AND b.company_id=d.id  and d.id='$com'";
+            $sql="select b.*,d.name as dname from qfant_users b,qfant_district d where 1=1 AND b.company_id=d.id and d.id='$com' ";
+        }else{
+            $countsql="select count(b.id) AS total from qfant_users b ";
+            $sql="select b.*,d.name as dname from qfant_users b left join qfant_district d on  b.company_id=d.id";
+        }
+        $param=array();
+        $sql.=" limit %d,%d";
+        array_push($param,$offset);
+        array_push($param,$rows);
+        $data=D('users')->query($countsql,$param);
+        $result['total']=$data[0]['total'];
+        $data=D('users')->query($sql,$param);
+      //  $result["rows"] = $data;
+
+        //$result["total"]=D('users')->count();
+
+        //$data=D('users')->limit($offset.','.$rows)->select();
         foreach ($data as $key => $value) {//三级权限
             $ag=D('AuthGroup')->query("select g.title from qfant_auth_group g,qfant_auth_group_access ga where g.id=ga.group_id and ga.uid=".$value['id']);
             if($ag){
@@ -342,6 +365,7 @@ class RuleController extends AdminBaseController{
             $user['username']=$data['username'];
             $user['password']=md5($data['password']);
             $user['status']=$data['status'];
+            $user['company_id']=$data['company_id'];
             $user['register_time']=time();
             $result=$Model-> table('qfant_users')->add($user);
             if($result){
@@ -406,6 +430,7 @@ class RuleController extends AdminBaseController{
                 }
                 $user['username']=$data['username'];
                 $user['status']=$data['status'];
+                $user['company_id']=$data['company_id'];
                 $result= $Model-> table('qfant_users')->where(array('id'=>$data['id']))->save($user);
                 $Model->commit();
                     $message['status']=1;
