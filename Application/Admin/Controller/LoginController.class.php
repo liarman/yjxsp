@@ -31,7 +31,8 @@ class LoginController extends BaseController{
 				$_SESSION['user']=array(
 					'id'=>$data['id'],
 					'username'=>$data['username'],
-					'avatar'=>$data['avatar']
+					'avatar'=>$data['avatar'],
+					'company_id'=>$data['company_id']
 				);
 				$loginrecord['userid']=$data['id'];
 				$loginrecord['loginTime']=date('Y-m-d H:i:s');
