@@ -4,16 +4,17 @@ function add(id){
     $('#addrule').dialog('open').dialog('setTitle','添加权限');
     $('#rulefm').form('clear');
     if(id>0){
+        var getUrl = getRuleUrl+'/id/'+id;
         $("input[name='pid']").val(id);
-        var url =getRuleUrl;
-        $.getJSON(url,{id:id},function(data){
+        $.getJSON(getUrl,function(data){
             $(".parent").empty().append(data.title);
         })
     }
+    url=addRuleUrl;
 }
-function addRuleSubmit(){
+function addRule(){
     $('#rulefm').form('submit',{
-        url: addRuleUrl,
+        url: url,
         onSubmit: function(){
             return $(this).form('validate');
         },
@@ -33,7 +34,7 @@ function addRuleSubmit(){
 }
 function editRuleSubmit(){
     $('#ruleeditfm').form('submit',{
-        url: editRuleUrl+'/id/'+id,
+        url: url,
         onSubmit: function(){
             return $(this).form('validate');
         },
@@ -54,9 +55,9 @@ function editRuleSubmit(){
 //编辑会员对话窗
 function editRule(id){
     if (id>0){
+        var getUrl = getRuleUrl+'/id/'+id;
         $('#editrule').dialog('open').dialog('setTitle','编辑');
-        var url =getRuleUrl;
-        $.getJSON(url,{id:id},function(data){
+        $.getJSON(getUrl,function(data){
             $("#editRulePid").val(data.pid);
             $("#editRuleId").val(data.id);
             $("#editRuleTitle").textbox('setValue',data.title);
