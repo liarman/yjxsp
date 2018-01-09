@@ -115,7 +115,7 @@ class CustomerController extends AppBaseController
                 $b = $this->caesar->clientDecode($key, $b);
                 $param = json_decode($b, true);
                 $pageNo = $param['pageNo'];
-                $pageSize =$param['pageSize'];
+                $pageSize = $param['pageSize'];
                 $offset = ($pageNo - 1) * $pageSize;
                 $sql = "select * from qfant_category  n  where 1=1";
                 $param = array();
@@ -128,8 +128,7 @@ class CustomerController extends AppBaseController
                 $data['bstatus']['des'] = '获取成功';
                 $data['data']['categoryResult'] = $category;
 
-
-          echo $this->caesar->clientEncode($key, json_encode($data));
+                echo $this->caesar->clientEncode($key, json_encode($data));
 
             }
         }
@@ -172,7 +171,7 @@ class CustomerController extends AppBaseController
                  $pageNo = $param['pageNo'];
                  $pageSize = $param['pageSize'];
                  $offset = ($pageNo - 1) * $pageSize;
-                 $company_id=$_SESSION['user']['company_id'];
+                 $company_id=1;//$_SESSION['user']['company_id'];
                  $sql = "select * from qfant_fengcai  n  where 1=1 and  n.district_id='$company_id' ";
                  $param = array();
                  $sql .= " limit %d,%d";
@@ -209,7 +208,7 @@ class CustomerController extends AppBaseController
 
                 echo $this->caesar->clientEncode($key, json_encode($data));
 
-            }
+           }
         }
     }
 
@@ -218,7 +217,7 @@ class CustomerController extends AppBaseController
      * 传参：pageNo  pageSize
      */
     public  function  news(){
-        if (IS_POST) {
+      if (IS_POST) {
             $key = I("post.key");
             $b = I("post.b");
             if ($key && $b) {
@@ -250,7 +249,7 @@ class CustomerController extends AppBaseController
      * 传参 id
      */
     public function  newsDetial(){
-        if (IS_POST) {
+       if (IS_POST) {
             $key = I("post.key");
             $b = I("post.b");
             if ($key && $b) {
@@ -261,7 +260,7 @@ class CustomerController extends AppBaseController
                 $data['bstatus']['des'] = '获取成功';
                 $data['data']['newsdetialResult'] = $newsdetial;
 
-                echo $this->caesar->clientEncode($key, json_encode($data));
+               echo $this->caesar->clientEncode($key, json_encode($data));
 
             }
         }
