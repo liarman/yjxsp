@@ -67,6 +67,7 @@ class NewsController extends AdminBaseController{
         if(IS_POST){
             $data['title']=I('post.title');
             $data['intro']=I('post.intro');
+            $data['company_id'] = $_SESSION['user']['company_id'];
             unset($data['id']);
             $result=D('News')->addData($data);
 
