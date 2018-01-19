@@ -108,25 +108,17 @@ class CustomerController extends AppBaseController
      * 传参：pageNo  pageSize
      */
     public function category(){
-        if (IS_POST) {
+		if (IS_POST) {
             $key = I("post.key");
             $b = I("post.b");
             if ($key && $b) {
-                $b = $this->caesar->clientDecode($key, $b);
-                $param = json_decode($b, true);
-                $pageNo = $param['pageNo'];
-                $pageSize = $param['pageSize'];
-                $offset = ($pageNo - 1) * $pageSize;
-                $sql = "select * from qfant_category  n  where 1=1";
-                $param = array();
-                $sql .= " limit %d,%d";
-                array_push($param, $offset);
-                array_push($param, $pageSize);
-                $category = D('Category')->query($sql, $param);
-
+                $categorys = D('Category')->select();
+				foreach($categorys as $k=>$val){
+					$categorys[$k]['products']=D("Product")->field("id,name,pic1,price")->where(array('category_id'=>$val['id']))->select();
+				}	
                 $data['bstatus']['code'] = 0;
                 $data['bstatus']['des'] = '获取成功';
-                $data['data']['categoryResult'] = $category;
+                $data['data']['categoryResult'] = $categorys;
 
                 echo $this->caesar->clientEncode($key, json_encode($data));
 
@@ -145,8 +137,7 @@ class CustomerController extends AppBaseController
                  $b = $this->caesar->clientDecode($key, $b);
                  $param = json_decode($b, true);
                  $id=$param['id'];
-                 $sql="SELECT	p.*, c. NAME AS categoryname FROM	qfant_product p left  join qfant_category c on c.id = p.category_id  where  p.id='$id'";
-                 $product = D('product')->query($sql, "");
+                 $product = D('product')->where(array('id'=>$id))->find();
                  $data['bstatus']['code'] = 0;
                  $data['bstatus']['des'] = '获取成功';
                  $data['data']['productResult'] = $product;
@@ -168,7 +159,11 @@ class CustomerController extends AppBaseController
              if ($key && $b) {
                  $b = $this->caesar->clientDecode($key, $b);
                  $param = json_decode($b, true);
-                 $pageNo = $param['pageNo'];
+                 if($param['pageNo'] < 1){
+					$param['pageNo'] = 1;
+				}else{
+					$pageNo = $param['pageNo'] ;
+				}
                  $pageSize = $param['pageSize'];
                  $offset = ($pageNo - 1) * $pageSize;
                  $company_id=1;//$_SESSION['user']['company_id'];
@@ -223,7 +218,11 @@ class CustomerController extends AppBaseController
             if ($key && $b) {
                 $b = $this->caesar->clientDecode($key, $b);
                 $param = json_decode($b, true);
-                $pageNo = $param['pageNo'];
+                if($param['pageNo'] < 1){
+					$param['pageNo'] = 1;
+				}else{
+					$pageNo = $param['pageNo'] ;
+				}
                 $pageSize = $param['pageSize'];
                 $offset = ($pageNo - 1) * $pageSize;
                 $company_id=$_SESSION['user']['company_id'];
