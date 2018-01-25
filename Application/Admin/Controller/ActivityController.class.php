@@ -12,8 +12,15 @@ class ActivityController extends AdminBaseController{
             $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
             $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
             $offset = ($page-1)*$rows;
-            $result["total"]=D('Fengcai')->count();
-            $data=D('Fengcai')->limit($offset.','.$rows)->select();
+            $company_id=2;//$_SESSION['user']['company_id'];
+            $countsql = "SELECT	 count(o.id) AS total FROM	qfant_fengcai o WHERE	1 = 1 ";
+            $sql = "SELECT	f.* ,d.name FROM	qfant_fengcai f LEFT JOIN qfant_district d on f.district_id =d.id WHERE 1=1 AND  f.district_id='$company_id' ";
+            $param=array();
+            array_push($param,$offset);
+            array_push($param,$rows);
+            $data=D('Fengcai')->query($countsql,$param);
+            $result['total']=$data[0]['total'];
+            $data=D('Fengcai')->query($sql,$param);
             $result["rows"] = $data;
             $this->ajaxReturn($result,'JSON');
         }
@@ -67,7 +74,7 @@ class ActivityController extends AdminBaseController{
         if(IS_POST){
             $data['title']=I('post.title');
             $data['intro']=I('post.intro');
-            $data['company_id'] = $_SESSION['user']['company_id'];
+            $data['district_id'] = $_SESSION['user']['company_id'];
             unset($data['id']);
             $result=D('Fengcai')->addData($data);
 
