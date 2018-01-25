@@ -12,7 +12,7 @@ class ActivityController extends AdminBaseController{
             $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
             $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
             $offset = ($page-1)*$rows;
-            $company_id=2;//$_SESSION['user']['company_id'];
+            $company_id= $_SESSION['user']['company_id'];
             $countsql = "SELECT	 count(o.id) AS total FROM	qfant_fengcai o WHERE	1 = 1 ";
             $sql = "SELECT	f.* ,d.name FROM	qfant_fengcai f LEFT JOIN qfant_district d on f.district_id =d.id WHERE 1=1 AND  f.district_id='$company_id' ";
             $param=array();
