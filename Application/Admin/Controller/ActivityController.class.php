@@ -57,6 +57,7 @@ class ActivityController extends AdminBaseController{
             $data['id']=I('post.id');
             $data['title']=I('post.title');
             $data['intro']=I('post.intro');
+            $data['district_id'] = I('post.district_id');
             $where['id']=$data['id'];
             //print_r($data);die;
             $result=D('Fengcai')->editData($where,$data);
@@ -78,9 +79,10 @@ class ActivityController extends AdminBaseController{
      */
     public function addActivity(){
         if(IS_POST){
+
             $data['title']=I('post.title');
             $data['intro']=I('post.intro');
-            $data['district_id'] = $_SESSION['user']['company_id'];
+            $data['district_id'] = I('post.district_id');
             unset($data['id']);
             $result=D('Fengcai')->addData($data);
 
