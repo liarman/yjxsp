@@ -49,6 +49,10 @@
                 <td><input name="title" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
             </tr>
             <tr>
+                <td>小区:</td>
+                <td><input id="number" name="district_id" class="easyui-combobox" url="{:U('Admin/District/ajaxDistrictAll')}" valueField="id" textField="name"  /></td>
+            </tr>
+            <tr>
                 <td>通知:</td>
                 <td><textarea name="intro" class="addintro" style="width:300px;height:180px;"></textarea></td>
             </tr>
@@ -68,6 +72,10 @@
             <tr>
                 <td>名称:</td>
                 <td><input name="title" class="easyui-textbox" data-options="delay:1000,required:true,height:30" /></td>
+            </tr>
+            <tr>
+                <td>小区:</td>
+                <td><input id="dnumber" name="district_id" class="easyui-combobox" url="{:U('Admin/District/ajaxDistrictAll')}" valueField="id" textField="name"  /></td>
             </tr>
             <tr>
                 <td>通知:</td>
