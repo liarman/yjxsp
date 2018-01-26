@@ -79,13 +79,11 @@ class ActivityController extends AdminBaseController{
      */
     public function addActivity(){
         if(IS_POST){
-
             $data['title']=I('post.title');
             $data['intro']=I('post.intro');
             $data['district_id'] = I('post.district_id');
             unset($data['id']);
             $result=D('Fengcai')->addData($data);
-
             if($result){
                 $message['status']=1;
                 $message['message']='保存成功';
@@ -100,7 +98,15 @@ class ActivityController extends AdminBaseController{
         $this->ajaxReturn($message,'JSON');
     }
 
-
+    public function ajaxDistrictAll(){
+        if (empty($_SESSION['user']['company_id'])){
+            $data=D('District')->select();
+            $this->ajaxReturn($data,'JSON');
+        }
+        $condition['id'] =  $_SESSION['user']['company_id'];
+        $data=D('District')->where($condition)->select();
+        $this->ajaxReturn($data,'JSON');
+    }
 
     public function editopeninfo(){
         if(IS_POST){
@@ -141,11 +147,13 @@ class ActivityController extends AdminBaseController{
         }
         $this->ajaxReturn($message,'JSON');
     }
+
     public function ajaxActivityAll(){
         $townid=I("get.townid");
         $data=D('Activity')->where(array('townid'=>$townid))->select();
         $this->ajaxReturn($data,'JSON');
     }
+
     public function ajaxBoundary(){
         $vilage_id=I("get.village_id");
         $data=D('ActivityBoundary')->where(array('villageid'=>$vilage_id))->select();
