@@ -12,7 +12,7 @@ function add(id){
     }
     url=addRuleUrl;
 }
-function addRule(){
+function addRuleSubmit(){
     $('#rulefm').form('submit',{
         url: url,
         onSubmit: function(){
