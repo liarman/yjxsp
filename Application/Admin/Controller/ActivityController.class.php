@@ -107,7 +107,6 @@ class ActivityController extends AdminBaseController{
         $data=D('District')->where($condition)->select();
         $this->ajaxReturn($data,'JSON');
     }
-
     public function editopeninfo(){
         if(IS_POST){
             $data['id']=I('post.id');
