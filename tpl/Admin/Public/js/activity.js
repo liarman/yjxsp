@@ -13,15 +13,9 @@ KindEditor.ready(function(K) {
 });
 
 function addActivity(){
-    if(aaa==null){
-        $.messager.alert('Warning', '不能添加', 'info');
-    }else {
-        alert(aaa);
         $('#addActivity').dialog('open').dialog('setTitle','添加');
         $('#addActivityForm').form('clear');
         url=addActivityUrl;
-    }
-
 }
 
 function addActivitySubmit(){
@@ -68,9 +62,7 @@ function editActivitySubmit(){
 }
 //编辑会员对话窗
 function editActivity(){
-    if(aaa==null){
-        $.messager.alert('Warning', '不能修改', 'info');
-    }else {
+
         var row = $('#ActivityGrid').datagrid('getSelected');
         if(row==null){
             $.messager.alert('Warning',"请选择要编辑的行", 'info');return false;
@@ -83,7 +75,6 @@ function editActivity(){
         }
     }
 
-}
 
 
 /*function editActivitySubmit(){
@@ -121,9 +112,7 @@ function editActivity(){
     }
 }*/
 function destroyActivity(){
-    if(aaa==null){
-        $.messager.alert('Warning', '不能删除', 'info');
-    }else {
+
         var row = $('#ActivityGrid').datagrid('getSelected');
         if(row==null){
             $.messager.alert('Warning',"请选择要删除的行", 'info');return false;
@@ -145,8 +134,6 @@ function destroyActivity(){
                 }
             });
         }
-    }
-
 }
 function openinfos() {
     var row = $('#villageGrid').datagrid('getSelected');
