@@ -1,32 +1,4 @@
-$(document).ready(function(){
-    KindEditor.ready(function(K){
-        var editor = K.editor({
-            allowFileManager:false
-        });
-        K('#addcategoryimg').click(function() {
-            editor.loadPlugin('image', function() {
-                editor.plugin.imageDialog({
-                    fileUrl : K('#thumb').val(),
-                    clickFn : function(url, title) {
-                        $('.addimg').textbox("setValue", GLOBALUrl +url);
-                        editor.hideDialog();
-                    }
-                });
-            });
-        });
-        K('#editcategoryimg').click(function() {
-            editor.loadPlugin('image', function() {
-                editor.plugin.imageDialog({
-                    fileUrl : K('#thumb').val(),
-                    clickFn : function(url, title) {
-                        $('.editimg').textbox("setValue", GLOBALUrl +url);
-                        editor.hideDialog();
-                    }
-                });
-            });
-        });
-    });
-});
+
 var url;
 function addCategory(){
     $('#addCategory').dialog('open').dialog('setTitle','添加');

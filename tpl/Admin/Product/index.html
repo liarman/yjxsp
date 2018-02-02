@@ -18,6 +18,81 @@
     <script src="__EASYUI__/extend/validate.js"></script>
     <script src="__KINDEDITOR__/kindeditor-all.js"></script>
     <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            KindEditor.ready(function(K){
+                var editor = K.editor({
+                    allowFileManager:false
+                });
+                K('#addcategoryimg').click(function() {
+                    editor.loadPlugin('image', function() {
+                        editor.plugin.imageDialog({
+                            fileUrl : K('#thumb').val(),
+                            clickFn : function(url, title) {
+                                $('.addimg').textbox("setValue", GLOBALUrl +url);
+                                editor.hideDialog();
+                            }
+                        });
+                    });
+                });
+                K('#addcategoryimg1').click(function() {
+                    editor.loadPlugin('image', function() {
+                        editor.plugin.imageDialog({
+                            fileUrl : K('#thumb').val(),
+                            clickFn : function(url, title) {
+                                $('.addimg1').textbox("setValue", GLOBALUrl +url);
+                                editor.hideDialog();
+                            }
+                        });
+                    });
+                });
+                K('#addcategoryimg2').click(function() {
+                    editor.loadPlugin('image', function() {
+                        editor.plugin.imageDialog({
+                            fileUrl : K('#thumb').val(),
+                            clickFn : function(url, title) {
+                                $('.addimg2').textbox("setValue", GLOBALUrl +url);
+                                editor.hideDialog();
+                            }
+                        });
+                    });
+                });
+                K('#editcategoryimg').click(function() {
+                    editor.loadPlugin('image', function() {
+                        editor.plugin.imageDialog({
+                            fileUrl : K('#thumb').val(),
+                            clickFn : function(url, title) {
+                                $('.editimg').textbox("setValue", GLOBALUrl +url);
+                                editor.hideDialog();
+                            }
+                        });
+                    });
+                });
+                K('#editcategoryimg1').click(function() {
+                    editor.loadPlugin('image', function() {
+                        editor.plugin.imageDialog({
+                            fileUrl : K('#thumb').val(),
+                            clickFn : function(url, title) {
+                                $('.editimg1').textbox("setValue", GLOBALUrl +url);
+                                editor.hideDialog();
+                            }
+                        });
+                    });
+                });
+                K('#editcategoryimg2').click(function() {
+                    editor.loadPlugin('image', function() {
+                        editor.plugin.imageDialog({
+                            fileUrl : K('#thumb').val(),
+                            clickFn : function(url, title) {
+                                $('.editimg2').textbox("setValue", GLOBALUrl +url);
+                                editor.hideDialog();
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    </script>
 </head>
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
