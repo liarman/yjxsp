@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="__EASYUI__/themes/default/easyui.css" rel="stylesheet" />
-    <link href="__EASYUI__/themes/color.css" rel="stylesheet" />
-    <link href="__EASYUI__/themes/icon.css" rel="stylesheet" />
-    <link href="__KINDEDITOR__/themes/default/default.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>管理后台</title>
     <script src="__EASYUI__/jquery.min.js"></script>
     <script src="__EASYUI__/jquery.easyui.min.js"></script>
     <script src="__EASYUI__/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="__EASYUI__/super/css/font-awesome.min.css">
+    <link rel="stylesheet" href="__EASYUI__/super/superRed.css" id="themeCss">
+    <script src="__EASYUI__/super/super.js"></script>
+    <script src="__ADMIN_JS__/index.js" type="text/javascript" charset="utf-8"></script>
+    <script src="__EASYUI__/ajaxSetup.js"></script>
+    <link href="__PUBLIC__/statics/css/admin.css" rel="stylesheet" />
     <script src="__EASYUI__/common.js"></script>
-    <script src="__KINDEDITOR__/kindeditor-all-min.js"></script>
+    <script src="__EASYUI__/formatter.js"></script>
+    <script src="__EASYUI__/extend/validate.js"></script>
+    <script src="__KINDEDITOR__/kindeditor-all.js"></script>
+    <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
+    <script src="__ADMIN_JS__/water.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
-<script src="__ADMIN_JS__/Link.js" type="text/javascript" charset="utf-8"></script>
-
-<table id="linkGrid" class="easyui-datagrid" style="width:92%;height:800px" url="{:U('Admin/Link/ajaxLinkList')}" pagination="true"  toolbar="#toolbar" singleSelect="true" rownumbers="true">
+<script src="__ADMIN_JS__/links.js" type="text/javascript" charset="utf-8"></script>
+<table id="linkGrid" class="easyui-datagrid"  url="{:U('Admin/Link/ajaxLinkList')}" pagination="true"  toolbar="#toolbar_link" singleSelect="true" rownumbers="true">
     <thead>
     <tr>
         <th field="title" width="200" >标题</th>
-        <th field="imgurl" width="200" >图片地址</th>
+        <th field="imgurl" width="200" formatter="imgFormatter">图片地址</th>
         <th field="link" width="200" >链接</th>
         <th field="sort" width="200" >排序</th>
         <th field="type" width="200" formatter="formatCat">分类</th>
     </tr>
     </thead>
 </table>
-<div id="toolbar">
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="addLink()">添加</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editLink()">编辑</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyLink()">删除</a>
+<div id="toolbar_link">
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" plain="true" onclick="addLink()">添加</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-edit" plain="true" onclick="editLink()">编辑</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" plain="true" onclick="destroyLink()">删除</a>
 </div>
 <!-- 添加 -->
 <div id="addLink" class="easyui-dialog" title="添加" style="width:500px;padding:10px 20px;" closed="true" modal="true">
@@ -42,7 +50,7 @@
             <tr>
                 <td>图片:</td>
                 <td><input name="imgurl" class="easyui-textbox addimg" data-options="delay:1000,required:true,height:30"  />
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" id="addlinkimg" style="width:90px">上传</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" id="addlinkimg" style="width:90px">上传</a>
                 </td>
             </tr>
             <tr>
@@ -64,8 +72,8 @@
             </tr>
             <tr>
                 <td></td>
-                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="addLinkSubmit()" style="width:90px">保存</a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#addLink').dialog('close')" style="width:90px">取消</a></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" onclick="addLinkSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" onclick="javascript:$('#addLink').dialog('close')" style="width:90px">取消</a></td>
             </tr>
         </table>
 
@@ -82,7 +90,7 @@
             <tr>
                 <td>图片:</td>
                 <td><input name="imgurl" class="easyui-textbox editimg" data-options="delay:1000,required:true,height:30"  />
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" id="editlinkimg" style="width:90px">上传</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" id="editlinkimg" style="width:90px">上传</a>
                 </td>
             </tr>
             <tr>
@@ -104,17 +112,19 @@
             </tr>
             <tr>
                 <td></td>
-                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="editLinkSubmit()" style="width:90px">保存</a>
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#editLink').dialog('close')" style="width:90px">取消</a></td>
+                <td><a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" onclick="editLinkSubmit()" style="width:90px">保存</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-remove" onclick="javascript:$('#editLink').dialog('close')" style="width:90px">取消</a></td>
             </tr>
         </table>
 
     </form>
 </div>
+<div class="imgdlg"><img class="simg"></div>
 <script type="text/javascript">
-    var editLinkUrl="{:U('Admin/Link/edit')}";
-    var deleteLinkUrl="{:U('Admin/Link/delete')}";
-    var addLinkUrl="{:U('Admin/Link/add')}";
+    var GLOBALUrl= "{:C('GLOBAL_PIC_URL')}";
+    var addUrl= "{:U('Admin/Link/add')}";
+    var editUrl= "{:U('Admin/Link/edit')}";
+    var deleteUrl= "{:U('Admin/Link/delete')}";
 </script>
 </body>
 </html>

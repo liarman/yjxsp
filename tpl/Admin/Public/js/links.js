@@ -1,6 +1,3 @@
-/**
- * Created by ZH on 2017/11/28.
- */
 $(document).ready(function(){
     KindEditor.ready(function(K){
         var editor = K.editor({
@@ -11,7 +8,7 @@ $(document).ready(function(){
                 editor.plugin.imageDialog({
                     fileUrl : K('#thumb').val(),
                     clickFn : function(url, title) {
-                        $('.addimg').textbox("setValue","{:C('GLOBAL_PIC_URL')}"+url);
+                        $('.addimg').textbox("setValue", GLOBALUrl +url);
                         editor.hideDialog();
                     }
                 });
@@ -22,7 +19,7 @@ $(document).ready(function(){
                 editor.plugin.imageDialog({
                     fileUrl : K('#thumb').val(),
                     clickFn : function(url, title) {
-                        $('.editimg').textbox("setValue","{:C('GLOBAL_PIC_URL')}"+url);
+                        $('.editimg').textbox("setValue", GLOBALUrl +url);
                         editor.hideDialog();
                     }
                 });
@@ -34,7 +31,7 @@ var url;
 function addLink(){
     $('#addLink').dialog('open').dialog('setTitle','添加轮播图');
     $('#addLinkForm').form('clear');
-    url=addLinkUrl;
+    url= addUrl ;
 }
 function addLinkSubmit(){
     $('#addLinkForm').form('submit',{
@@ -85,7 +82,7 @@ function editLink(){
     if (row){
         $('#editLink').dialog('open').dialog('setTitle','编辑');
         $('#editLinkForm').form('load',row);
-        url =editLinkUrl+'/id/'+row.id;
+        url = editUrl +'/id/'+row.id;
     }
 }
 function destroyLink(){
@@ -96,7 +93,7 @@ function destroyLink(){
     if (row){
         $.messager.confirm('删除提示','真的要删除?',function(r){
             if (r){
-                var durl=deleteLinkUrl;
+                var durl= deleteUrl ;
                 $.getJSON(durl,{id:row.id},function(result){
                     if (result.status){
                         $('#linkGrid').datagrid('reload');    // reload the user data
