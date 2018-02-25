@@ -17,9 +17,8 @@
     <script src="__EASYUI__/extend/validate.js"></script>
     <script src="__KINDEDITOR__/kindeditor-all.js"></script>
     <script src="__KINDEDITOR__/lang/zh-CN.js"></script>
-	<script src="__ADMIN_JS__/links.js" type="text/javascript" charset="utf-8"></script>
-
-
+    <link href="__KINDEDITOR__/themes/default/default.css" rel="stylesheet" />
+    <script src="__ADMIN_JS__/links.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body style="padding: 0">
 <div id='Loading'><image src='__PUBLIC_IMAGES__/loading.gif'/>加载中....</div>
@@ -51,7 +50,7 @@
             <tr>
                 <td>图片:</td>
                 <td><input name="imgurl" class="easyui-textbox addimg" data-options="delay:1000,required:true,height:30"  />
-                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-check" id="addlinkimg" style="width:90px">上传</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="fa fa-plus" id="addlinkimg" style="width:90px">上传</a>
                 </td>
             </tr>
             <tr>
@@ -127,36 +126,6 @@
     var editUrl= "{:U('Admin/Link/edit')}";
     var deleteUrl= "{:U('Admin/Link/delete')}";
 </script>
-<script type="text/javascript">
-        $(document).ready(function(){
-            KindEditor.ready(function(K){
-                var editor = K.editor({
-                    allowFileManager:false
-                });
-                K('#addlinkimg').click(function() {
-                    editor.loadPlugin('image', function() {
-                        editor.plugin.imageDialog({
-                            fileUrl : K('#thumb').val(),
-                            clickFn : function(url, title) {
-                                $('.addimg').textbox("setValue", GLOBALUrl +url);
-                                editor.hideDialog();
-                            }
-                        });
-                    });
-                });
-                K('#editlinkimg').click(function() {
-                    editor.loadPlugin('image', function() {
-                        editor.plugin.imageDialog({
-                            fileUrl : K('#thumb').val(),
-                            clickFn : function(url, title) {
-                                $('.editimg').textbox("setValue", GLOBALUrl +url);
-                                editor.hideDialog();
-                            }
-                        });
-                    });
-                });
-            });
-        });
-</script>
+
 </body>
 </html>
