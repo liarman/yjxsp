@@ -95,7 +95,7 @@ class CustomerController extends AppBaseController
                     $link = D('Link')->query($sql,"");
                     $data['bstatus']['code'] = 0;
                     $data['bstatus']['des'] = '获取成功';
-                    $data['data']['linkResult'] = $link;
+                    $data['data']['links'] = $link;
                     echo $this->caesar->clientEncode($key, json_encode($data));
 
             }
