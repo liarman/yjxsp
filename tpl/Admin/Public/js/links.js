@@ -1,4 +1,31 @@
-
+var piceditor;
+KindEditor.ready(function(K) {
+    piceditor = K.editor({
+        allowFileManager:false
+    });
+    K('#addlinkimg').click(function() {
+        piceditor.loadPlugin('image', function() {
+            piceditor.plugin.imageDialog({
+                fileUrl : K('#thumb').val(),
+                clickFn : function(url, title) {
+                    $('.addimg').textbox("setValue", GLOBALUrl +url);
+                    piceditor.hideDialog();
+                }
+            });
+        });
+    });
+    K('#editlinkimg').click(function() {
+        piceditor.loadPlugin('image', function() {
+            piceditor.plugin.imageDialog({
+                fileUrl : K('#thumb').val(),
+                clickFn : function(url, title) {
+                    $('.editimg').textbox("setValue", GLOBALUrl +url);
+                    piceditor.hideDialog();
+                }
+            });
+        });
+    });
+});
 var url;
 function addLink(){
     $('#addLink').dialog('open').dialog('setTitle','添加轮播图');
